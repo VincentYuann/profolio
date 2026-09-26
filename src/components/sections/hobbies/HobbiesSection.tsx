@@ -45,9 +45,9 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
       {/* Full-Bleed Atmospheric Background Behind Hobbies Cards - Komorebi Filtered Light */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="./images/komorebi-spatial.jpg"
-          alt="Komorebi dappled sunlight backdrop behind hobbies"
-          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
+          src="./images/botanical-ink-accent.jpg"
+          alt="Botanical ink art backdrop behind hobbies"
+          className="absolute inset-0 w-full h-full object-contain opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{

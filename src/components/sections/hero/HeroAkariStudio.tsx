@@ -70,7 +70,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
         {/* Layer 2: Subtle Pine Tree Atmosphere on Left */}
         <div className="absolute left-0 top-1/4 w-72 lg:w-96 h-96 opacity-30 dark:opacity-10 mix-blend-multiply dark:mix-blend-screen pointer-events-none">
           <img
-            src="./images/sumie-pine-tree-left.jpg"
+            src="./background/tree.jpg"
             alt="Sumi-e pine tree branch"
             className="w-full h-full object-contain object-left"
             loading="lazy"
@@ -84,14 +84,20 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
           />
         </div>
 
-        {/* Layer 3: Subtle Sumi-e Mountains in Background */}
+        {/* Layer 3: Subtle Sumi-e Landscape in Background */}
         <div className="absolute left-0 bottom-0 w-full lg:w-1/2 h-2/3 opacity-30 dark:opacity-10 mix-blend-multiply dark:mix-blend-screen pointer-events-none">
           <img
-            src="./images/hero-sumie-landscape.png"
+            src="./background/hero-sumie-landscape-banner.jpg"
             alt="Sumi-e mountain background"
             className="w-full h-full object-contain object-bottom-left"
             loading="lazy"
             decoding="async"
+            style={{
+              maskImage:
+                'radial-gradient(ellipse 85% 80% at 35% 65%, black 25%, transparent 85%)',
+              WebkitMaskImage:
+                'radial-gradient(ellipse 85% 80% at 35% 65%, black 25%, transparent 85%)',
+            }}
           />
         </div>
 

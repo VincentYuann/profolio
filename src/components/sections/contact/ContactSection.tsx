@@ -125,7 +125,7 @@ export const ContactSection: React.FC = () => {
           {/* Sumi-e Mountain Silhouette Mask Backdrop: Anchored Clearly on Left Side */}
           <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-50 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-[3px]">
             <img
-              src="./images/contact-sumie-mountain.png"
+              src="./background/mountain.jpg"
               alt="Sumi-e mountain backdrop"
               className="w-full h-full object-cover object-[65%_center]"
               loading="lazy"

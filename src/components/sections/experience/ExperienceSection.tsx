@@ -135,6 +135,22 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
       <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-dark-surface/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
       <div className="absolute left-0 sm:left-24 top-1/4 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
+      
+      {/* Full-Bleed Atmospheric Bamboo Mist Backdrop */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
+        <img
+          src="./background/bamboo.jpg"
+          alt="Bamboo mist backdrop"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
+          loading="lazy"
+          decoding="async"
+          style={{
+            maskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
+          }}
+        />
+      </div>
+
       {/* Subtle Sumi-e Bamboo Silhouette Watermark in Background */}
       <div className="absolute right-0 top-12 bottom-12 w-64 lg:w-96 pointer-events-none z-0 overflow-hidden select-none opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity">
         <img
