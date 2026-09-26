@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, FileText, Code2, Cpu, Sparkles, FolderGit2, Briefcase, Mail } from 'lucide-react';
 import { HankoStamp } from '../../common/HankoStamp';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { useSiteData } from '../../../context/SiteDataContext';
 
 interface HeroAkariStudioProps {
@@ -152,10 +151,10 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </a>
             </nav>
 
-            {/* Ensō Consultation Badge */}
+            {/* Status Consultation Badge */}
             <div className="hidden lg:flex items-center gap-3 pt-6 border-t border-light-border/60 dark:border-dark-border/60">
-              <div className="relative w-10 h-10 shrink-0">
-                <EnsoOrbital placement="center" size={40} hoverOnly={false} />
+              <div className="relative w-8 h-8 rounded-full bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] flex items-center justify-center shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-500/90 dark:bg-emerald-400/90 animate-pulse" />
               </div>
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-wider text-light-ink-subtle dark:text-dark-ink-subtle">
@@ -216,7 +215,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                       onNavigate('resume');
                     }
                   }}
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-[#565A63] text-light-ink dark:text-dark-ink font-sans text-xs sm:text-sm font-medium rounded-lg shadow-2xs transition-all cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#565A63] text-light-ink dark:text-dark-ink font-sans text-xs sm:text-sm font-medium rounded-lg shadow-2xs transition-all cursor-pointer"
                 >
                   <span>Technical CV</span>
                   <FileText className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -230,9 +229,9 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-light-border/60 dark:border-dark-border/60">
               {/* Feature 1 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card/80 dark:bg-dark-surface-card/80 border border-light-border/70 dark:border-dark-border/70">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
-                  <Cpu className="w-4 h-4 text-terracotta" />
+                  <Cpu className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
                     DISTRIBUTED SCALE
                   </span>
@@ -243,9 +242,9 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Feature 2 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card/80 dark:bg-dark-surface-card/80 border border-light-border/70 dark:border-dark-border/70">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
-                  <Code2 className="w-4 h-4 text-terracotta" />
+                  <Code2 className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
                     SHOKUNIN JOINERY
                   </span>
@@ -256,9 +255,9 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Feature 3 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card/80 dark:bg-dark-surface-card/80 border border-light-border/70 dark:border-dark-border/70">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
-                  <Sparkles className="w-4 h-4 text-terracotta" />
+                  <Sparkles className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
                     WARM SURFACES
                   </span>

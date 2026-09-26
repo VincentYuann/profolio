@@ -8,7 +8,6 @@ import {
   ListChecks,
 } from 'lucide-react';
 import { CornerBrackets } from '../../common/CornerBrackets';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { useSiteData } from '../../../context/SiteDataContext';
 import { TechTag } from '../../common/TechTag';
 import { Badge } from '../../ui/badge';
@@ -37,22 +36,22 @@ interface MilestoneTheme {
   bulletOrdinalClass: string;
 }
 
-// Canonical Terracotta Cinnabar theme strictly adhering to DESIGN.md single-accent discipline
+// Quiet architectural milestone theme strictly adhering to editorial discipline
 const CANONICAL_MILESTONE_THEME: MilestoneTheme = {
   primary: '#B5482E',
-  textClass: 'text-terracotta dark:text-[#E85D44]',
-  badgeBg: 'bg-terracotta/10 dark:bg-terracotta/15',
-  badgeBorder: 'border-terracotta/40 dark:border-terracotta/40',
-  badgeText: 'text-terracotta dark:text-[#E85D44]',
-  emblemBorder: 'border-light-border dark:border-dark-border',
+  textClass: 'text-light-ink dark:text-dark-ink',
+  badgeBg: 'bg-light-surface-raised dark:bg-[#30333A]',
+  badgeBorder: 'border-light-border dark:border-[#3A3D44]',
+  badgeText: 'text-light-ink dark:text-dark-ink',
+  emblemBorder: 'border-light-border dark:border-[#3A3D44]',
   emblemShadow: 'shadow-2xs',
-  cardActiveBorder: 'border-terracotta/70 dark:border-terracotta/60',
-  cardActiveRing: 'ring-1 ring-terracotta/20',
-  cardActiveGlow: 'shadow-md shadow-black/5 dark:shadow-black/20',
+  cardActiveBorder: 'border-light-border-strong dark:border-[#4E525D]',
+  cardActiveRing: '',
+  cardActiveGlow: 'shadow-sm',
   nodeActiveBg: 'bg-terracotta',
   nodeActiveBorder: 'border-terracotta',
-  nodeActiveShadow: 'shadow-xs ring-2 ring-terracotta/30',
-  bulletOrdinalClass: 'text-light-ink-muted dark:text-dark-ink-muted bg-light-surface dark:bg-dark-surface-raised border-light-border dark:border-dark-border shadow-2xs',
+  nodeActiveShadow: '',
+  bulletOrdinalClass: 'text-light-ink-muted dark:text-dark-ink-muted bg-light-surface dark:bg-[#25272D] border-light-border dark:border-[#3A3D44]',
 };
 
 const getMilestoneTheme = (_idx: number): MilestoneTheme => {
@@ -215,7 +214,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                   }`}
                   id={`milestone-${idx + 1}`}
                 >
-                  {/* Rail Anchor Node Button */}
+                  {/* Editorial Timeline Marker: Exact 8px marker without ring or orbit */}
                   <button
                     type="button"
                     aria-label={`Jump to ${exp.company} milestone`}
@@ -223,29 +222,22 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                       e.stopPropagation();
                       setActiveCardId(cardKey);
                     }}
-                    className={`timeline-node absolute left-3.5 sm:left-5 top-7 sm:top-8 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-300 cursor-pointer ${
+                    className={`timeline-node absolute left-3.5 sm:left-5 top-7 sm:top-8 w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-300 cursor-pointer ${
                       isCardActive
-                        ? `${theme.nodeActiveBorder} ${theme.nodeActiveBg} ${theme.nodeActiveShadow} scale-110`
-                        : 'border-light-border-strong dark:border-[#4E525D] bg-light-canvas dark:bg-[#1E1F24] group-hover:border-terracotta/70'
+                        ? 'bg-terracotta border border-terracotta'
+                        : 'border border-light-ink-muted/50 dark:border-[#686559] bg-light-canvas dark:bg-[#1E1F24] hover:border-terracotta'
                     }`}
                   />
 
                   {/* Milestone Card Frame */}
                   <div
-                    className={`relative rounded-xl sm:rounded-2xl border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame ${
+                    className={`relative rounded-xl sm:rounded-2xl border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame bg-light-surface-card dark:bg-[#292B31] ${
                       isCardActive
-                        ? `${theme.cardActiveBorder} bg-light-surface-card dark:bg-dark-surface-card ${theme.cardActiveRing} ${theme.cardActiveGlow}`
-                        : 'border-light-border dark:border-dark-border bg-light-surface-card dark:bg-dark-surface-card hover:border-light-border-strong dark:hover:border-[#4E525D]'
+                        ? 'border-light-border-strong dark:border-[#4E525D] shadow-sm'
+                        : 'border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D]'
                     }`}
                   >
-                    {/* Celestial Ensō Orbital Circle: Placed at the top-left corner of the card frame (only on hover) */}
-                    <EnsoOrbital
-                      placement="top-left"
-                      size={96}
-                      hoverOnly={true}
-                    />
-
-                    {/* Corner Hairline Brackets */}
+                    {/* Corner Hairline Brackets (Subtle) */}
                     <CornerBrackets size="sm" />
 
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
@@ -332,11 +324,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                               onClick={(e) => toggleExpand(cardKey, e)}
                               className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg font-mono text-xs transition-all duration-200 border cursor-pointer ${
                                 isExpanded
-                                  ? `${theme.badgeBg} ${theme.badgeText} ${theme.badgeBorder} font-medium`
-                                  : 'bg-light-surface dark:bg-dark-surface-card text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border hover:border-terracotta/60 hover:text-terracotta'
+                                  ? 'bg-light-surface dark:bg-[#25272D] text-light-ink dark:text-dark-ink border-light-border-strong dark:border-[#4E525D] font-medium'
+                                  : 'bg-light-surface/60 dark:bg-[#25272D]/60 text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44] hover:text-light-ink dark:hover:text-dark-ink hover:border-light-border-strong dark:hover:border-[#4E525D]'
                               }`}
                             >
-                              <Layers className={`w-3.5 h-3.5 ${theme.textClass}`} />
+                              <Layers className="w-3.5 h-3.5 text-light-ink-subtle dark:text-dark-ink-subtle" />
                               <span>
                                 {isExpanded
                                   ? 'Collapse Details ↑'
@@ -348,21 +340,21 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
 
                         {/* Expanded Progressive Disclosure Drawer */}
                         {isExpanded && (
-                          <div className="mt-4 pt-4 border-t border-light-border/60 dark:border-dark-border/60 space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                          <div className="mt-4 pt-4 border-t border-light-border/60 dark:border-[#3A3D44]/60 space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
                             {/* Engineering Impact Bullets */}
                             {bullets.length > 0 && (
                               <div>
-                                <div className={`text-xs sm:text-[13px] font-mono tracking-wide ${theme.textClass} font-semibold mb-2.5 flex items-center gap-1.5`}>
-                                  <ListChecks className={`w-3.5 h-3.5 ${theme.textClass}`} />
+                                <div className="text-xs sm:text-[13px] font-mono tracking-wide text-light-ink dark:text-dark-ink font-semibold mb-2.5 flex items-center gap-1.5">
+                                  <ListChecks className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
                                   Engineering Contributions &amp; Quantified Impact
                                 </div>
                                 <ul className="space-y-2.5">
                                   {bullets.map((pt, pIdx) => (
                                     <li
                                       key={pIdx}
-                                      className="p-3 sm:p-3.5 rounded-lg border border-light-border/80 dark:border-dark-border/80 bg-light-surface-raised/60 dark:bg-dark-surface-card/60 hover:border-terracotta/40 hover:bg-light-surface-raised dark:hover:bg-dark-surface-raised transition-all duration-200 flex items-start gap-3 shadow-2xs group/bullet"
+                                      className="p-3 sm:p-3.5 rounded-lg border border-light-border/70 dark:border-[#3A3D44]/70 bg-light-surface/50 dark:bg-[#25272D]/50 hover:border-light-border-strong dark:hover:border-[#4E525D] transition-all duration-200 flex items-start gap-3 shadow-2xs group/bullet"
                                     >
-                                      <span className={`font-mono text-[11px] sm:text-xs font-semibold ${theme.bulletOrdinalClass} rounded px-1.5 py-0.5 shrink-0 select-none mt-0.5`}>
+                                      <span className="font-mono text-[11px] sm:text-xs font-medium text-light-ink-muted dark:text-dark-ink-muted bg-light-surface-raised dark:bg-[#292B31] border border-light-border/80 dark:border-[#3A3D44] rounded px-1.5 py-0.5 shrink-0 select-none mt-0.5">
                                         #{String(pIdx + 1).padStart(2, '0')}
                                       </span>
                                       <span className="font-sans text-xs sm:text-sm text-light-ink dark:text-dark-ink leading-relaxed font-normal">

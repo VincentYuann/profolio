@@ -1,6 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { ArrowRight, Layers, Github, ExternalLink, Calendar } from 'lucide-react';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { TechTag } from '../../common/TechTag';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { Badge } from '../../ui/badge';
@@ -87,16 +86,9 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
               <article
                 key={project.id}
                 onClick={() => openProject(project)}
-                className="interactive-card group relative w-full bg-light-surface-card dark:bg-dark-surface-card hover:bg-light-surface dark:hover:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-akari overflow-visible cursor-pointer"
+                className="interactive-card group relative w-full bg-light-surface-card dark:bg-[#292B31] hover:bg-light-surface dark:hover:bg-[#30333A] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm overflow-visible cursor-pointer"
               >
-                {/* Celestial Ensō Orbital Circle: appears ONLY on the hovered project card */}
-                <EnsoOrbital
-                  placement="top-left"
-                  size={96}
-                  hoverOnly={true}
-                />
-
-                {/* Corner Hairline Brackets */}
+                {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 <div
@@ -106,7 +98,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                 >
                   {/* Visual Media Column */}
                   <div className={`lg:col-span-6 ${isAlternate ? 'lg:col-start-7' : ''}`}>
-                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-dark-surface-muted border border-light-border/70 dark:border-dark-border/70">
+                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-[#1A1B20] border border-light-border/70 dark:border-[#3A3D44]/70">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -127,13 +119,13 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     {/* Unified Metadata Strip: Order + Date + Active Status Pill */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <Badge variant={isCurrent ? "terracotta" : "outline"} className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                        <Badge variant={isCurrent ? "terracotta" : "outline"} className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 border-light-border dark:border-[#3A3D44]">
                           #{String(index + 1).padStart(2, '0')}
                         </Badge>
 
                         {(project.startDate || project.endDate) && (
-                          <span className="font-mono text-xs text-terracotta font-semibold tracking-wider uppercase flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5 text-terracotta" />
+                          <span className="font-mono text-xs text-light-ink-muted dark:text-dark-ink-muted font-medium tracking-wider uppercase flex items-center gap-1.5">
+                            <Calendar className="w-3.5 h-3.5 opacity-70" />
                             {project.startDate || '2024'} - {project.endDate || (isCurrent ? 'Present' : 'Completed')}
                           </span>
                         )}
@@ -145,11 +137,11 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                         <h3 className="font-serif text-2xl sm:text-3xl text-light-ink dark:text-dark-ink font-medium tracking-tight group-hover:text-terracotta transition-colors duration-200">
                           {project.title}
                         </h3>
-                        <span className="font-serif text-lg text-terracotta dark:text-ochre shrink-0">
+                        <span className="font-serif text-lg text-light-ink-muted dark:text-dark-ink-muted shrink-0">
                           {project.kanji}
                         </span>
                       </div>
-                      <p className="font-sans text-xs font-medium text-terracotta dark:text-ochre uppercase tracking-wider">
+                      <p className="font-sans text-xs font-medium text-light-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
                         {project.subtitle}
                       </p>
                     </div>

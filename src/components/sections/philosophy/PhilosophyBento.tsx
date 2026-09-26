@@ -1,33 +1,32 @@
 import React from 'react';
 import { Compass, Feather, ShieldCheck } from 'lucide-react';
 import { BambooArt } from '../../common/BambooArt';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData } from '../../../context/SiteDataContext';
 
 const TRAJECTORY_THEMES = [
   {
-    eraColor: 'text-ochre dark:text-ochre',
-    tagBg: 'bg-ochre/10 dark:bg-ochre/20 text-ochre dark:text-ochre border-ochre/30',
-    borderHover: 'hover:border-ochre/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-bamboo dark:text-bamboo',
-    tagBg: 'bg-bamboo/10 dark:bg-bamboo/20 text-bamboo dark:text-bamboo border-bamboo/30',
-    borderHover: 'hover:border-bamboo/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-terracotta dark:text-terracotta',
-    tagBg: 'bg-terracotta/10 dark:bg-terracotta/20 text-terracotta dark:text-terracotta border-terracotta/30',
-    borderHover: 'hover:border-terracotta/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-ochre dark:text-ochre',
-    tagBg: 'bg-ochre/10 dark:bg-ochre/20 text-ochre dark:text-ochre border-ochre/30',
-    borderHover: 'hover:border-ochre/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     glow: 'hover:shadow-sm',
   },
 ];
@@ -36,10 +35,10 @@ const PILLAR_CONFIGS = [
   {
     icon: Compass,
     num: 'PILLAR 01',
-    kanjiColor: 'text-ochre dark:text-ochre',
-    iconColor: 'text-ochre dark:text-ochre',
-    dotColor: 'bg-ochre',
-    hoverBorder: 'hover:border-ochre/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <svg
         className="w-28 h-28 absolute right-1 bottom-1 text-ochre/15 dark:text-ochre/10 pointer-events-none"
@@ -56,10 +55,10 @@ const PILLAR_CONFIGS = [
   {
     icon: Feather,
     num: 'PILLAR 02',
-    kanjiColor: 'text-terracotta dark:text-terracotta',
-    iconColor: 'text-terracotta dark:text-terracotta',
-    dotColor: 'bg-terracotta',
-    hoverBorder: 'hover:border-terracotta/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <div className="absolute right-1 bottom-1 w-28 h-32 opacity-20 dark:opacity-10 pointer-events-none">
         <img
@@ -75,10 +74,10 @@ const PILLAR_CONFIGS = [
   {
     icon: ShieldCheck,
     num: 'PILLAR 03',
-    kanjiColor: 'text-bamboo dark:text-bamboo',
-    iconColor: 'text-bamboo dark:text-bamboo',
-    dotColor: 'bg-bamboo',
-    hoverBorder: 'hover:border-bamboo/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <div className="absolute right-1 bottom-1 w-24 h-36 opacity-25 dark:opacity-15 pointer-events-none">
         <BambooArt className="w-full h-full" sway={false} opacity={0.8} />
@@ -189,19 +188,19 @@ export const PhilosophyBento: React.FC = () => {
         {/* 04.1 Origin Trajectory Bento Box */}
         {hasOriginStory && (
           <div
-            className="mb-10 sm:mb-12 bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-terracotta/40 transition-colors duration-300"
+            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-[#4E525D] transition-colors duration-300"
           >
             <CornerBrackets size="md" />
 
             {/* Card Top Sub-Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-dark-border/60 relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60 relative z-10">
               <span className="font-mono text-xs font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 {originStory?.badge || 'ORIGIN & TRAJECTORY · 原点と軌跡'}
               </span>
               <div className="flex items-center gap-1.5 font-mono text-[11px] text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-wider">
                 <span>PHILADELPHIA, PA</span>
                 <span className="opacity-40">·</span>
-                <span className="text-terracotta font-medium">SWE · SYSTEMS · FULL-STACK</span>
+                <span className="text-light-ink-muted dark:text-dark-ink-muted font-medium">SWE · SYSTEMS · FULL-STACK</span>
               </div>
             </div>
 
@@ -229,17 +228,10 @@ export const PhilosophyBento: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-ochre/40 dark:border-ochre/30 hover:border-terracotta/70 dark:hover:border-terracotta/70 pt-3.5"
+                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-[#3A3D44] hover:border-light-ink-muted dark:hover:border-[#4E525D] pt-3.5"
                     >
-                      {/* Celestial Ensō Orbital Circle */}
-                      <EnsoOrbital
-                        placement="top-left"
-                        size={88}
-                        hoverOnly={true}
-                        interactive={false}
-                      />
                       <div>
-                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-dark-border/40 relative z-10">
+                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-[#3A3D44]/40 relative z-10">
                           <span className={`font-mono text-[11px] font-bold ${tTheme.eraColor} tracking-wider uppercase`}>
                             {m.era || `PHASE 0${idx + 1}`}
                           </span>
@@ -307,25 +299,22 @@ export const PhilosophyBento: React.FC = () => {
             return (
               <div
                 key={pillar.position || idx}
-                className={`interactive-card bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-dark-surface-raised transition-all duration-300 ${config.hoverBorder} hover:shadow-akari dark:hover:shadow-night-glow classical-card-frame min-h-[280px]`}
+                className="interactive-card bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-[#30333A] hover:border-light-border-strong dark:hover:border-[#4E525D] transition-all duration-300 classical-card-frame min-h-[280px]"
               >
-                {/* Celestial Ensō Orbital Circle: appears ONLY on the hovered card */}
-                <EnsoOrbital placement="top-left" size={112} hoverOnly={true} />
-
-                {/* Corner Hairline Brackets */}
+                {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 {/* Top Accent Kanji & Icon */}
                 <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
-                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60 pb-3 sm:pb-4">
-                    <span className={`pillar-kanji font-serif text-4xl sm:text-6xl ${config.kanjiColor} font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors`}>
+                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-[#3A3D44]/60 pb-3 sm:pb-4">
+                    <span className="pillar-kanji font-serif text-4xl sm:text-6xl text-light-ink dark:text-dark-ink font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors">
                       {pillar.kanji}
                     </span>
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                         {num}
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-light-surface-raised dark:bg-dark-surface-card border border-light-border dark:border-dark-border flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-[#25272D] border border-light-border dark:border-[#3A3D44] flex items-center justify-center">
                         <Icon className={`w-3.5 h-3.5 ${config.iconColor}`} />
                       </div>
                     </div>

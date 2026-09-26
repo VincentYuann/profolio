@@ -17,11 +17,13 @@
 
 .dark {
   --canvas-bg: #1E1F24;
+  --panel-bg: #25272D;
+  --surface-bg: #25272D;
+  --card-bg: #292B31;
   --pattern-dot: rgba(255, 255, 255, 0.02);
-  --surface-bg: #2A2C32;
   --ink-color: #E8E6DF;
   --ink-muted: #A7A398;
-  --border-color: rgba(58, 61, 68, 0.75);
+  --border-color: rgba(167, 163, 152, 0.20);
   --color-terracotta-rgb: 181 72 46;
   --color-ochre-rgb: 212 155 106;
   --color-bamboo-rgb: 82 109 87;
@@ -298,16 +300,17 @@
   border-color: rgb(var(--color-terracotta-rgb) / 0.32);
 }
 
-/* Corner Hairline Brackets: Restrained Japanese Craft joinery (50-70% reduced contrast, no aggressive HUD translation) */
+/* Corner Hairline Brackets: Restrained Japanese Craft joinery (Whisper-quiet opacity, no HUD translation) */
 .corner-bracket {
   transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
   will-change: border-color, opacity;
+  opacity: 0.35;
 }
 
 .interactive-card:hover .corner-bracket,
 .group:hover .corner-bracket {
-  border-color: rgb(var(--color-ochre-rgb) / 0.7);
-  opacity: 0.85;
+  border-color: rgba(167, 163, 152, 0.4);
+  opacity: 0.55;
 }
 
 /* Subtle Kanji Accent on hover */

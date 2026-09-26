@@ -206,10 +206,10 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
         </div>
 
         {/* Left Concentric Diamond Crest */}
-        <DiamondCrest className="w-4 h-3.5 sm:w-5 sm:h-4 text-terracotta" />
+        <DiamondCrest className="w-3.5 h-3 sm:w-4 sm:h-3.5 text-light-ink-subtle/50 dark:text-dark-ink-subtle/40" />
 
         {/* Section Description in the Middle */}
-        <div className="relative z-10 inline-flex items-center px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-full bg-light-surface/90 dark:bg-dark-surface/90 border border-light-border/80 dark:border-dark-border/80 shadow-xs backdrop-blur-xs hover:border-ochre/50 transition-colors shrink-0">
+        <div className="relative z-10 inline-flex items-center px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-full bg-light-surface dark:bg-[#25272D] border border-light-border/70 dark:border-[#3A3D44]/70 shadow-xs backdrop-blur-xs transition-colors shrink-0">
           <span className="font-sans font-semibold tracking-[0.16em] sm:tracking-[0.2em] text-light-ink-muted dark:text-dark-ink-muted uppercase text-[11px] sm:text-xs">
             <span className="sm:hidden">{displayShort}</span>
             <span className="hidden sm:inline">{label}</span>
@@ -217,7 +217,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
         </div>
 
         {/* Right Concentric Diamond Crest */}
-        <DiamondCrest className="w-4 h-3.5 sm:w-5 sm:h-4 text-terracotta" />
+        <DiamondCrest className="w-3.5 h-3 sm:w-4 sm:h-3.5 text-light-ink-subtle/50 dark:text-dark-ink-subtle/40" />
 
         {/* Right Dashed Hairline Line */}
         <div className="flex-1 min-w-[20px] flex items-center overflow-hidden">

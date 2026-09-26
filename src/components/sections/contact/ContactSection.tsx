@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Mail, Github, Linkedin, Send, CheckCircle2, AlertCircle, Copy, Check } from 'lucide-react';
 import { sendContactMessage } from '../../../lib/supabase';
 import { BambooArt } from '../../common/BambooArt';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData } from '../../../context/SiteDataContext';
 
@@ -119,15 +118,8 @@ export const ContactSection: React.FC = () => {
       <div className="absolute inset-0 bg-radial-[at_50%_40%] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-2xl p-8 sm:p-12 overflow-visible shadow-akari dark:shadow-night-glow classical-card-frame hover:border-terracotta/40 transition-colors duration-500">
-          {/* Celestial Ensō Orbital Circle: appears ONLY on the hovered card */}
-          <EnsoOrbital
-            placement="top-left"
-            size={120}
-            hoverOnly={true}
-          />
-
-          {/* Corner Hairline Brackets */}
+        <div className="interactive-card group relative bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-2xl p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">
+          {/* Corner Hairline Brackets (Subtle) */}
           <CornerBrackets size="lg" />
 
           {/* Komorebi Japanese Landscape Mask Backdrop: Anchored Clearly on Left Side */}

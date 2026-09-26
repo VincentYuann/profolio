@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, FileText } from 'lucide-react';
 import { BambooArt } from '../../common/BambooArt';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { HankoStamp } from '../../common/HankoStamp';
 import { TechTag } from '../../common/TechTag';
 import { useSiteData, parsePillarTags } from '../../../context/SiteDataContext';
@@ -175,12 +174,9 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
               <BambooArt className="w-36 h-52" sway={true} opacity={0.6} />
             </div>
 
-            <div className="relative z-10 w-full max-w-sm bg-light-surface-card/95 dark:bg-dark-surface-card/95 backdrop-blur-md border border-light-border dark:border-dark-border p-6 rounded-xl shadow-xs transition-all duration-300 group">
-              {/* Celestial Ensō Orbital Circle: appears on hover */}
-              <EnsoOrbital placement="top-left" size={120} interactive={true} />
-
+            <div className="relative z-10 w-full max-w-sm bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] p-6 rounded-xl shadow-xs transition-all duration-300 group">
               {/* Box Header */}
-              <div className="w-full flex items-center justify-between pb-2 mb-4 border-b border-light-border/60 dark:border-dark-border/60 relative z-10">
+              <div className="w-full flex items-center justify-between pb-2 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60 relative z-10">
                 <span className="font-sans font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase text-[11px] tracking-wider">
                   {hanko?.headerLabel || 'SEAL / 認印'}
                 </span>
@@ -196,7 +192,7 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
                   className="w-16 h-16 sm:w-18 sm:h-18 transition-transform duration-300 group-hover:scale-105"
                 />
                 {hanko?.statusBadge && (
-                  <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-light-surface dark:bg-dark-surface-raised border border-light-border dark:border-dark-border text-[11px] font-mono font-medium text-terracotta tracking-wider uppercase">
+                  <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-light-surface dark:bg-[#25272D] border border-light-border dark:border-[#3A3D44] text-[11px] font-mono font-medium text-terracotta tracking-wider uppercase">
                     <span className="w-1.5 h-1.5 rounded-full bg-terracotta" />
                     <span>{hanko.statusBadge}</span>
                   </div>

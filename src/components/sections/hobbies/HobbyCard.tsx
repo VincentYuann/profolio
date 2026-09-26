@@ -1,7 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { Image as ImageIcon, Maximize2 } from 'lucide-react';
 import { HobbyItem } from '../../../context/SiteDataContext';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { getCategoryStyle } from '../../../lib/hobbyTheme';
 
@@ -32,22 +31,16 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
 
   return (
     <article
-      className="bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-terracotta/40 dark:hover:border-terracotta/40 transition-all duration-300 flex flex-col justify-between"
+      className="bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-light-border-strong dark:hover:border-[#4E525D] hover:bg-light-surface dark:hover:bg-[#30333A] transition-all duration-300 flex flex-col justify-between"
     >
-      {/* Top-Left Celestial Ensō Orbital Circle on Hover */}
-      <EnsoOrbital
-        placement="top-left"
-        size={96}
-        hoverOnly={true}
-      />
       <CornerBrackets size="md" />
 
       {/* Card Header */}
       <div className="relative z-10">
-        <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-dark-border/60">
+        <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="font-mono text-[11px] font-bold text-terracotta tracking-wider uppercase">
+              <span className="font-mono text-[11px] font-medium text-light-ink-muted dark:text-dark-ink-muted tracking-wider uppercase">
                 {`0${index + 1}`} · {hobby.kanji || '工芸'}
               </span>
               <span
