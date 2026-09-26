@@ -1,33 +1,32 @@
 import React from 'react';
 import { Compass, Feather, ShieldCheck } from 'lucide-react';
 import { BambooArt } from '../../common/BambooArt';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData } from '../../../context/SiteDataContext';
 
 const TRAJECTORY_THEMES = [
   {
-    eraColor: 'text-ochre dark:text-ochre',
-    tagBg: 'bg-ochre/10 dark:bg-ochre/20 text-ochre dark:text-ochre border-ochre/30',
-    borderHover: 'hover:border-ochre/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-bamboo dark:text-bamboo',
-    tagBg: 'bg-bamboo/10 dark:bg-bamboo/20 text-bamboo dark:text-bamboo border-bamboo/30',
-    borderHover: 'hover:border-bamboo/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-terracotta dark:text-terracotta',
-    tagBg: 'bg-terracotta/10 dark:bg-terracotta/20 text-terracotta dark:text-terracotta border-terracotta/30',
-    borderHover: 'hover:border-terracotta/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
-    eraColor: 'text-ochre dark:text-ochre',
-    tagBg: 'bg-ochre/10 dark:bg-ochre/20 text-ochre dark:text-ochre border-ochre/30',
-    borderHover: 'hover:border-ochre/50',
+    eraColor: 'text-light-ink dark:text-dark-ink',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
 ];
@@ -36,10 +35,10 @@ const PILLAR_CONFIGS = [
   {
     icon: Compass,
     num: 'PILLAR 01',
-    kanjiColor: 'text-ochre dark:text-ochre',
-    iconColor: 'text-ochre dark:text-ochre',
-    dotColor: 'bg-ochre',
-    hoverBorder: 'hover:border-ochre/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <svg
         className="w-28 h-28 absolute right-1 bottom-1 text-ochre/15 dark:text-ochre/10 pointer-events-none"
@@ -56,16 +55,16 @@ const PILLAR_CONFIGS = [
   {
     icon: Feather,
     num: 'PILLAR 02',
-    kanjiColor: 'text-terracotta dark:text-terracotta',
-    iconColor: 'text-terracotta dark:text-terracotta',
-    dotColor: 'bg-terracotta',
-    hoverBorder: 'hover:border-terracotta/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <div className="absolute right-1 bottom-1 w-28 h-32 opacity-20 dark:opacity-10 pointer-events-none">
         <img
           src="./images/sumie-pine-tree-left.jpg"
           alt="Pine motif"
-          className="w-full h-full object-contain object-bottom-right mix-blend-multiply dark:mix-blend-screen dark:invert"
+          className="w-full h-full object-contain object-bottom-right mix-blend-multiply dark:mix-blend-luminosity dark:opacity-15 dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
         />
@@ -75,10 +74,10 @@ const PILLAR_CONFIGS = [
   {
     icon: ShieldCheck,
     num: 'PILLAR 03',
-    kanjiColor: 'text-bamboo dark:text-bamboo',
-    iconColor: 'text-bamboo dark:text-bamboo',
-    dotColor: 'bg-bamboo',
-    hoverBorder: 'hover:border-bamboo/50',
+    kanjiColor: 'text-light-ink dark:text-dark-ink',
+    iconColor: 'text-light-ink-muted dark:text-dark-ink-muted',
+    dotColor: 'bg-light-ink-subtle dark:bg-[#76736A]',
+    hoverBorder: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
     watermark: (
       <div className="absolute right-1 bottom-1 w-24 h-36 opacity-25 dark:opacity-15 pointer-events-none">
         <BambooArt className="w-full h-full" sway={false} opacity={0.8} />
@@ -107,9 +106,9 @@ export const PhilosophyBento: React.FC = () => {
   }
 
   return (
-    <section id="philosophy" className="relative w-full py-16 lg:py-24">
+    <section id="philosophy" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Philosophy */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-[#101115]/70 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-dark-surface-card/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Zen Ambient Mist Radial Wash */}
       <div className="absolute inset-0 bg-radial-[at_50%_50%] from-ochre/[0.03] dark:from-ochre/[0.02] to-transparent pointer-events-none z-0" />
 
@@ -117,9 +116,9 @@ export const PhilosophyBento: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         {/* Panoramic Mist Landscape backdrop spanning across the section */}
         <img
-          src="./images/hero-sumie-landscape-bamboo-banner.jpg"
+          src="./background/hero-sumie-landscape-bamboo-banner.jpg"
           alt="Sumi-e landscape behind philosophy cards"
-          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-screen dark:invert"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{
@@ -133,7 +132,7 @@ export const PhilosophyBento: React.FC = () => {
           <img
             src="./images/sumie-tall-vertical-bamboo.jpg"
             alt="Sumi-e bamboo art left flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-screen dark:invert animate-bamboo-sway"
+            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-bamboo-sway"
             loading="lazy"
             decoding="async"
             style={{
@@ -148,7 +147,7 @@ export const PhilosophyBento: React.FC = () => {
           <img
             src="./images/sumie-tall-vertical-bamboo.jpg"
             alt="Sumi-e bamboo art right flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-screen dark:invert scale-x-[-1]"
+            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 scale-x-[-1]"
             loading="lazy"
             decoding="async"
             style={{
@@ -166,12 +165,26 @@ export const PhilosophyBento: React.FC = () => {
       {/* Main Philosophy Bento Content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="mb-10 sm:mb-12 pb-6 border-b border-light-border/70 dark:border-dark-border/80">
-          <div className="max-w-3xl">
+        <div className="relative mb-12 sm:mb-16 pb-6 border-b border-light-border/70 dark:border-dark-border/80">
+          {/* Ambient Akari Paper Lantern Radial Glow */}
+          <div
+            className="pointer-events-none absolute -top-12 -left-12 w-96 h-48 rounded-full opacity-60 dark:opacity-40 blur-3xl z-0"
+            style={{
+              background: 'radial-gradient(circle, rgba(232, 162, 86, 0.08) 0%, rgba(232, 162, 86, 0.02) 50%, transparent 80%)'
+            }}
+          />
+
+          <div className="max-w-3xl relative z-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="font-serif text-terracotta text-sm">04 //</span>
-              <span className="font-sans text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
+              <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 ORIGIN &amp; PHILOSOPHY · 原点と哲学
+              </span>
+              <span
+                className="inline-flex items-center justify-center w-4 h-4 rounded-[2px] bg-terracotta/10 text-terracotta text-[9px] font-serif border border-terracotta/30 select-none ml-1"
+                title="Hanko Seal: 哲 (Philosophy)"
+              >
+                哲
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-light-ink dark:text-dark-ink font-normal tracking-tight">
@@ -189,7 +202,7 @@ export const PhilosophyBento: React.FC = () => {
         {/* 04.1 Origin Trajectory Bento Box */}
         {hasOriginStory && (
           <div
-            className="mb-10 sm:mb-12 bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-terracotta/40 transition-colors duration-300"
+            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-dark-border-strong transition-colors duration-300"
           >
             <CornerBrackets size="md" />
 
@@ -201,7 +214,7 @@ export const PhilosophyBento: React.FC = () => {
               <div className="flex items-center gap-1.5 font-mono text-[11px] text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-wider">
                 <span>PHILADELPHIA, PA</span>
                 <span className="opacity-40">·</span>
-                <span className="text-terracotta font-medium">SWE · SYSTEMS · FULL-STACK</span>
+                <span className="text-light-ink-muted dark:text-dark-ink-muted font-medium">SWE · SYSTEMS · FULL-STACK</span>
               </div>
             </div>
 
@@ -229,22 +242,15 @@ export const PhilosophyBento: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-ochre/40 dark:border-ochre/30 hover:border-terracotta/70 dark:hover:border-terracotta/70 pt-3.5"
+                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-dark-border hover:border-light-ink-muted dark:hover:border-dark-border-strong pt-3.5"
                     >
-                      {/* Celestial Ensō Orbital Circle */}
-                      <EnsoOrbital
-                        placement="top-left"
-                        size={88}
-                        hoverOnly={true}
-                        interactive={false}
-                      />
                       <div>
                         <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-dark-border/40 relative z-10">
                           <span className={`font-mono text-[11px] font-bold ${tTheme.eraColor} tracking-wider uppercase`}>
                             {m.era || `PHASE 0${idx + 1}`}
                           </span>
                           {m.tag && (
-                            <span className={`font-mono text-[11px] px-1.5 py-0.5 rounded border ${tTheme.tagBg} tracking-wider uppercase`}>
+                            <span className={`font-mono text-[11px] px-1.5 py-0.5 rounded-[2px] border ${tTheme.tagBg} tracking-wider uppercase`}>
                               {m.tag}
                             </span>
                           )}
@@ -277,7 +283,7 @@ export const PhilosophyBento: React.FC = () => {
         {displayPillars.length > 0 && (
           <div className="mb-6 pt-2 pb-3 flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60">
             <div className="flex items-center gap-2">
-              <span className="font-serif text-terracotta text-sm">04.2 //</span>
+              <span className="font-mono text-xs text-light-ink-subtle dark:text-dark-ink-subtle font-medium">04.2 //</span>
               <span className="font-sans text-xs sm:text-sm font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 Three Architectural Pillars · 三つの信条
               </span>
@@ -307,25 +313,22 @@ export const PhilosophyBento: React.FC = () => {
             return (
               <div
                 key={pillar.position || idx}
-                className={`interactive-card bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-dark-surface-raised transition-all duration-300 ${config.hoverBorder} hover:shadow-akari dark:hover:shadow-night-glow classical-card-frame min-h-[280px]`}
+                className="interactive-card bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-dark-surface hover:border-light-border-strong dark:hover:border-dark-border-strong transition-all duration-300 classical-card-frame min-h-[280px]"
               >
-                {/* Celestial Ensō Orbital Circle: appears ONLY on the hovered card */}
-                <EnsoOrbital placement="top-left" size={112} hoverOnly={true} />
-
-                {/* Corner Hairline Brackets */}
+                {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 {/* Top Accent Kanji & Icon */}
                 <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
                   <div className="flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60 pb-3 sm:pb-4">
-                    <span className={`pillar-kanji font-serif text-4xl sm:text-6xl ${config.kanjiColor} font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors`}>
+                    <span className="pillar-kanji font-serif text-4xl sm:text-6xl text-light-ink dark:text-dark-ink font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors">
                       {pillar.kanji}
                     </span>
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                         {num}
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-light-surface-raised dark:bg-dark-surface-card border border-light-border dark:border-dark-border flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-dark-surface-raised border border-light-border dark:border-dark-border flex items-center justify-center">
                         <Icon className={`w-3.5 h-3.5 ${config.iconColor}`} />
                       </div>
                     </div>
@@ -357,7 +360,7 @@ export const PhilosophyBento: React.FC = () => {
                 )}
 
                 {/* Thematic Watermark Motif behind card content */}
-                <div className="absolute inset-0 pointer-events-none rounded-xl">
+                <div className="absolute inset-0 pointer-events-none rounded-[3px]">
                   {config.watermark}
                 </div>
               </div>

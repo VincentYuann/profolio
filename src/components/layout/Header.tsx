@@ -173,7 +173,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={(e) => handleNavClick(e, item)}
                 className={`group relative font-sans text-xs uppercase tracking-wider transition-colors flex items-center gap-1.5 py-1 whitespace-nowrap ${
                   isActive
-                    ? 'text-terracotta font-semibold'
+                    ? 'text-light-ink dark:text-dark-ink font-semibold'
                     : 'text-light-ink-muted dark:text-dark-ink-muted hover:text-light-ink dark:hover:text-dark-ink'
                 }`}
               >
@@ -191,11 +191,11 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right side cluster: always neatly aligned with zero overlap */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          {/* Day / Night segmented toggle */}
-          <div className="flex items-center p-0.5 rounded-full bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border text-[11px] sm:text-xs select-none shrink-0 shadow-2xs">
+          {/* Day / Night segmented toggle with architectural 2px corners */}
+          <div className="flex items-center p-0.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border text-[11px] sm:text-xs select-none shrink-0 shadow-2xs">
             <button
               onClick={() => setTheme('day')}
-              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-full font-sans font-semibold tracking-wider transition-all duration-200 cursor-pointer group/theme ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 rounded-[2px] font-sans font-semibold tracking-wider transition-all duration-200 cursor-pointer group/theme ${
                 theme === 'day'
                   ? 'bg-light-surface-raised text-light-ink shadow-sm'
                   : 'text-light-ink-muted hover:text-light-ink dark:text-dark-ink-muted dark:hover:text-dark-ink'
@@ -208,7 +208,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={() => setTheme('night')}
-              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-full font-sans font-semibold tracking-wider transition-all duration-200 cursor-pointer group/theme ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 rounded-[2px] font-sans font-semibold tracking-wider transition-all duration-200 cursor-pointer group/theme ${
                 theme === 'night'
                   ? 'bg-dark-surface-raised text-dark-ink shadow-sm'
                   : 'text-light-ink-muted hover:text-light-ink dark:text-dark-ink-muted dark:hover:text-dark-ink'
@@ -230,7 +230,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onOpenContact();
               }
             }}
-            className="hidden sm:inline-flex xl:hidden items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-sans font-medium tracking-wide bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
+            className="hidden sm:inline-flex xl:hidden items-center gap-1.5 px-3 py-1.5 rounded-[2px] text-xs font-sans font-medium tracking-wide bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
           >
             <span>Get in Touch</span>
           </a>
@@ -240,7 +240,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="hidden xl:flex items-center gap-1.5 shrink-0">
               <button
                 onClick={() => onNavigate?.(currentView === 'edit' ? 'home' : 'edit')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-sans border transition-colors cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[2px] text-xs font-sans border transition-colors cursor-pointer ${
                   currentView === 'edit'
                     ? 'bg-terracotta text-white border-terracotta shadow-xs'
                     : 'text-terracotta border-terracotta/40 bg-terracotta/10 hover:bg-terracotta/20 hover:border-terracotta'
@@ -262,7 +262,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
               <button
                 onClick={onLogout}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-red-500 hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-[2px] text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-red-500 hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer"
                 title="Sign out of Admin mode"
                 aria-label="Sign Out"
               >
@@ -272,12 +272,12 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           ) : isVisitor ? (
             <div className="hidden xl:flex items-center gap-1.5 shrink-0">
-              <span className="inline-flex items-center px-2 py-1 rounded text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20">
+              <span className="inline-flex items-center px-2 py-1 rounded-[2px] text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20">
                 Visitor
               </span>
               <button
                 onClick={onLogout}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-red-500 hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-[2px] text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-red-500 hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer"
                 title="Exit Visitor session"
                 aria-label="Exit Visitor"
               >
@@ -288,7 +288,7 @@ export const Header: React.FC<HeaderProps> = ({
           ) : (
             <button
               onClick={() => onNavigate?.('login')}
-              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-light-ink dark:hover:text-dark-ink hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer shrink-0"
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[2px] text-xs font-sans text-light-ink-muted dark:text-dark-ink-muted hover:text-light-ink dark:hover:text-dark-ink hover:bg-light-surface-raised dark:hover:bg-dark-surface border border-light-border dark:border-dark-border transition-colors cursor-pointer shrink-0"
               title="Admin Login"
               aria-label="Admin Login"
             >
@@ -301,7 +301,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="relative xl:hidden">
             <button
               onClick={() => setMobileDrawerOpen((prev) => !prev)}
-              className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all duration-200 select-none cursor-pointer shrink-0 ${
+              className={`w-9 h-9 flex items-center justify-center rounded-[2px] border transition-all duration-200 select-none cursor-pointer shrink-0 ${
                 mobileDrawerOpen
                   ? 'border-terracotta bg-terracotta/10 text-terracotta shadow-xs'
                   : 'border-light-border dark:border-dark-border bg-light-surface-card dark:bg-dark-surface text-light-ink dark:text-dark-ink hover:border-terracotta/60 hover:text-terracotta'

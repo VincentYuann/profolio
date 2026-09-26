@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { ArrowLeft, Search, ExternalLink, Github, Layers, Calendar } from 'lucide-react';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { TechTag } from '../../common/TechTag';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData, Project } from '../../../context/SiteDataContext';
@@ -145,16 +144,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl overflow-visible p-5 shadow-akari hover:border-terracotta/40 transition-all duration-300 flex flex-col justify-between"
+                className="interactive-card group relative bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-xl overflow-visible p-5 shadow-sm transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Ensō Bloom: Top-left only on hover */}
-                <EnsoOrbital
-                  placement="top-left"
-                  size={80}
-                  hoverOnly={true}
-                />
-
-                {/* Corner Hairline Brackets */}
+                {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="sm" />
 
                 <div>

@@ -1,6 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { ArrowRight, Layers, Github, ExternalLink, Calendar } from 'lucide-react';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { TechTag } from '../../common/TechTag';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { Badge } from '../../ui/badge';
@@ -50,21 +49,35 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
           onNavigate('projects');
         }
       }}
-      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-terracotta/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
+      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-2xs transition-all duration-200"
     >
-      <Layers className="w-3.5 h-3.5 text-terracotta" />
+      <Layers className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
       <span className="sm:hidden">All Projects ({projects?.length || 0})</span>
       <span className="hidden sm:inline">View All Projects ({projects?.length || 0})</span>
-      <ArrowRight className="w-3.5 h-3.5 text-terracotta transition-transform duration-200 group-hover:translate-x-1" />
+      <ArrowRight className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-1" />
     </a>
   );
 
   return (
-    <section id="featured-works" className="relative w-full py-16 lg:py-24">
+    <section id="featured-works" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Featured Works */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#0e1014]/60 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
-      {/* Subtle Japanese Minimal Grid Pattern */}
-      <div className="absolute right-0 sm:right-16 top-1/3 w-[32rem] h-[32rem] bg-radial-[at_center] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-dark-surface/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      {/* Subtle Japanese Joinery Axis Ambient Glow */}
+      <div className="absolute right-0 sm:right-24 top-1/3 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
+      {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
+        <img
+          src="./decorators/ocean.jpg"
+          alt="Sumi-e ocean waves backdrop"
+          className="absolute right-0 top-0 bottom-0 w-full lg:w-3/4 h-full object-cover object-right opacity-30 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
+          loading="lazy"
+          decoding="async"
+          style={{
+            maskImage: 'radial-gradient(ellipse 90% 80% at 75% 50%, black 25%, transparent 85%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 90% 80% at 75% 50%, black 25%, transparent 85%)',
+          }}
+        />
+      </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header with Classical Wabi-Sabi Numerals & View All Action */}
@@ -87,16 +100,9 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
               <article
                 key={project.id}
                 onClick={() => openProject(project)}
-                className="interactive-card group relative w-full bg-light-surface-card dark:bg-dark-surface-card hover:bg-light-surface dark:hover:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-akari overflow-visible cursor-pointer"
+                className="interactive-card group relative w-full bg-light-surface-card dark:bg-dark-surface-card craft-card hover:bg-light-surface dark:hover:bg-dark-surface-raised border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong rounded-[3px] p-4 sm:p-8 transition-all duration-300 shadow-2xs overflow-visible cursor-pointer"
               >
-                {/* Celestial Ensō Orbital Circle: appears ONLY on the hovered project card */}
-                <EnsoOrbital
-                  placement="top-left"
-                  size={96}
-                  hoverOnly={true}
-                />
-
-                {/* Corner Hairline Brackets */}
+                {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 <div
@@ -104,13 +110,17 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     isAlternate ? 'lg:grid-flow-dense' : ''
                   }`}
                 >
-                  {/* Visual Media Column */}
+                  {/* Visual Media Column with Faded Edge Vignette */}
                   <div className={`lg:col-span-6 ${isAlternate ? 'lg:col-start-7' : ''}`}>
-                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-dark-surface-muted border border-light-border/70 dark:border-dark-border/70">
+                    <div className="relative aspect-[16/9] w-full rounded-[2px] overflow-hidden bg-light-surface-muted dark:bg-dark-canvas border border-light-border/70 dark:border-dark-border/70">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover object-center group-hover:opacity-95 transition-opacity duration-300"
+                        style={{
+                          maskImage: 'radial-gradient(ellipse 96% 94% at 50% 50%, black 72%, transparent 100%)',
+                          WebkitMaskImage: 'radial-gradient(ellipse 96% 94% at 50% 50%, black 72%, transparent 100%)',
+                        }}
                         loading="lazy"
                         decoding="async"
                         onError={handleImageError()}
@@ -127,13 +137,13 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     {/* Unified Metadata Strip: Order + Date + Active Status Pill */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <Badge variant="terracotta" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                        <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-[2px] bg-light-surface-muted/60 dark:bg-dark-canvas border-light-border dark:border-dark-border text-light-ink-muted dark:text-dark-ink-muted">
                           #{String(index + 1).padStart(2, '0')}
                         </Badge>
 
                         {(project.startDate || project.endDate) && (
-                          <span className="font-mono text-xs text-terracotta font-semibold tracking-wider uppercase flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5 text-terracotta" />
+                          <span className="font-mono text-xs text-light-ink-muted dark:text-dark-ink-muted font-medium tracking-wider uppercase flex items-center gap-1.5">
+                            <Calendar className="w-3.5 h-3.5 opacity-70" />
                             {project.startDate || '2024'} - {project.endDate || (isCurrent ? 'Present' : 'Completed')}
                           </span>
                         )}
@@ -145,11 +155,11 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                         <h3 className="font-serif text-2xl sm:text-3xl text-light-ink dark:text-dark-ink font-medium tracking-tight group-hover:text-terracotta transition-colors duration-200">
                           {project.title}
                         </h3>
-                        <span className="font-serif text-lg text-terracotta dark:text-ochre shrink-0">
+                        <span className="font-serif text-lg text-light-ink-muted dark:text-dark-ink-muted shrink-0">
                           {project.kanji}
                         </span>
                       </div>
-                      <p className="font-sans text-xs font-medium text-terracotta dark:text-ochre uppercase tracking-wider">
+                      <p className="font-sans text-xs font-medium text-light-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
                         {project.subtitle}
                       </p>
                     </div>
@@ -175,7 +185,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                         <span>
                           {project.links.caseStudyText || 'View Architecture'}
                         </span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5 text-terracotta" />
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5 text-light-ink-muted dark:text-dark-ink-muted group-hover/btn:text-terracotta" />
                       </button>
 
                       {/* Direct External Links */}

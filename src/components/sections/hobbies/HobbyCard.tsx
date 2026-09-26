@@ -1,7 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { Image as ImageIcon, Maximize2 } from 'lucide-react';
 import { HobbyItem } from '../../../context/SiteDataContext';
-import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { getCategoryStyle } from '../../../lib/hobbyTheme';
 
@@ -32,14 +31,8 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
 
   return (
     <article
-      className="bg-light-surface-card/95 dark:bg-dark-surface/95 backdrop-blur-sm border border-light-border dark:border-dark-border rounded-xl p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-terracotta/40 dark:hover:border-terracotta/40 transition-all duration-300 flex flex-col justify-between"
+      className="bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-light-border-strong dark:hover:border-dark-border-strong hover:bg-light-surface dark:hover:bg-dark-surface transition-all duration-300 flex flex-col justify-between"
     >
-      {/* Top-Left Celestial Ensō Orbital Circle on Hover */}
-      <EnsoOrbital
-        placement="top-left"
-        size={96}
-        hoverOnly={true}
-      />
       <CornerBrackets size="md" />
 
       {/* Card Header */}
@@ -47,11 +40,11 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
         <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-dark-border/60">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="font-mono text-[11px] font-bold text-terracotta tracking-wider uppercase">
+              <span className="font-mono text-[11px] font-medium text-light-ink-muted dark:text-dark-ink-muted tracking-wider uppercase">
                 {`0${index + 1}`} · {hobby.kanji || '工芸'}
               </span>
               <span
-                className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider border font-medium ${categoryStyle}`}
+                className={`inline-flex items-center px-2 py-0.5 rounded-[2px] text-[11px] font-mono uppercase tracking-wider border font-medium ${categoryStyle}`}
               >
                 {hobby.category || 'Passion'}
               </span>
@@ -62,7 +55,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
           </div>
 
           <div className="text-right shrink-0">
-            <span className="font-serif text-2xl sm:text-3xl text-terracotta/80 font-bold leading-none block">
+            <span className="font-serif text-2xl sm:text-3xl text-light-ink-subtle/50 dark:text-dark-ink-subtle/40 font-medium leading-none block select-none">
               {hobby.kanji || '道'}
             </span>
           </div>
@@ -74,7 +67,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
             <div className="grid grid-cols-12 gap-2 h-44 sm:h-52">
               {/* Primary Active Photo */}
               <div
-                className={`relative rounded-lg overflow-hidden border border-light-border/80 dark:border-dark-border group/hero bg-light-surface-muted dark:bg-dark-surface-muted ${
+                className={`relative rounded-[3px] overflow-hidden border border-light-border/80 dark:border-dark-border group/hero bg-light-surface-muted dark:bg-dark-surface-muted ${
                   sideThumbnails.length > 0 ? 'col-span-8 sm:col-span-9' : 'col-span-12'
                 }`}
               >
@@ -94,7 +87,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
                     e.stopPropagation();
                     setIsLightboxOpen(true);
                   }}
-                  className="absolute bottom-2 right-2 p-1.5 rounded-md bg-black/60 text-white/90 hover:text-white hover:bg-black/80 transition-all opacity-0 group-hover/hero:opacity-100 cursor-pointer"
+                  className="absolute bottom-2 right-2 p-1.5 rounded-[2px] bg-black/60 text-white/90 hover:text-white hover:bg-black/80 transition-all opacity-0 group-hover/hero:opacity-100 cursor-pointer"
                   title="Expand to Fullscreen Lightbox"
                   aria-label="Enlarge image"
                 >
@@ -102,7 +95,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
                 </button>
 
                 {/* Image Counter Pill */}
-                <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-[11px] font-mono text-white/90 flex items-center gap-1">
+                <div className="absolute top-2 left-2 px-2 py-0.5 rounded-[2px] bg-black/60 backdrop-blur-xs text-[11px] font-mono text-white/90 flex items-center gap-1">
                   <ImageIcon className="w-3 h-3 text-terracotta" />
                   <span>
                     {activeImageIndex + 1} / {images.length}
@@ -118,7 +111,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
                       key={idx}
                       type="button"
                       onClick={() => setActiveImageIndex(idx)}
-                      className="relative flex-1 rounded-md overflow-hidden border border-light-border dark:border-dark-border hover:border-terracotta transition-colors group/thumb cursor-pointer bg-light-surface-muted dark:bg-dark-surface-muted"
+                      className="relative flex-1 rounded-[2px] overflow-hidden border border-light-border dark:border-dark-border hover:border-terracotta transition-colors group/thumb cursor-pointer bg-light-surface-muted dark:bg-dark-surface-muted"
                       title={`Switch to image ${idx + 1}`}
                       aria-label={`Switch to photo ${idx + 1}`}
                     >
@@ -154,7 +147,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
               return (
                 <div
                   key={mIdx}
-                  className="inline-flex items-center gap-1.5 text-xs py-1.5 px-3 rounded-lg bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border shadow-xs"
+                  className="inline-flex items-center gap-1.5 text-xs py-1.5 px-3 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border shadow-xs"
                 >
                   <span className="font-semibold text-light-ink dark:text-dark-ink text-[11px] sm:text-xs tracking-tight">
                     {labelText}

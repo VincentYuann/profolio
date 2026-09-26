@@ -17,7 +17,7 @@ export const MarginBambooFlanks: React.FC<MarginBambooFlanksProps> = ({
         <img
           src={imageSrc}
           alt="Sumi-e bamboo margin accent"
-          className="w-full h-full object-contain object-bottom opacity-30 dark:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert animate-bamboo-sway"
+          className="w-full h-full object-contain object-bottom opacity-30 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-bamboo-sway"
           loading="lazy"
           decoding="async"
           style={{
@@ -32,7 +32,7 @@ export const MarginBambooFlanks: React.FC<MarginBambooFlanksProps> = ({
         <img
           src={imageSrc}
           alt="Sumi-e bamboo margin accent"
-          className="w-full h-full object-contain object-bottom opacity-30 dark:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert scale-x-[-1]"
+          className="w-full h-full object-contain object-bottom opacity-30 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 scale-x-[-1]"
           loading="lazy"
           decoding="async"
           style={{

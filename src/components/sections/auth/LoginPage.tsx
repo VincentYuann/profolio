@@ -57,7 +57,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, isVisitor = fa
       </div>
 
       {/* Login Card with Japanese Double Hairline Frame & Corner Brackets */}
-      <div className="interactive-card relative w-full max-w-sm bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-2xl p-8 shadow-akari dark:shadow-night-glow flex flex-col gap-5 classical-card-frame">
+      <div className="interactive-card relative w-full max-w-sm bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-8 shadow-sm flex flex-col gap-5 classical-card-frame">
         <CornerBrackets size="md" />
 
         <h1 className="font-serif text-lg text-light-ink dark:text-dark-ink text-center">

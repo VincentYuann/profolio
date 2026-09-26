@@ -63,16 +63,20 @@ import {
   SiClickhouse,
   SiGooglebigquery,
 
-  // Cloud & DevOps
+  // Cloud & Big Tech
+  SiGoogle,
+  SiGooglecloud,
   SiDocker,
   SiKubernetes,
   SiLinux,
-  SiGooglecloud,
   SiCloudflare,
   SiGithub,
   SiGit,
   SiNginx,
   SiTerraform,
+  SiMeta,
+  SiApple,
+  SiN8n,
 
   // Creative Tech & Graphics
   SiThreedotjs,
@@ -109,6 +113,15 @@ export interface TechIconHookResult {
  * Curated Pre-bundled Local Registry for instantaneous (0ms) offline rendering
  */
 export const LOCAL_TECH_REGISTRY: Record<string, { icon: TechIconComponent; name: string }> = {
+  google: { icon: SiGoogle, name: 'Google' },
+  gcp: { icon: SiGooglecloud, name: 'Google Cloud' },
+  googlecloud: { icon: SiGooglecloud, name: 'Google Cloud' },
+  meta: { icon: SiMeta, name: 'Meta' },
+  llama: { icon: SiMeta, name: 'LLaMA' },
+  llamaindex: { icon: SiLangchain, name: 'LlamaIndex' },
+  apple: { icon: SiApple, name: 'Apple' },
+  n8n: { icon: SiN8n, name: 'n8n' },
+
   pytorch: { icon: SiPytorch, name: 'PyTorch' },
   tensorflow: { icon: SiTensorflow, name: 'TensorFlow' },
   huggingface: { icon: SiHuggingface, name: 'Hugging Face' },
@@ -173,7 +186,6 @@ export const LOCAL_TECH_REGISTRY: Record<string, { icon: TechIconComponent; name
   kubernetes: { icon: SiKubernetes, name: 'Kubernetes' },
   linux: { icon: SiLinux, name: 'Linux' },
   aws: { icon: Cloud as unknown as TechIconComponent, name: 'AWS' },
-  gcp: { icon: SiGooglecloud, name: 'Google Cloud' },
   cloudflare: { icon: SiCloudflare, name: 'Cloudflare' },
   github: { icon: SiGithub, name: 'GitHub' },
   git: { icon: SiGit, name: 'Git' },
@@ -217,6 +229,7 @@ export const TECH_ALIASES: Record<string, string> = {
   shell: 'bash',
   css3: 'css',
   html: 'html5',
+  llamaindex: 'llamaindex',
 };
 
 /**
@@ -246,7 +259,7 @@ export function normalizeTechSlug(input: string): string {
 // Global in-memory cache for dynamic SVG strings (slug -> SVG content or null)
 const SVG_CACHE = new Map<string, string | null>();
 const PENDING_PROMISES = new Map<string, Promise<string | null>>();
-const CACHE_PREFIX = 'tech_svg_v1_';
+const CACHE_PREFIX = 'tech_svg_v2_';
 
 // Seed SVG cache from localStorage
 if (typeof window !== 'undefined') {
@@ -256,7 +269,11 @@ if (typeof window !== 'undefined') {
       if (key && key.startsWith(CACHE_PREFIX)) {
         const slug = key.replace(CACHE_PREFIX, '');
         const val = localStorage.getItem(key);
-        if (val) SVG_CACHE.set(slug, val);
+        if (val === 'NULL') {
+          SVG_CACHE.set(slug, null);
+        } else if (val) {
+          SVG_CACHE.set(slug, val);
+        }
       }
     }
   } catch {}
@@ -268,7 +285,6 @@ if (typeof window !== 'undefined') {
 function sanitizeSvg(rawSvg: string): string {
   return rawSvg
     .replace(/<svg\b([^>]*)>/i, (_match, attrs) => {
-      // Clean width and height, ensure viewBox exists, set width/height to 100%
       let cleanedAttrs = attrs
         .replace(/\bwidth="[^"]*"/i, '')
         .replace(/\bheight="[^"]*"/i, '')
@@ -280,9 +296,9 @@ function sanitizeSvg(rawSvg: string): string {
 }
 
 /**
- * Dynamically resolves an SVG logo for any technology via the Iconify API
- * Tries: simple-icons -> devicon -> logos -> Iconify live search
- * If not found, returns null (clean fallback to pure text, NO emojis)
+ * Dynamically resolves an SVG logo for any technology via jsDelivr Simple Icons & Devicon
+ * with zero rate-limiting and global multi-CDN caching.
+ * If not found, returns null (clean fallback to pure text, NO emojis).
  */
 export async function fetchTechIconSvg(tag: string): Promise<string | null> {
   const slug = normalizeTechSlug(tag);
@@ -299,13 +315,19 @@ export async function fetchTechIconSvg(tag: string): Promise<string | null> {
   }
 
   const promise = (async (): Promise<string | null> => {
-    // Registry priorities on Iconify
-    const prefixes = ['simple-icons', 'devicon', 'logos', 'material-icon-theme'];
+    // Uncapped, high-performance CDNs (jsDelivr simple-icons, jsDelivr devicon)
+    const endpoints = [
+      `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${slug}.svg`,
+      `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`,
+      `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-plain.svg`,
+      `https://api.iconify.design/simple-icons:${slug}.svg?color=currentColor`,
+      `https://api.iconify.design/logos:${slug}.svg`,
+    ];
 
-    for (const prefix of prefixes) {
+    for (const url of endpoints) {
       try {
-        const res = await fetch(`https://api.iconify.design/${prefix}:${slug}.svg?color=currentColor`);
-        if (res.ok) {
+        const res = await fetch(url);
+        if (res.status === 200) {
           const text = await res.text();
           if (text && text.includes('<svg') && !text.includes('404')) {
             const cleaned = sanitizeSvg(text);
@@ -317,43 +339,15 @@ export async function fetchTechIconSvg(tag: string): Promise<string | null> {
           }
         }
       } catch {
-        // network issue, try next prefix
+        // network issue, try next endpoint
       }
     }
 
-    // Dynamic search fallback for unconventional naming
-    try {
-      const searchRes = await fetch(
-        `https://api.iconify.design/search?query=${encodeURIComponent(slug)}&limit=5`
-      );
-      if (searchRes.ok) {
-        const data = await searchRes.json();
-        const candidate = (data.icons as string[] | undefined)?.find(
-          (ic) =>
-            ic.startsWith('simple-icons:') ||
-            ic.startsWith('devicon:') ||
-            ic.startsWith('logos:')
-        );
-
-        if (candidate) {
-          const svgRes = await fetch(`https://api.iconify.design/${candidate}.svg?color=currentColor`);
-          if (svgRes.ok) {
-            const text = await svgRes.text();
-            if (text && text.includes('<svg')) {
-              const cleaned = sanitizeSvg(text);
-              SVG_CACHE.set(slug, cleaned);
-              try {
-                localStorage.setItem(`${CACHE_PREFIX}${slug}`, cleaned);
-              } catch {}
-              return cleaned;
-            }
-          }
-        }
-      }
-    } catch {}
-
-    // No logo found across registries: cache as null so we don't re-query
+    // Explicitly not found across all registries
     SVG_CACHE.set(slug, null);
+    try {
+      localStorage.setItem(`${CACHE_PREFIX}${slug}`, 'NULL');
+    } catch {}
     return null;
   })();
 
@@ -364,7 +358,7 @@ export async function fetchTechIconSvg(tag: string): Promise<string | null> {
 }
 
 /**
- * React hook to resolve tech icons with automatic Iconify dynamic discovery
+ * React hook to resolve tech icons with automatic dynamic discovery
  */
 export function useTechIcon(tag: string): TechIconHookResult {
   const norm = normalizeTechSlug(tag);
@@ -468,24 +462,36 @@ export function getTechBadgeIcon(tag: string): TechIconMatch {
 }
 
 /**
- * Queries Iconify for matching icons when searching
+ * Queries Iconify for matching icons when searching, filtered strictly to tech/brand libraries
  */
 export async function searchTechIcons(query: string): Promise<string[]> {
   const q = query.trim().toLowerCase();
   if (!q) return [];
 
   try {
-    const res = await fetch(`https://api.iconify.design/search?query=${encodeURIComponent(q)}&limit=10`);
+    const res = await fetch(`https://api.iconify.design/search?query=${encodeURIComponent(q)}&limit=60`);
     if (!res.ok) return [];
     const data = await res.json();
     const icons = (data.icons as string[]) || [];
 
+    // Strictly whitelist developer / tech-specific icon sets
+    const techPrefixes = ['simple-icons:', 'devicon:', 'logos:', 'skill-icons:'];
     const names = new Set<string>();
+
     icons.forEach((ic) => {
+      if (!techPrefixes.some((p) => ic.startsWith(p))) return;
+
       const parts = ic.split(':');
       if (parts.length === 2) {
-        const rawName = parts[1].replace(/[-_]/g, ' ');
-        names.add(rawName.charAt(0).toUpperCase() + rawName.slice(1));
+        // Strip style suffixes like -line, -fill, -solid, -outline, -original, -plain, -icon
+        const rawName = parts[1]
+          .replace(/-(original|plain|icon|wordmark|line|fill|solid|outline|dark|light)$/i, '')
+          .replace(/[-_]/g, ' ')
+          .trim();
+
+        if (rawName && rawName.length <= 20) {
+          names.add(rawName.charAt(0).toUpperCase() + rawName.slice(1));
+        }
       }
     });
 
