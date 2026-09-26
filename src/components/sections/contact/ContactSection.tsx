@@ -112,18 +112,18 @@ export const ContactSection: React.FC = () => {
   )}` : '#';
 
   return (
-    <section id="contact" className="relative w-full py-14 lg:py-20 mb-8 scroll-mt-20">
+    <section id="contact" className="relative w-full py-24 lg:py-32 mb-8 scroll-mt-20">
       {/* Architectural Background Chamber for Contact */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-[#262523]/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-dark-surface-card/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
       <div className="absolute inset-0 bg-radial-[at_50%_40%] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="interactive-card group relative bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-2xl p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">
+        <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong rounded-[3px] p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">
           {/* Corner Hairline Brackets (Subtle) */}
           <CornerBrackets size="lg" />
 
           {/* Sumi-e Mountain Silhouette Mask Backdrop: Anchored Clearly on Left Side */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-50 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-2xl">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-50 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-[3px]">
             <img
               src="./images/contact-sumie-mountain.png"
               alt="Sumi-e mountain backdrop"
@@ -170,7 +170,7 @@ export const ContactSection: React.FC = () => {
                     <>
                       <a
                         href={mailtoHref}
-                        className="btn-bloom inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-terracotta hover:bg-terracotta-hover text-white font-sans text-xs uppercase tracking-widest rounded-lg shadow-sm"
+                        className="btn-bloom inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-terracotta hover:bg-terracotta-hover text-white font-sans text-xs uppercase tracking-widest rounded-[2px] shadow-sm"
                       >
                         <Mail className="w-4 h-4" />
                         <span>{contactEmail}</span>
@@ -179,7 +179,7 @@ export const ContactSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="inline-flex items-center gap-1.5 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-raised border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-[2px] shadow-xs transition-all duration-200 cursor-pointer"
                         title="Copy email to clipboard"
                       >
                         {copiedEmail ? (
@@ -202,7 +202,7 @@ export const ContactSection: React.FC = () => {
                       href={contactGithub}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
+                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-raised border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-[2px] shadow-xs transition-all duration-200"
                     >
                       <Github className="w-4 h-4" />
                       <span className="tracking-widest">Github</span>
@@ -214,7 +214,7 @@ export const ContactSection: React.FC = () => {
                       href={contactLinkedin}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
+                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-raised border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-[2px] shadow-xs transition-all duration-200"
                     >
                       <Linkedin className="w-4 h-4" />
                       <span className="tracking-widest">Linkedin</span>
@@ -231,7 +231,7 @@ export const ContactSection: React.FC = () => {
               </h3>
 
               {status === 'success' ? (
-                <div role="status" aria-live="polite" className="p-5 rounded bg-bamboo/10 border border-bamboo/30 text-center space-y-2">
+                <div role="status" aria-live="polite" className="p-5 rounded-[2px] bg-bamboo/10 border border-bamboo/30 text-center space-y-2">
                   <CheckCircle2 className="w-8 h-8 text-bamboo mx-auto" />
                   <h4 className="font-serif text-base text-light-ink dark:text-dark-ink">
                     Message Delivered Directly
@@ -270,7 +270,7 @@ export const ContactSection: React.FC = () => {
                         onBlur={() => handleBlur('name')}
                         aria-invalid={Boolean(touched.name && errors.name)}
                         aria-describedby={touched.name && errors.name ? 'contact-name-error' : undefined}
-                        className={`w-full px-3 py-2 rounded text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors ${
+                        className={`w-full px-3 py-2 rounded-[2px] text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors ${
                           touched.name && errors.name
                             ? 'border-red-500/80 dark:border-red-400/80 focus:border-red-500 focus-visible:ring-red-500/30'
                             : 'border-light-border dark:border-dark-border focus:border-terracotta focus-visible:ring-terracotta/40'
@@ -298,7 +298,7 @@ export const ContactSection: React.FC = () => {
                         onBlur={() => handleBlur('email')}
                         aria-invalid={Boolean(touched.email && errors.email)}
                         aria-describedby={touched.email && errors.email ? 'contact-email-error' : undefined}
-                        className={`w-full px-3 py-2 rounded text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors ${
+                        className={`w-full px-3 py-2 rounded-[2px] text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors ${
                           touched.email && errors.email
                             ? 'border-red-500/80 dark:border-red-400/80 focus:border-red-500 focus-visible:ring-red-500/30'
                             : 'border-light-border dark:border-dark-border focus:border-terracotta focus-visible:ring-terracotta/40'
@@ -328,7 +328,7 @@ export const ContactSection: React.FC = () => {
                       onBlur={() => handleBlur('message')}
                       aria-invalid={Boolean(touched.message && errors.message)}
                       aria-describedby={touched.message && errors.message ? 'contact-message-error' : undefined}
-                      className={`w-full px-3 py-2.5 rounded text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors resize-none ${
+                      className={`w-full px-3 py-2.5 rounded-[2px] text-sm bg-light-surface dark:bg-dark-surface border text-light-ink dark:text-dark-ink focus:outline-none focus-visible:ring-2 transition-colors resize-none ${
                         touched.message && errors.message
                           ? 'border-red-500/80 dark:border-red-400/80 focus:border-red-500 focus-visible:ring-red-500/30'
                           : 'border-light-border dark:border-dark-border focus:border-terracotta focus-visible:ring-terracotta/40'
@@ -352,7 +352,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="w-full py-2.5 px-4 rounded font-sans text-sm font-medium bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:outline-none"
+                    className="w-full py-2.5 px-4 rounded-[2px] font-sans text-sm font-medium bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:outline-none"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{status === 'sending' ? 'Transmitting...' : 'Send Message'}</span>

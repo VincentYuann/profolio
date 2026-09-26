@@ -193,11 +193,13 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
         <DiamondCrest className="w-3.5 h-3 sm:w-4 sm:h-3.5 text-light-ink-subtle/50 dark:text-dark-ink-subtle/40" />
 
         {/* Section Description in the Middle */}
-        <div className="relative z-10 inline-flex items-center px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-full bg-light-surface dark:bg-[#262523] border border-light-border/70 dark:border-[#3E3B37] shadow-xs backdrop-blur-xs transition-colors shrink-0">
-          <span className="font-sans font-semibold tracking-[0.16em] sm:tracking-[0.2em] text-light-ink-muted dark:text-dark-ink-muted uppercase text-[11px] sm:text-xs">
+        <div className="relative z-10 inline-flex items-center gap-2 px-3 sm:px-4 py-1 rounded-[2px] bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border shadow-2xs transition-colors shrink-0">
+          <span className="text-[10px] text-terracotta select-none">◇</span>
+          <span className="font-chakra font-semibold tracking-[0.18em] sm:tracking-[0.2em] text-light-ink-muted dark:text-dark-ink-muted uppercase text-2xs">
             <span className="sm:hidden">{displayShort}</span>
             <span className="hidden sm:inline">{label}</span>
           </span>
+          <span className="text-[10px] text-terracotta select-none">◇</span>
         </div>
 
         {/* Right Concentric Diamond Crest */}

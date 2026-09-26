@@ -96,8 +96,8 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
         </div>
 
         {/* Layer 4: Atmospheric Wash Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-light-canvas via-light-canvas/75 to-transparent dark:from-[#1F1E1D] dark:via-[#1F1E1D]/85 dark:to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-light-canvas dark:from-[#1F1E1D] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-light-canvas via-light-canvas/75 to-transparent dark:from-dark-canvas dark:via-dark-canvas/85 dark:to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-light-canvas dark:from-dark-canvas to-transparent pointer-events-none" />
       </div>
 
       {/* Main Studio Frame Layout (Sidebar + Hero Content) */}
@@ -111,12 +111,12 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             2. Omitting redundant internal nav links (header already has them)
             3. Providing real curatorial telemetry, coordinates, external profiles, and CLI snippet
           */}
-          <aside className="lg:col-span-4 xl:col-span-3 border-b lg:border-b-0 lg:border-r border-light-border dark:border-[#3E3B37] pb-6 lg:pb-0 pr-0 lg:pr-8 flex flex-col justify-between gap-6 h-full">
+          <aside className="lg:col-span-4 xl:col-span-3 border-b lg:border-b-0 lg:border-r border-light-border dark:border-dark-border pb-6 lg:pb-0 pr-0 lg:pr-8 flex flex-col justify-between gap-6 h-full">
             
             {/* Atelier Identity Block */}
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-xs font-chakra uppercase tracking-widest text-light-ink-subtle dark:text-dark-ink-subtle font-semibold">
-                <span className="w-2 h-2 rounded-xs bg-terracotta inline-block" />
+                <span className="w-2 h-2 rounded-[1px] bg-terracotta inline-block" />
                 <span>ATELIER DOSSIER · 工匠の記録</span>
               </div>
 
@@ -130,7 +130,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Japanese Tategaki Marginalia */}
-              <div className="pt-4 border-t border-light-border/60 dark:border-[#3E3B37]/60">
+              <div className="pt-4 border-t border-light-border/60 dark:border-dark-border/60">
                 <p className="font-sans text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest leading-relaxed">
                   HANDMADE SYSTEMS INSPIRED BY TRADITION. DESIGNED TO SCALE.
                 </p>
@@ -146,7 +146,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             </div>
 
             {/* Atelier Telemetry & Geolocation (Replaces redundant nav links) */}
-            <div className="space-y-3 pt-5 border-t border-light-border/60 dark:border-[#3E3B37]/60 text-xs">
+            <div className="space-y-3 pt-5 border-t border-light-border/60 dark:border-dark-border/60 text-xs">
               <div className="flex items-center gap-2 text-light-ink-subtle dark:text-dark-ink-subtle">
                 <Compass className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted shrink-0" />
                 <span className="font-mono text-[11px] text-light-ink-muted dark:text-dark-ink-muted tracking-tight">
@@ -162,7 +162,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             </div>
 
             {/* External Channels & Developer CLI (Channels not in top navbar) */}
-            <div className="space-y-3 pt-5 border-t border-light-border/60 dark:border-[#3E3B37]/60">
+            <div className="space-y-3 pt-5 border-t border-light-border/60 dark:border-dark-border/60">
               <div className="text-2xs font-chakra uppercase tracking-widest text-light-ink-subtle dark:text-dark-ink-subtle font-semibold">
                 DIRECT CHANNELS &amp; REPOSITORIES
               </div>
@@ -171,7 +171,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                   href="https://github.com/VincentYuann"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-light-surface dark:bg-[#1A1918] border border-light-border/80 dark:border-[#3E3B37] hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[2px] bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
                   title="GitHub Profile"
                 >
                   <Github className="w-3.5 h-3.5" />
@@ -181,7 +181,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                   href="https://www.linkedin.com/in/vincent-yuan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-light-surface dark:bg-[#1A1918] border border-light-border/80 dark:border-[#3E3B37] hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[2px] bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
                   title="LinkedIn Profile"
                 >
                   <Linkedin className="w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                 </a>
                 <a
                   href="mailto:vincentyuan1020@gmail.com"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-light-surface dark:bg-[#1A1918] border border-light-border/80 dark:border-[#3E3B37] hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[2px] bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-terracotta/60 text-light-ink dark:text-dark-ink text-xs font-mono transition-colors shadow-2xs"
                   title="Send Email"
                 >
                   <Mail className="w-3.5 h-3.5" />
@@ -202,7 +202,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                 type="button"
                 onClick={handleCopyCmd}
                 title="Copy developer CLI command"
-                className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-light-surface/80 dark:bg-[#1A1918] border border-light-border/90 dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] font-mono text-[11px] text-light-ink dark:text-dark-ink transition-all cursor-pointer group shadow-2xs"
+                className="w-full flex items-center justify-between px-3 py-2 rounded-[2px] bg-light-surface/80 dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong font-mono text-[11px] text-light-ink dark:text-dark-ink transition-all cursor-pointer group shadow-2xs"
               >
                 <div className="flex items-center gap-1.5">
                   <Terminal className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted group-hover:text-terracotta transition-colors" />
@@ -218,8 +218,8 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             </div>
 
             {/* Status Consultation Badge */}
-            <div className="flex items-center gap-3 pt-5 border-t border-light-border/60 dark:border-[#3E3B37]/60">
-              <div className="relative w-7 h-7 rounded-full bg-light-surface-card dark:bg-[#2D2B29] border border-light-border dark:border-[#3E3B37] flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 pt-5 border-t border-light-border/60 dark:border-dark-border/60">
+              <div className="relative w-6 h-6 rounded-[2px] bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border flex items-center justify-center shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500/90 dark:bg-emerald-400/90 animate-pulse" />
               </div>
               <div>
@@ -257,7 +257,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                 {tagline}
               </p>
 
-              {/* Action Buttons */}
+              {/* Action Buttons with 2px corners */}
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <a
                   href="#featured-works"
@@ -267,7 +267,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                       onNavigate('home', 'featured-works');
                     }
                   }}
-                  className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light font-mulish text-xs sm:text-sm font-semibold rounded-lg shadow-xs hover:opacity-90 transition-all cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light font-mulish text-xs sm:text-sm font-semibold rounded-[2px] shadow-2xs hover:opacity-95 transition-all cursor-pointer"
                 >
                   <span>Explore Selected Works</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -281,7 +281,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                       onNavigate('resume');
                     }
                   }}
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-[#2D2B29] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-mulish text-xs sm:text-sm font-medium rounded-lg shadow-2xs transition-all cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-mulish text-xs sm:text-sm font-medium rounded-[2px] shadow-2xs transition-all cursor-pointer"
                 >
                   <span>Technical CV</span>
                   <FileText className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -296,10 +296,10 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               2. Frontend & Interaction Craft
               3. Agentic AI & Data Pipelines
             */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-light-border/60 dark:border-[#3E3B37]/60">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-light-border/60 dark:border-dark-border/60">
               
               {/* Stack 1: Systems & Backend */}
-              <div className="flex flex-col gap-2 p-4.5 rounded-xl bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
+              <div className="flex flex-col gap-2 p-4.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border">
                 <div className="flex items-center justify-between text-light-ink dark:text-dark-ink">
                   <div className="flex items-center gap-2">
                     <Cpu className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
@@ -318,7 +318,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Stack 2: Frontend & Interaction */}
-              <div className="flex flex-col gap-2 p-4.5 rounded-xl bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
+              <div className="flex flex-col gap-2 p-4.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border">
                 <div className="flex items-center justify-between text-light-ink dark:text-dark-ink">
                   <div className="flex items-center gap-2">
                     <Code2 className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
@@ -337,7 +337,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Stack 3: Agentic AI & RAG */}
-              <div className="flex flex-col gap-2 p-4.5 rounded-xl bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
+              <div className="flex flex-col gap-2 p-4.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border">
                 <div className="flex items-center justify-between text-light-ink dark:text-dark-ink">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />

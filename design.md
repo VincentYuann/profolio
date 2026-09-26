@@ -15,13 +15,13 @@ colors:
   ochre: "#D49B6A"
   bamboo: "#526D57"
 
-  # Light theme: canonical Akari palette (Reference Image #1 & #2)
+  # Light theme: Washi & Akari Paper (Canonical Reference Spec)
   light-canvas: "#F2E9DA"
   light-surface: "#F7F0E3"
   light-surface-card: "#F7F0E3"
   light-surface-raised: "#FBF6EC"
   light-surface-muted: "#EDE1CE"
-  light-ink: "#2B2E3A"
+  light-ink: "#282E3A"
   light-ink-muted: "#686559"
   light-ink-subtle: "#8B8375"
   light-border: "#D9C9AE"
@@ -30,22 +30,22 @@ colors:
   light-on-dark: "#F7F0E3"
   light-focus: "#B5482E"
 
-  # Dark theme: 4-Tier Warm Charcoal Night Mode (Canonical Architectural Hierarchy)
-  dark-canvas: "#1F1E1D"
-  dark-panel: "#262523"
-  dark-surface: "#262523"
-  dark-card: "#2D2B29"
-  dark-surface-card: "#2D2B29"
-  dark-surface-raised: "#353330"
-  dark-surface-muted: "#1A1918"
-  dark-ink: "#ECE8DF"
-  dark-ink-muted: "#ACA598"
-  dark-ink-subtle: "#787368"
-  dark-border: "#3E3B37"
+  # Dark theme: Sumi & Charred Cedar (Canonical 4-Tier Reference Spec)
+  dark-canvas: "#1E1F24"
+  dark-panel: "#2A2C32"
+  dark-surface: "#2A2C32"
+  dark-card: "#2A2C32"
+  dark-surface-card: "#2A2C32"
+  dark-surface-raised: "#353842"
+  dark-surface-muted: "#18191D"
+  dark-ink: "#E8E6DF"
+  dark-ink-muted: "#A7A398"
+  dark-ink-subtle: "#76736A"
+  dark-border: "#3A3D44"
   dark-border-strong: "#4E525D"
   dark-border-subtle: "rgba(182, 175, 162, 0.18)"
-  dark-button-light: "#ECE8DF"
-  dark-on-light: "#1F1E1D"
+  dark-button-light: "#E8E6DF"
+  dark-on-light: "#1E1F24"
   dark-focus: "#B5482E"
 
 typography:
@@ -119,11 +119,15 @@ spacing:
 
 rounded:
   none: "0px"
-  sm: "4px"
-  md: "8px"
-  lg: "12px"
-  xl: "16px"
-  pill: "9999px"
+  xs: "2px"
+  sm: "2px"
+  md: "3px"
+  lg: "3px"
+  xl: "3px"
+  2xl: "3px"
+  3xl: "3px"
+  pill: "3px"
+  full: "9999px"
 ---
 
 # Vincent Yuan: Akari Craft & Editorial Design System (v2.0)

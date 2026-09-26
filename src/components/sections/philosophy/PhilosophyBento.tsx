@@ -7,26 +7,26 @@ import { useSiteData } from '../../../context/SiteDataContext';
 const TRAJECTORY_THEMES = [
   {
     eraColor: 'text-light-ink dark:text-dark-ink',
-    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
-    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
     eraColor: 'text-light-ink dark:text-dark-ink',
-    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
-    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
     eraColor: 'text-light-ink dark:text-dark-ink',
-    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
-    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
   {
     eraColor: 'text-light-ink dark:text-dark-ink',
-    tagBg: 'bg-light-surface-raised dark:bg-[#30333A] text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44]',
-    borderHover: 'hover:border-light-border-strong dark:hover:border-[#4E525D]',
+    tagBg: 'bg-light-surface-raised dark:bg-dark-surface-raised text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border',
+    borderHover: 'hover:border-light-border-strong dark:hover:border-dark-border-strong',
     glow: 'hover:shadow-sm',
   },
 ];
@@ -106,9 +106,9 @@ export const PhilosophyBento: React.FC = () => {
   }
 
   return (
-    <section id="philosophy" className="relative w-full py-16 lg:py-24 scroll-mt-20">
+    <section id="philosophy" className="relative w-full py-24 lg:py-32 scroll-mt-20">
       {/* Architectural Background Chamber for Philosophy */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-[#2A2C32]/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-dark-surface-card/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Zen Ambient Mist Radial Wash */}
       <div className="absolute inset-0 bg-radial-[at_50%_50%] from-ochre/[0.03] dark:from-ochre/[0.02] to-transparent pointer-events-none z-0" />
 
@@ -165,12 +165,26 @@ export const PhilosophyBento: React.FC = () => {
       {/* Main Philosophy Bento Content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="mb-10 sm:mb-12 pb-6 border-b border-light-border/70 dark:border-dark-border/80">
-          <div className="max-w-3xl">
+        <div className="relative mb-12 sm:mb-16 pb-6 border-b border-light-border/70 dark:border-dark-border/80">
+          {/* Ambient Akari Paper Lantern Radial Glow */}
+          <div
+            className="pointer-events-none absolute -top-12 -left-12 w-96 h-48 rounded-full opacity-60 dark:opacity-40 blur-3xl z-0"
+            style={{
+              background: 'radial-gradient(circle, rgba(232, 162, 86, 0.08) 0%, rgba(232, 162, 86, 0.02) 50%, transparent 80%)'
+            }}
+          />
+
+          <div className="max-w-3xl relative z-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="font-serif text-terracotta text-sm">04 //</span>
-              <span className="font-sans text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
+              <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 ORIGIN &amp; PHILOSOPHY · 原点と哲学
+              </span>
+              <span
+                className="inline-flex items-center justify-center w-4 h-4 rounded-[2px] bg-terracotta/10 text-terracotta text-[9px] font-serif border border-terracotta/30 select-none ml-1"
+                title="Hanko Seal: 哲 (Philosophy)"
+              >
+                哲
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-light-ink dark:text-dark-ink font-normal tracking-tight">
@@ -188,12 +202,12 @@ export const PhilosophyBento: React.FC = () => {
         {/* 04.1 Origin Trajectory Bento Box */}
         {hasOriginStory && (
           <div
-            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-[#4E525D] transition-colors duration-300"
+            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-dark-border-strong transition-colors duration-300"
           >
             <CornerBrackets size="md" />
 
             {/* Card Top Sub-Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3E3B37]/60 relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-dark-border/60 relative z-10">
               <span className="font-mono text-xs font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 {originStory?.badge || 'ORIGIN & TRAJECTORY · 原点と軌跡'}
               </span>
@@ -228,15 +242,15 @@ export const PhilosophyBento: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-[#3E3B37] hover:border-light-ink-muted dark:hover:border-[#4E525D] pt-3.5"
+                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-dark-border hover:border-light-ink-muted dark:hover:border-dark-border-strong pt-3.5"
                     >
                       <div>
-                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-[#3E3B37]/40 relative z-10">
+                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-dark-border/40 relative z-10">
                           <span className={`font-mono text-[11px] font-bold ${tTheme.eraColor} tracking-wider uppercase`}>
                             {m.era || `PHASE 0${idx + 1}`}
                           </span>
                           {m.tag && (
-                            <span className={`font-mono text-[11px] px-1.5 py-0.5 rounded border ${tTheme.tagBg} tracking-wider uppercase`}>
+                            <span className={`font-mono text-[11px] px-1.5 py-0.5 rounded-[2px] border ${tTheme.tagBg} tracking-wider uppercase`}>
                               {m.tag}
                             </span>
                           )}
@@ -267,7 +281,7 @@ export const PhilosophyBento: React.FC = () => {
 
         {/* 04.2 Core Architectural Pillars Subsection Divider */}
         {displayPillars.length > 0 && (
-          <div className="mb-6 pt-2 pb-3 flex items-center justify-between border-b border-light-border/60 dark:border-[#3E3B37]/60">
+          <div className="mb-6 pt-2 pb-3 flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60">
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-light-ink-subtle dark:text-dark-ink-subtle font-medium">04.2 //</span>
               <span className="font-sans text-xs sm:text-sm font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
@@ -299,14 +313,14 @@ export const PhilosophyBento: React.FC = () => {
             return (
               <div
                 key={pillar.position || idx}
-                className="interactive-card bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-[#343230] hover:border-light-border-strong dark:hover:border-[#4E525D] transition-all duration-300 classical-card-frame min-h-[280px]"
+                className="interactive-card bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-dark-surface hover:border-light-border-strong dark:hover:border-dark-border-strong transition-all duration-300 classical-card-frame min-h-[280px]"
               >
                 {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 {/* Top Accent Kanji & Icon */}
                 <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
-                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-[#3E3B37]/60 pb-3 sm:pb-4">
+                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60 pb-3 sm:pb-4">
                     <span className="pillar-kanji font-serif text-4xl sm:text-6xl text-light-ink dark:text-dark-ink font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors">
                       {pillar.kanji}
                     </span>
@@ -314,7 +328,7 @@ export const PhilosophyBento: React.FC = () => {
                       <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                         {num}
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-dark-surface-raised border border-light-border dark:border-dark-border flex items-center justify-center">
                         <Icon className={`w-3.5 h-3.5 ${config.iconColor}`} />
                       </div>
                     </div>
@@ -346,7 +360,7 @@ export const PhilosophyBento: React.FC = () => {
                 )}
 
                 {/* Thematic Watermark Motif behind card content */}
-                <div className="absolute inset-0 pointer-events-none rounded-xl">
+                <div className="absolute inset-0 pointer-events-none rounded-[3px]">
                   {config.watermark}
                 </div>
               </div>

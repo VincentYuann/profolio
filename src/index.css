@@ -6,7 +6,7 @@
   --canvas-bg: #F2E9DA;
   --pattern-dot: #D9C9AE;
   --surface-bg: #F7F0E3;
-  --ink-color: #2B2E3A;
+  --ink-color: #282E3A;
   --ink-muted: #686559;
   --border-color: #D9C9AE;
   --color-terracotta-rgb: 181 72 46;
@@ -16,14 +16,14 @@
 }
 
 .dark {
-  --canvas-bg: #1F1E1D;
-  --panel-bg: #262523;
-  --surface-bg: #262523;
-  --card-bg: #2D2B29;
-  --pattern-dot: rgba(236, 232, 223, 0.04);
-  --ink-color: #ECE8DF;
-  --ink-muted: #ACA598;
-  --border-color: rgba(182, 175, 162, 0.18);
+  --canvas-bg: #1E1F24;
+  --panel-bg: #2A2C32;
+  --surface-bg: #2A2C32;
+  --card-bg: #2A2C32;
+  --pattern-dot: rgba(232, 230, 223, 0.04);
+  --ink-color: #E8E6DF;
+  --ink-muted: #A7A398;
+  --border-color: #3A3D44;
   --color-terracotta-rgb: 181 72 46;
   --color-ochre-rgb: 212 155 106;
   --color-bamboo-rgb: 82 109 87;
@@ -44,7 +44,7 @@
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Tactile Washi Paper Tooth Overlay (Whispering craft texture) */
+  /* Tactile Washi Paper Tooth Overlay (Fixed low-opacity SVG noise 0.04) */
   body::before {
     content: '';
     position: fixed;
@@ -53,7 +53,7 @@
     height: 100%;
     pointer-events: none;
     z-index: 50;
-    opacity: 0.028;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)'/%3E%3C/svg%3E");
   }
 }
@@ -74,6 +74,21 @@
 }
 
 @layer utilities {
+  /* Double Hairline Frame: Outer 1px border, 3px gap, inner 1px border */
+  .double-hairline {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+  }
+  .double-hairline::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    border-radius: 2px;
+  }
+
   /* Washi Paper Texture Subtle Background */
   .washi-pattern {
     background-color: transparent;
@@ -82,17 +97,16 @@
     background-position: 0 0;
   }
 
-  /* Tactile Craft Card: Subtle surface variation + softened top bevel highlight */
+  /* Tactile Craft Card: Clean architectural panel with 0px to 3px radius */
   .craft-card {
     background-color: var(--card-bg);
-    background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.022) 0%, transparent 70%);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
   }
 
   :root:not(.dark) .craft-card {
-    background-color: #FDFBF7;
-    background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.6) 0%, transparent 75%);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    background-color: #F7F0E3;
+    box-shadow: 0 1px 3px rgba(40, 46, 58, 0.04);
   }
 
   /* Japanese Tategaki (Vertical Writing Mode) */

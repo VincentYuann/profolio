@@ -130,9 +130,9 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
   const allOpen = list.every((exp, idx) => expandedCards[exp.id || idx]);
 
   return (
-    <section id="experience" className="relative w-full py-16 lg:py-24 scroll-mt-20">
+    <section id="experience" className="relative w-full py-24 lg:py-32 scroll-mt-20">
       {/* Architectural Background Chamber for Experience */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-[#262523]/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-dark-surface/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
       <div className="absolute left-0 sm:left-24 top-1/4 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
       {/* Subtle Sumi-e Bamboo Silhouette Watermark in Background */}
@@ -164,7 +164,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
               <button
                 type="button"
                 onClick={toggleAll}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-2xs transition-all duration-200 cursor-pointer"
                 title="Expand or collapse all career milestone details"
               >
                 <Layers className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
@@ -180,7 +180,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                     onNavigate('resume');
                   }
                 }}
-                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-2xs transition-all duration-200"
               >
                 <Briefcase className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
                 <span className="hidden sm:inline">Curriculum Vitae</span>
@@ -246,10 +246,10 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
 
                   {/* Milestone Card Frame */}
                   <div
-                    className={`relative rounded-xl sm:rounded-2xl border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame bg-light-surface-card dark:bg-[#2D2B29] craft-card ${
+                    className={`relative rounded-[3px] border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame bg-light-surface-card dark:bg-dark-surface-card craft-card ${
                       isCardActive
-                        ? 'border-light-border-strong dark:border-[#4E525D] shadow-sm'
-                        : 'border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D]'
+                        ? 'border-light-border-strong dark:border-dark-border-strong shadow-xs'
+                        : 'border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong'
                     }`}
                   >
                     {/* Celestial Ensō Orbital Circle with Brushstroke & Bamboo Sprig (Image 1 reference) */}
@@ -269,7 +269,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
 
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
                       {/* Left: Clean Square Emblem (Custom Logo Image or Default Japanese Hanko Seal) */}
-                      <div className={`relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-xl border ${isCardActive ? theme.emblemBorder : 'border-light-border dark:border-dark-border'} bg-light-surface dark:bg-dark-surface-raised ${theme.emblemShadow} flex items-center justify-center overflow-hidden shrink-0 mx-auto sm:mx-0 transition-shadow duration-300`}>
+                      <div className={`relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-[2px] border ${isCardActive ? theme.emblemBorder : 'border-light-border dark:border-dark-border'} bg-light-surface dark:bg-dark-surface-raised ${theme.emblemShadow} flex items-center justify-center overflow-hidden shrink-0 mx-auto sm:mx-0 transition-shadow duration-300`}>
                         {exp.logoUrl ? (
                           <img
                             src={exp.logoUrl}
@@ -296,7 +296,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                         {/* Metadata Strip: Dates + High-Contrast Active/Completed Pill */}
                         <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
                           {/* Order index */}
-                          <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 border-light-border dark:border-dark-border text-light-ink-muted dark:text-dark-ink-muted">
+                          <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-[2px] border-light-border dark:border-dark-border text-light-ink-muted dark:text-dark-ink-muted">
                             #{String(idx + 1).padStart(2, '0')}
                           </Badge>
 
@@ -343,16 +343,16 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                           </p>
                         )}
 
-                        {/* Inspect / Collapse Button */}
+                        {/* Inspect / Collapse Button with 2px corners */}
                         {bullets.length > 0 && (
                           <div className="pt-3.5">
                             <button
                               type="button"
                               onClick={(e) => toggleExpand(cardKey, e)}
-                              className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg font-mono text-xs transition-all duration-200 border cursor-pointer ${
+                              className={`inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-[2px] font-mono text-xs transition-all duration-200 border cursor-pointer ${
                                 isExpanded
-                                  ? 'bg-light-surface dark:bg-[#25272D] text-light-ink dark:text-dark-ink border-light-border-strong dark:border-[#4E525D] font-medium'
-                                  : 'bg-light-surface/60 dark:bg-[#25272D]/60 text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-[#3A3D44] hover:text-light-ink dark:hover:text-dark-ink hover:border-light-border-strong dark:hover:border-[#4E525D]'
+                                  ? 'bg-light-surface dark:bg-dark-surface text-light-ink dark:text-dark-ink border-light-border-strong dark:border-dark-border-strong font-medium'
+                                  : 'bg-light-surface/60 dark:bg-dark-surface/60 text-light-ink-muted dark:text-dark-ink-muted border-light-border dark:border-dark-border hover:text-light-ink dark:hover:text-dark-ink hover:border-light-border-strong dark:hover:border-dark-border-strong'
                               }`}
                             >
                               <Layers className="w-3.5 h-3.5 text-light-ink-subtle dark:text-dark-ink-subtle" />

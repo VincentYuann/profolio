@@ -49,7 +49,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
           onNavigate('projects');
         }
       }}
-      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
+      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[2px] bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-2xs transition-all duration-200"
     >
       <Layers className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
       <span className="sm:hidden">All Projects ({projects?.length || 0})</span>
@@ -59,9 +59,9 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
   );
 
   return (
-    <section id="featured-works" className="relative w-full py-16 lg:py-24 scroll-mt-20">
+    <section id="featured-works" className="relative w-full py-24 lg:py-32 scroll-mt-20">
       {/* Architectural Background Chamber for Featured Works */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#262523]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-dark-surface/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
@@ -112,7 +112,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
               <article
                 key={project.id}
                 onClick={() => openProject(project)}
-                className="interactive-card group relative w-full bg-light-surface-card dark:bg-[#2D2B29] craft-card hover:bg-light-surface dark:hover:bg-[#343230] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm overflow-visible cursor-pointer"
+                className="interactive-card group relative w-full bg-light-surface-card dark:bg-dark-surface-card craft-card hover:bg-light-surface dark:hover:bg-dark-surface-raised border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong rounded-[3px] p-4 sm:p-8 transition-all duration-300 shadow-2xs overflow-visible cursor-pointer"
               >
                 {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
@@ -122,13 +122,17 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     isAlternate ? 'lg:grid-flow-dense' : ''
                   }`}
                 >
-                  {/* Visual Media Column */}
+                  {/* Visual Media Column with Faded Edge Vignette */}
                   <div className={`lg:col-span-6 ${isAlternate ? 'lg:col-start-7' : ''}`}>
-                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-[#1A1918] border border-light-border/70 dark:border-[#3E3B37]/70">
+                    <div className="relative aspect-[16/9] w-full rounded-[2px] overflow-hidden bg-light-surface-muted dark:bg-dark-canvas border border-light-border/70 dark:border-dark-border/70">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover object-center group-hover:opacity-95 transition-opacity duration-300"
+                        style={{
+                          maskImage: 'radial-gradient(ellipse 96% 94% at 50% 50%, black 72%, transparent 100%)',
+                          WebkitMaskImage: 'radial-gradient(ellipse 96% 94% at 50% 50%, black 72%, transparent 100%)',
+                        }}
                         loading="lazy"
                         decoding="async"
                         onError={handleImageError()}
@@ -145,7 +149,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     {/* Unified Metadata Strip: Order + Date + Active Status Pill */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 bg-light-surface-muted/60 dark:bg-[#1F1E1D] border-light-border dark:border-[#3E3B37] text-light-ink-muted dark:text-dark-ink-muted">
+                        <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-[2px] bg-light-surface-muted/60 dark:bg-dark-canvas border-light-border dark:border-dark-border text-light-ink-muted dark:text-dark-ink-muted">
                           #{String(index + 1).padStart(2, '0')}
                         </Badge>
 
