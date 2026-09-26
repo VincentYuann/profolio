@@ -97,16 +97,59 @@
     background-position: 0 0;
   }
 
-  /* Tactile Craft Card: Clean architectural panel with 0px to 3px radius */
+  /* Tactile Craft Surfaces (Card, Modal, Panel, Chat): Authentic Washi / Charred Cedar Tooth */
+  .craft-card,
+  .craft-panel,
+  .washi-card {
+    position: relative;
+    border-radius: 3px;
+  }
+
+  .craft-modal {
+    border-radius: 3px;
+  }
+
   .craft-card {
     background-color: var(--card-bg);
-    border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
   }
 
   :root:not(.dark) .craft-card {
     background-color: #F7F0E3;
     box-shadow: 0 1px 3px rgba(40, 46, 58, 0.04);
+  }
+
+  .craft-modal {
+    background-color: var(--card-bg);
+  }
+
+  :root:not(.dark) .craft-modal {
+    background-color: #F7F0E3;
+  }
+
+  /* Direct Tactile Micro-Tooth Texture Overlay */
+  .craft-card::after,
+  .craft-modal::after,
+  .craft-panel::after,
+  .washi-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.045;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)'/%3E%3C/svg%3E");
+  }
+
+  .dark .craft-card::after,
+  .dark .craft-modal::after,
+  .dark .craft-panel::after,
+  .dark .washi-card::after {
+    opacity: 0.065;
+    mix-blend-mode: screen;
   }
 
   /* Japanese Tategaki (Vertical Writing Mode) */

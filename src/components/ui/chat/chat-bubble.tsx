@@ -40,7 +40,7 @@ const ChatBubbleAvatar = React.forwardRef<HTMLDivElement, ChatBubbleAvatarProps>
     <div
       ref={ref}
       className={cn(
-        'w-7 h-7 rounded-lg flex items-center justify-center shrink-0 select-none text-xs font-serif font-bold shadow-xs',
+        'w-7 h-7 rounded-[2px] flex items-center justify-center shrink-0 select-none text-xs font-serif font-bold shadow-xs',
         className
       )}
       {...props}
@@ -52,13 +52,13 @@ const ChatBubbleAvatar = React.forwardRef<HTMLDivElement, ChatBubbleAvatarProps>
 ChatBubbleAvatar.displayName = 'ChatBubbleAvatar';
 
 const chatBubbleMessageVariants = cva(
-  'relative rounded-xl p-3 sm:p-3.5 text-xs sm:text-[13px] leading-relaxed transition-colors',
+  'relative rounded-[2px] p-3 sm:p-3.5 text-xs sm:text-[13px] leading-relaxed transition-colors',
   {
     variants: {
       variant: {
         sent: 'bg-light-button-dark dark:bg-dark-surface-raised text-light-on-dark dark:text-dark-ink border border-light-border dark:border-dark-border-strong rounded-br-xs shadow-xs',
         received:
-          'bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border text-light-ink dark:text-dark-ink rounded-bl-xs shadow-xs',
+          'bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border text-light-ink dark:text-dark-ink rounded-bl-xs shadow-xs',
       },
     },
     defaultVariants: {

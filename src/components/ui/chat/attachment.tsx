@@ -28,7 +28,7 @@ export const Attachment = React.forwardRef<HTMLDivElement, AttachmentProps>(
         data-size={size}
         data-orientation={orientation}
         className={cn(
-          'relative flex items-center justify-between rounded-lg border border-light-border dark:border-dark-border bg-light-surface-card dark:bg-dark-surface-card transition-all shadow-2xs group',
+          'relative flex items-center justify-between rounded-[2px] border border-light-border dark:border-dark-border bg-light-surface-card dark:bg-dark-surface-card transition-all shadow-2xs group',
           size === 'default' && 'p-2.5 gap-3',
           size === 'sm' && 'p-2 gap-2',
           size === 'xs' && 'p-1.5 gap-1.5',
@@ -138,7 +138,7 @@ export const AttachmentAction = React.forwardRef<
       ref={ref}
       type="button"
       className={cn(
-        'size-7 rounded-md flex items-center justify-center text-light-ink-muted dark:text-dark-ink-muted hover:text-terracotta hover:bg-terracotta/10 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta',
+        'size-7 rounded-[2px] flex items-center justify-center text-light-ink-muted dark:text-dark-ink-muted hover:text-terracotta hover:bg-terracotta/10 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta',
         className
       )}
       {...props}

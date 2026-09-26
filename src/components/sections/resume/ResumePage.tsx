@@ -279,7 +279,7 @@ export const ResumePage: React.FC<ResumePageProps> = ({ onNavigate }) => {
       <div className="w-full relative">
         {activeTab === 'pdf' ? (
           /* PDF Viewer Tab */
-          <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl overflow-hidden shadow-akari dark:shadow-night-glow classical-card-frame">
+          <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] overflow-hidden shadow-sm classical-card-frame">
             <CornerBrackets size="lg" />
             {/* Top Bar for PDF Viewer */}
             <div className="px-4 py-2.5 bg-light-surface-muted/90 dark:bg-dark-surface-muted border-b border-light-border dark:border-dark-border flex items-center justify-between text-xs text-light-ink-muted dark:text-dark-ink-muted">
@@ -305,7 +305,7 @@ export const ResumePage: React.FC<ResumePageProps> = ({ onNavigate }) => {
               <object
                 data={`${supabasePdfUrl}#toolbar=1&navpanes=0&scrollbar=1`}
                 type="application/pdf"
-                className="w-full h-full rounded-lg border border-light-border/60 dark:border-dark-border"
+                className="w-full h-full rounded-[2px] border border-light-border/60 dark:border-dark-border"
               >
                 {/* Fallback if browser cannot embed PDF */}
                 <div className="flex flex-col items-center justify-center p-8 text-center space-y-4 max-w-md mx-auto">
@@ -319,13 +319,13 @@ export const ResumePage: React.FC<ResumePageProps> = ({ onNavigate }) => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={handleDownloadPdf}
-                      className="px-4 py-2 bg-terracotta text-white text-xs font-sans rounded-md shadow-xs"
+                      className="px-4 py-2 bg-terracotta text-white text-xs font-sans rounded-[2px] shadow-xs cursor-pointer"
                     >
                       Download Resume PDF
                     </button>
                     <button
                       onClick={() => setActiveTab('latex')}
-                      className="px-4 py-2 bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border text-xs font-sans text-light-ink dark:text-dark-ink rounded-md"
+                      className="px-4 py-2 bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border text-xs font-sans text-light-ink dark:text-dark-ink rounded-[2px] cursor-pointer"
                     >
                       View LaTeX Source
                     </button>
@@ -336,7 +336,7 @@ export const ResumePage: React.FC<ResumePageProps> = ({ onNavigate }) => {
           </div>
         ) : (
           /* LaTeX Source Tab */
-          <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl overflow-hidden shadow-akari dark:shadow-night-glow classical-card-frame">
+          <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border rounded-[3px] overflow-hidden shadow-sm classical-card-frame">
             <CornerBrackets size="lg" />
             {/* Header with quick stats */}
             <div className="px-4 py-2.5 bg-light-surface-muted/90 dark:bg-dark-surface-muted border-b border-light-border dark:border-dark-border flex items-center justify-between text-xs text-light-ink-muted dark:text-dark-ink-muted">
