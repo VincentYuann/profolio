@@ -352,7 +352,7 @@ export const ResumePage: React.FC<ResumePageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Syntax Highlighted Code Viewer */}
-            <div className="w-full max-h-[780px] overflow-auto p-4 sm:p-6 font-mono text-xs leading-relaxed bg-[#FDFCFA] dark:bg-[#0E0F12]">
+            <div className="w-full max-h-[780px] overflow-auto p-4 sm:p-6 font-mono text-xs leading-relaxed bg-[#FDFCFA] dark:bg-[#18191D]">
               <pre className="table w-full">
                 {latexSource.split('\n').map((line, idx) => {
                   const tokens = tokenizeLatexLine(line);

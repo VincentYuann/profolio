@@ -60,9 +60,9 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
   );
 
   return (
-    <section id="featured-works" className="relative w-full py-16 lg:py-24">
+    <section id="featured-works" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Featured Works */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#0e1014]/60 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#2A2C32]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Minimal Grid Pattern */}
       <div className="absolute right-0 sm:right-16 top-1/3 w-[32rem] h-[32rem] bg-radial-[at_center] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
 
@@ -127,7 +127,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     {/* Unified Metadata Strip: Order + Date + Active Status Pill */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <Badge variant="terracotta" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                        <Badge variant={isCurrent ? "terracotta" : "outline"} className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5">
                           #{String(index + 1).padStart(2, '0')}
                         </Badge>
 

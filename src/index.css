@@ -7,22 +7,22 @@
   --pattern-dot: #D9C9AE;
   --surface-bg: #F7F0E3;
   --ink-color: #2B2E3A;
-  --ink-muted: #6B6559;
+  --ink-muted: #686559;
   --border-color: #D9C9AE;
-  --color-terracotta-rgb: 200 60 35;
+  --color-terracotta-rgb: 181 72 46;
   --color-ochre-rgb: 212 155 106;
   --color-bamboo-rgb: 82 109 87;
   --ease-zen: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark {
-  --canvas-bg: #090A0C;
-  --pattern-dot: rgba(255, 255, 255, 0.03);
-  --surface-bg: #111215;
-  --ink-color: #F5F3EF;
-  --ink-muted: #BDB9AE;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --color-terracotta-rgb: 200 60 35;
+  --canvas-bg: #1E1F24;
+  --pattern-dot: rgba(255, 255, 255, 0.02);
+  --surface-bg: #2A2C32;
+  --ink-color: #E8E6DF;
+  --ink-muted: #A7A398;
+  --border-color: rgba(58, 61, 68, 0.75);
+  --color-terracotta-rgb: 181 72 46;
   --color-ochre-rgb: 212 155 106;
   --color-bamboo-rgb: 82 109 87;
 }
@@ -298,34 +298,25 @@
   border-color: rgb(var(--color-terracotta-rgb) / 0.32);
 }
 
-/* Corner Hairline Brackets interactive highlights (supports both .interactive-card and .group) */
+/* Corner Hairline Brackets: Restrained Japanese Craft joinery (50-70% reduced contrast, no aggressive HUD translation) */
 .corner-bracket {
-  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, border-color;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  will-change: border-color, opacity;
 }
 
 .interactive-card:hover .corner-bracket,
 .group:hover .corner-bracket {
-  border-color: rgb(var(--color-terracotta-rgb)) !important;
+  border-color: rgb(var(--color-ochre-rgb) / 0.7);
+  opacity: 0.85;
 }
 
-.interactive-card:hover .corner-bracket-tl,
-.group:hover .corner-bracket-tl { transform: translate(-2px, -2px); }
-.interactive-card:hover .corner-bracket-tr,
-.group:hover .corner-bracket-tr { transform: translate(2px, -2px); }
-.interactive-card:hover .corner-bracket-bl,
-.group:hover .corner-bracket-bl { transform: translate(-2px, 2px); }
-.interactive-card:hover .corner-bracket-br,
-.group:hover .corner-bracket-br { transform: translate(2px, 2px); }
-
-/* Kanji Accent Glow on hover */
+/* Subtle Kanji Accent on hover */
 .pillar-kanji {
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.45s ease, color 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
 }
 
 .interactive-card:hover .pillar-kanji {
-  transform: scale(1.06);
-  text-shadow: 0 0 18px rgb(var(--color-terracotta-rgb) / 0.45);
+  transform: scale(1.03);
 }
 
 /* Button Bloom */

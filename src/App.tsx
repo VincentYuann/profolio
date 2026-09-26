@@ -15,6 +15,8 @@ import { toast } from 'sonner';
 import { ThemedToaster } from './components/layout/ThemedToaster';
 import { AiChatWidget } from './components/common/AiChatWidget';
 import { TooltipProvider } from './components/ui/tooltip';
+import { VariantProvider } from './context/VariantContext';
+import { VariantSwitcher } from './components/common/VariantSwitcher';
 
 import {
   ProjectsPageSkeleton,
@@ -72,32 +74,40 @@ const HomeView: React.FC<{ onNavigate: (view: ViewMode, sectionId?: string) => v
   return (
     <>
       <Hero onNavigate={onNavigate} />
-      {hasExperiences && (
-        <>
-          <SectionDivider label="CAREER TRAJECTORY · 職歴" shortLabel="CAREER · 職歴" />
-          <ExperienceSection onNavigate={onNavigate} />
-        </>
-      )}
-      {hasProjects && (
-        <>
-          <SectionDivider label="SELECTED PORTFOLIO · 作品" shortLabel="PORTFOLIO · 作品" />
-          <ProjectsShowcase onNavigate={onNavigate} />
-        </>
-      )}
-      {hasPhilosophy && (
-        <>
-          <SectionDivider label="ORIGIN & PHILOSOPHY · 原点と哲学" shortLabel="PHILOSOPHY · 哲学" />
-          <PhilosophyBento />
-        </>
-      )}
-      {hasHobbies && (
-        <>
-          <SectionDivider label="HOBBIES & INTERESTS · 趣味と日常" shortLabel="HOBBIES · 趣味" />
-          <HobbiesSection onNavigate={onNavigate} />
-        </>
-      )}
-      <SectionDivider label="INITIATE A DIALOGUE · 対話" shortLabel="DIALOGUE · 対話" />
-      <ContactSection />
+      {/* 
+        PARALLAX SCROLLING LAYERING: THE DIVISION EFFECT
+        The Hero section above has a fixed pinned backdrop.
+        This lower product showcase container is a heavy, independent craft surface
+        (bg-light-canvas dark:bg-[#1E1F24]) that mask-slides straight over the hero on scroll.
+      */}
+      <div className="division-showcase-container relative z-20 w-full bg-light-canvas dark:bg-[#1E1F24] border-t-2 border-light-border dark:border-[#3A3D44] shadow-[0_-24px_50px_rgba(43,46,58,0.08)] dark:shadow-[0_-28px_60px_rgba(0,0,0,0.65)] transition-colors duration-300">
+        {hasExperiences && (
+          <>
+            <SectionDivider label="CAREER TRAJECTORY · 職歴" shortLabel="CAREER · 職歴" />
+            <ExperienceSection onNavigate={onNavigate} />
+          </>
+        )}
+        {hasProjects && (
+          <>
+            <SectionDivider label="SELECTED PORTFOLIO · 作品" shortLabel="PORTFOLIO · 作品" />
+            <ProjectsShowcase onNavigate={onNavigate} />
+          </>
+        )}
+        {hasPhilosophy && (
+          <>
+            <SectionDivider label="ORIGIN & PHILOSOPHY · 原点と哲学" shortLabel="PHILOSOPHY · 哲学" />
+            <PhilosophyBento />
+          </>
+        )}
+        {hasHobbies && (
+          <>
+            <SectionDivider label="HOBBIES & INTERESTS · 趣味と日常" shortLabel="HOBBIES · 趣味" />
+            <HobbiesSection onNavigate={onNavigate} />
+          </>
+        )}
+        <SectionDivider label="INITIATE A DIALOGUE · 対話" shortLabel="DIALOGUE · 対話" />
+        <ContactSection />
+      </div>
     </>
   );
 };
@@ -325,7 +335,8 @@ export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <TooltipProvider delayDuration={200}>
-        <SiteDataProvider>
+        <VariantProvider>
+          <SiteDataProvider>
           <div className="min-h-screen bg-light-canvas dark:bg-dark-canvas text-light-ink dark:text-dark-ink transition-colors duration-300 flex flex-col selection:bg-terracotta/20 selection:text-terracotta">
             <Header
               currentView={currentView}
@@ -377,11 +388,13 @@ export const App: React.FC = () => {
             {currentView === 'home' && <Footer onNavigate={handleNavigate} />}
           </div>
           <AiChatWidget onNavigate={handleNavigate} isAdmin={isAdmin} />
+          <VariantSwitcher />
           <ThemedToaster />
         </SiteDataProvider>
-      </TooltipProvider>
-    </ThemeProvider>
-  );
+      </VariantProvider>
+    </TooltipProvider>
+  </ThemeProvider>
+);
 };
 
 export default App;

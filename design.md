@@ -1,125 +1,99 @@
 ---
-version: 1.2.0
-name: Vincent Yuan: Akari Day & Night Portfolio Design System
+version: 2.0.0
+name: Vincent Yuan: Akari Craft & Editorial Design System
 description: >-
-  A two-theme portfolio design system combining a warm Akari-inspired
+  A restrained, museum-grade portfolio design system combining a warm Akari-inspired
   editorial day mode with a quiet charcoal night mode. The visual language is
-  Japanese-influenced, tactile, precise, and deliberately sparse, embodying Ma (negative space),
-  Shokunin (artisan precision), and Wabi-Sabi (subtle organic harmony).
+  rooted in Japanese craft, tactile materiality, and editorial typography, embodying Ma (negative space),
+  Shokunin (artisan precision), and Wabi-Sabi (organic harmony), completely free from cyberpunk or digital UI clichés.
 colors:
   # Shared brand / identity
   identity-accent: "#B5482E"
   identity-accent-hover: "#9E3D27"
   identity-accent-soft: "#F0D7C7"
-  terracotta: "#C83C23"
+  terracotta: "#B5482E"
   ochre: "#D49B6A"
   bamboo: "#526D57"
-  toast-button-light: "#E8E6DF"
 
-  # Light theme: canonical Akari palette
+  # Light theme: canonical Akari palette (Reference Image #1 & #2)
   light-canvas: "#F2E9DA"
   light-surface: "#F7F0E3"
   light-surface-card: "#F7F0E3"
   light-surface-raised: "#FBF6EC"
   light-surface-muted: "#EDE1CE"
   light-ink: "#2B2E3A"
-  light-ink-muted: "#6B6559"
+  light-ink-muted: "#686559"
   light-ink-subtle: "#8B8375"
   light-border: "#D9C9AE"
   light-border-strong: "#BDAA89"
   light-button-dark: "#26262E"
   light-on-dark: "#F7F0E3"
   light-focus: "#B5482E"
-  light-success: "#526D57"
-  light-warning: "#9A6B2E"
-  light-error: "#B5482E"
 
-  # Dark theme: Obsidian night counterpart
-  dark-canvas: "#090A0C"
-  dark-canvas-deep: "#090A0C"
-  dark-surface: "#111215"
-  dark-surface-card: "#141519"
-  dark-surface-raised: "#1B1C22"
-  dark-surface-muted: "#0D0E11"
-  dark-ink: "#F5F3EF"
-  dark-ink-muted: "#BDB9AE"
-  dark-ink-subtle: "#7E7C75"
+  # Dark theme: Warm Charcoal Night Mode (Reference Image #1 Dark Mode)
+  dark-canvas: "#1E1F24"
+  dark-surface: "#2A2C32"
+  dark-surface-card: "#2A2C32"
+  dark-surface-raised: "#32353C"
+  dark-surface-muted: "#18191D"
+  dark-ink: "#E8E6DF"
+  dark-ink-muted: "#A7A398"
+  dark-ink-subtle: "#76736A"
   dark-border: "#3A3D44"
-  dark-border-strong: "#565A63"
-  dark-button-light: "#F5F3EF"
-  dark-on-light: "#090A0C"
-  dark-focus: "#C65B42"
-  dark-success: "#87A889"
-  dark-warning: "#D3A45B"
-  dark-error: "#D86A50"
+  dark-border-subtle: "rgba(58, 61, 68, 0.75)"
+  dark-button-light: "#E8E6DF"
+  dark-on-light: "#1E1F24"
+  dark-focus: "#B5482E"
 
 typography:
   display-xl:
-    fontFamily: "Canela, Oxanium, Chakra Petch, Iowan Old Style, Georgia, serif"
-    fontSize: "64px"
+    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontSize: "60px"
     fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
+    lineHeight: 1.08
+    letterSpacing: "-0.025em"
   display-lg:
-    fontFamily: "Canela, Oxanium, Chakra Petch, Iowan Old Style, Georgia, serif"
-    fontSize: "52px"
-    fontWeight: 400
-    lineHeight: 1.05
-    letterSpacing: "-0.03em"
-  headline-lg:
-    fontFamily: "Canela, Oxanium, Chakra Petch, Iowan Old Style, Georgia, serif"
-    fontSize: "40px"
+    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontSize: "48px"
     fontWeight: 400
     lineHeight: 1.12
     letterSpacing: "-0.02em"
-  headline-md:
-    fontFamily: "Canela, Oxanium, Chakra Petch, Iowan Old Style, Georgia, serif"
-    fontSize: "30px"
+  headline-lg:
+    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontSize: "36px"
     fontWeight: 400
     lineHeight: 1.18
     letterSpacing: "-0.015em"
+  headline-md:
+    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: 1.25
+    letterSpacing: "-0.01em"
   headline-sm:
-    fontFamily: "Montserrat, Inter, Noto Serif, Noto Serif JP, Arial, sans-serif"
-    fontSize: "20px"
-    fontWeight: 500
-    lineHeight: 1.3
-    letterSpacing: "0.01em"
-  body-lg:
-    fontFamily: "Montserrat, Inter, Noto Serif, Noto Serif JP, Arial, sans-serif"
+    fontFamily: "Montserrat, Inter, Arial, sans-serif"
     fontSize: "18px"
+    fontWeight: 500
+    lineHeight: 1.35
+    letterSpacing: "0.02em"
+  body-lg:
+    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: "0em"
+  body-md:
+    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "0em"
-  body-md:
-    fontFamily: "Montserrat, Inter, Noto Serif, Noto Serif JP, Arial, sans-serif"
-    fontSize: "15px"
+  body-sm:
+    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.6
-    letterSpacing: "0em"
-  body-sm:
-    fontFamily: "Montserrat, Inter, Noto Serif, Noto Serif JP, JetBrains Mono, Arial, sans-serif"
-    fontSize: "13px"
-    fontWeight: 400
-    lineHeight: 1.55
-    letterSpacing: "0.005em"
-  label-lg:
-    fontFamily: "Montserrat, Inter, Noto Serif, Noto Serif JP, JetBrains Mono, Material Symbols Outlined, Arial, sans-serif"
-    fontSize: "13px"
-    fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "0.08em"
-  label-md:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
-    fontSize: "11px"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "0.12em"
-  label-caps:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
-    fontSize: "10px"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "0.16em"
+    letterSpacing: "0.01em"
   code-md:
     fontFamily: "JetBrains Mono, SFMono-Regular, Consolas, monospace"
     fontSize: "13px"
@@ -131,236 +105,143 @@ typography:
     fontSize: "11px"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0em"
+    letterSpacing: "0.02em"
 
 spacing:
-  px: "1px"
-  0: "0px"
-  1: "4px"
-  2: "8px"
-  3: "12px"
-  4: "16px"
-  5: "20px"
-  6: "24px"
-  8: "32px"
-  10: "40px"
-  12: "48px"
-  16: "64px"
-  20: "80px"
-  24: "96px"
-  32: "128px"
   page-gutter-mobile: "20px"
   page-gutter-tablet: "32px"
   page-gutter-desktop: "48px"
   content-max: "1440px"
   content-reading-max: "720px"
-  sidebar-width: "240px"
-  grid-gap: "24px"
 
 rounded:
   none: "0px"
-  hairline: "2px"
   sm: "4px"
   md: "8px"
   lg: "12px"
   xl: "16px"
-  2xl: "20px"
   pill: "9999px"
 ---
 
-# Vincent Yuan: Akari Day & Night Portfolio Design System
+# Vincent Yuan: Akari Craft & Editorial Design System (v2.0)
 
-## 1. Overview & Architectural POV
+## 1. Design Philosophy & Aesthetic Foundation
 
-This is the canonical design system specification for **Vincent Yuan, Full-Stack Software Engineer (Systems Architecture & AI concentrations)** based in **Philadelphia, PA**. 
+The Vincent Yuan portfolio visual system is an homage to traditional Japanese material craft and fine editorial book design. It intentionally rejects the ubiquitous dark-mode cyberpunk tropes (neon glows, HUD targeting brackets, cyan/orange terminal styling, sci-fi fonts) in favor of quiet confidence, intentional negative space (*Ma*), and artisan joinery (*Shokunin*).
 
-The design combines the restraint of Japanese architectural philosophies (*Ma* — negative space, *Wabi-Sabi* — organic elegance, and *Shokunin* — disciplined artisan precision) with the clarity and robustness of modern full-stack systems engineering.
+### The Dual-Theme Equilibrium
+- **Akari Day Mode**: Warm washi-paper canvas (`#F2E9DA`), tactile card panels (`#F7F0E3`), muted warm-tan hairline borders (`#D9C9AE`), and deep sumi charcoal ink (`#2B2E3A`).
+- **Warm Charcoal Night Mode**: Deep blue-charcoal ground (`#1E1F24`), warm slate card panels (`#2A2C32`), soft muted warm-gray hairline borders (`#3A3D44` / `rgba(58, 61, 68, 0.75)`), and warm off-white typography (`#E8E6DF`).
+- **The Golden Rule of Night Mode**: Night mode is a warm, desaturated evening studio, NOT an obsidian abyss (`#000000` / `#090A0C`). Outlines are quiet and low-opacity, never competing with content.
 
-### Dual-Theme Equilibrium
-- **Akari Day Mode**: Warm washi-paper canvas (`#F2E9DA`), parchment surfaces (`#F7F0E3`), delicate tan borders (`#D9C9AE`), and softened sumi charcoal text (`#2B2E3A`). Evokes daylight through shoji screens, studio paper, bamboo, and warm cedar.
-- **Charcoal Night Mode**: Deep blue-charcoal canvas (`#1E1F24`), obsidian surfaces (`#1B1C22`), graphite borders (`#3A3D44`), and warm off-white typography (`#E8E6DF`). Evokes a focused evening workbench rather than a neon cyber aesthetic.
-
-### Accent Color Discipline
-**Terracotta Cinnabar (`#C83C23` / `#B5482E`)** is the sole deliberate brand accent in both themes. Like an authentic Japanese Hanko seal impression, it carries weight through rarity and intentionality. It is never used as a generic background flood or decorative distraction.
-
----
-
-## 2. Punctuation & Typography Standards
-
-### Absolute Elimination of Em & En Dashes
-To maintain crisp, distraction-free typographic rhythm and avoid visual collisions:
-- **Never use em dashes (`—`) or en dashes (`–`) anywhere in user-facing copy, headers, date ranges, or code comments.**
-- **Use standard clean punctuation**: Colons (`:`), commas (`,`), standard hyphens (`-`), or centered middle dots (`·`).
-- **Examples**:
-  - *Incorrect*: `Origin & Trajectory — Phase 01`
-  - *Correct*: `Origin & Trajectory · Phase 01` or `Origin & Trajectory: Phase 01`
-  - *Incorrect*: `Sept 2021 — Present`
-  - *Correct*: `Sept 2021 - Present`
-
-### Type Hierarchy & Families
-1. **Canela / Serif** (`font-serif`): Expressive editorial serif used for display headlines, section numbers (`01 //`, `02 //`), and Kanji title watermarks (`原点と哲学`, `職歴`, `主な作品`).
-2. **Montserrat / Sans** (`font-sans`): Clear operational sans-serif used for body text, navigation links, descriptions, tooltips, and buttons.
-3. **JetBrains Mono / Monospace** (`font-mono`): Technical annotations, date ranges, index tags (`#01`), uppercase subtitle ribbons, and code blocks.
-4. **Vertical Tategaki** (`writing-vertical-rl font-vertical`): Traditional Japanese vertical prose layout used in the Hanko Showcase Card and floating margin widgets.
+### Accent Color Restraint: Terracotta Cinnabar (`#B5482E`)
+- Terracotta cinnabar (`#B5482E`) is an **accent of intention**, like an authentic red Hanko seal stamp pressed onto handmade paper.
+- **Strict Rule**: Terracotta is NEVER a structural outline color for resting elements. It must not outline cards, timeline tracks, or headings by default.
+- **Active State Rule**:
+  ```css
+  /* Terracotta is applied ONLY when an element is actively selected */
+  .element:active,
+  .element.is-active,
+  .element.is-selected {
+    border-color: #B5482E;
+    color: #B5482E;
+  }
+  ```
 
 ---
 
-## 3. Standardized Section Header Design Pattern
+## 2. Typography Hierarchy
 
-Every major section across the portfolio follows an identical 5-tier structural pattern:
+1. **Headings & Display** (`font-serif`):
+   - Primary: **Canela**, **Tiempos**, **Noto Serif**, **Georgia**, `serif`.
+   - Character: Light, elegant, editorial, generous letterpress breathing room, relaxed line-height.
+   - Purpose: Main hero headline, major section titles (`01 //`, `02 //`), company names in career timeline, and Kanji watermarks.
+   - **Absolute Ban**: No sci-fi chamfered faces (e.g. `Oxanium`, `Chakra Petch`).
 
-```tsx
-<div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-light-border/70 dark:border-[#2D3039]/80 gap-6">
-  <div className="max-w-3xl">
-    {/* 1. Numerals & Uppercase Eyebrow */}
-    <div className="flex items-center gap-2 mb-2">
-      <span className="font-serif text-terracotta text-sm">0X //</span>
-      <span className="font-sans text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
-        SECTION TITLE · 日本語
-      </span>
-    </div>
+2. **UI & Operational Copy** (`font-sans`):
+   - Primary: **Montserrat**, **Inter**, `system-ui`, `sans-serif`.
+   - Character: Clean, legible, uppercase with tight tracking for badges/labels, balanced for descriptions and paragraphs.
 
-    {/* 2. Main Title with Inline Kanji Accent */}
-    <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-light-ink dark:text-dark-ink tracking-tight font-normal">
-      English Title{' '}
-      <span className="font-serif font-light text-light-ink-muted dark:text-dark-ink-muted text-2xl lg:text-3xl ml-2 whitespace-nowrap inline-block">
-        漢字
-      </span>
-    </h2>
+3. **Technical Metadata & Code** (`font-mono`):
+   - Primary: **JetBrains Mono**, `monospace`.
+   - Character: Small, tracked, quiet metadata (e.g. `#01`, date ranges, coordinates, and code snippets). Never glowing or neon.
 
-    {/* 3. Explanatory Context Subtitle */}
-    <p className="font-sans text-sm sm:text-base text-light-ink-muted dark:text-dark-ink-muted mt-3 font-light leading-relaxed">
-      One to two concise sentences establishing the purpose and scope of the section.
-    </p>
-  </div>
-
-  {/* 4. Optional Right-Side Controls / Action Links */}
-  <div className="flex items-center gap-3 shrink-0">
-    ...
-  </div>
-</div>
-```
-
-### Section Breakdown on Home Page:
-- **01 // Home & Hero** (`#home`): Hanko seal card, introductory narrative, and technical domain pills.
-- **02 // CAREER TRAJECTORY · 職歴** (`#experience`): Engineering chronology, timeline rail, active status pill, and `Expand All / Collapse All` toggle.
-- **03 // SELECTED PORTFOLIO · 作品** (`#featured-works`): Featured project showcase cards, architecture deep-dive modals, and `View All Projects (N)` link.
-- **04 // ORIGIN & ARCHITECTURAL PHILOSOPHY · 原点と哲学** (`#philosophy`): 04.1 Origin & Trajectory 4-phase framework + 04.2 Three Architectural Pillars (`間`, `調和`, `職人`).
-- **05 // DIALOGUE & CORRESPONDENCE · 対話と通信** (`#contact`): Inquiry form, verified direct mail link, and 1-click **Copy Email** button with checkmark feedback.
+4. **Punctuation Standard**:
+   - Strict elimination of em dashes (`—`) and en dashes (`–`).
+   - Use standard hyphens (`-`), colons (`:`), commas (`,`), and centered middle dots (`·`).
 
 ---
 
-## 4. Reusable Widgets & Components Catalog
+## 3. Structural Hierarchy & Card Anatomy
 
-### 1. Ensō Orbital Circle (`<EnsoOrbital />`)
-- **File**: `src/components/EnsoOrbital.tsx`
-- **Visual Anatomy**:
-  1. Calligraphic sumi-e brush body with ink bleed displacement filter (`filter="url(#enso-ink-bleed)"`).
-  2. Rotating golden orbit arc (`animate-orbital-spin` 22s, `#D59E66`).
-  3. Incandescent pulsing vermilion bead at golden arc apex (`animate-ruby-pulse` 2.6s, `#C83C23`).
-  4. Concentric dashed red orbit trail (`animate-dash-flow`).
-  5. Orbiting celestial dust particles.
-- **Props**:
-  - `placement`: `'top-left'` (standard) | `'top-right'` | `'center'` | `'custom'`
-  - `size`: `80` (archive card), `88` (milestone card), `96` (showcase card), `112` (pillar card), `120` (contact card), `128` (origin bento), `136` (hero seal box).
-  - `hoverOnly`: `true` (default) | `false`
-  - `active`: Optional `boolean` for state-driven visibility overrides.
-- **Mutually-Exclusive Hover Rule**: In composite card structures (e.g. Section 04 Origin Trajectory containing 4 milestone cards), strictly **one Ensō circle blooms at any given time**. Hovering the container triggers the container circle; hovering a child milestone transfers the bloom exclusively to that milestone's circle.
+To eliminate visual claustrophobia and "box-in-a-box" clutter:
+- **Clean Depth Hierarchy**: `Page (Canvas) → Section → Card → Content`.
+- Cards must have generous internal padding (`p-6` to `p-8` on desktop).
+- Resting cards have a single, muted border:
+  - Day: `1px solid #D9C9AE`
+  - Night: `1px solid rgba(58, 61, 68, 0.75)`
+- Resting cards have serene surfaces. Hover transitions are smooth, gentle, and tactile (subtle warm elevation), without intense neon glows or harsh border flips.
 
-### 2. Vertical Floating Margin Widgets (`<VerticalMarginWidget />`)
-- **File**: `src/components/VerticalMarginWidget.tsx`
-- **Purpose**: Balances widescreen desktop margins (`hidden xl:flex` / `hidden lg:flex`) with architectural *tategaki* Japanese marginalia, telemetry coordinates, pulsing jewel dots, and Hanko seal stamps.
-- **Preset Dictionary (`MARGIN_PRESETS`)**:
-  - `inkHarmony`: Motto `余白の調和` // `HARMONY`, Stamp `墨` (Projects Archive left flank).
-  - `codeSoul`: Motto `コードの魂` // `DIGITAL CRAFT`, Stamp `道` (Projects Archive right flank).
-  - `maWabi`: Motto `空間の美学` // `MA & WABI`, Stamp `原` (Philosophy Bento left flank).
-  - `craftSpec`: Motto `職人の規矩` // `CRAFT SPEC`, Stamp `寂` (Philosophy Bento right flank).
-  - `seiJaku`: Motto `沈黙と静寂` // `SEI & JAKU`, Stamp `侘` (Resume page left flank).
-  - `rekiTimeline`: Motto `歩みの軌跡` // `TIMELINE`, Stamp `歴` (Experience timeline left flank).
+### Corner Ornaments Specification
+- Corner ornaments are inspired by traditional Japanese joinery (*Kumiko*) and fine book-binding corners.
+- **Rules**:
+  - Thickness: Hairline (`1px`), low contrast (`border-ochre/30` / `border-[#3A3D44]/60`).
+  - Visibility: 50% to 70% lower contrast than previous HUD brackets.
+  - Placement: Strictly reserved for major container frames and hero showcase cards. Never repeated inside nested tags or child cards.
+  - Interaction: No aggressive translation outward (no `translate(-2px, -2px)`). On hover, a soft, subtle tint transition only.
 
-### 3. Hanko Seal Stamp (`<HankoStamp />`)
-- **File**: `src/components/HankoStamp.tsx`
-- **Purpose**: Authentic cinnabar vermilion seal script mark (`原` - Haru/Origin by default) enclosed in a double square hairline border with breathing pulse animation (`animate-seal-breathe` 6s).
-- **Hero Showcase Card**: Houses the seal, live coordinate header (`PHILADELPHIA, PA`), availability pill (`OPEN TO ROLES · FULL-STACK`), and a 3-column vertical tategaki prose widget:
-  1. `間と余白の美学` (`MA · 間`: Aesthetics of Negative Space)
-  2. `静寂と簡素な調和` (`WA · 調和`: Silence and Simple Harmony)
-  3. `職人の精緻な組手` (`CRAFT · 職人`: Artisan Precision and Joinery)
-
-### 4. Technical Domain Badges (`<TechTag />`)
-- **File**: `src/components/TechTag.tsx`
-- **Purpose**: Clean, monochrome technology tags with Lucide domain icons (Terminal, Code2, Database, Box, Workflow, Server, Sparkles).
-- **Strict Rule**: Anti-rainbow rule. Tags must never use randomized pastel green, blue, or yellow fills. They remain strictly monochromatic with subtle terracotta hover transitions.
-- **Sizes**: `sm` (10px text, 3px icon), `md` (11px text, 3.5px icon), `lg` (12px text, 4px icon).
-
-### 5. Corner Hairline Brackets (`<CornerBrackets />`)
-- **File**: `src/components/CornerBrackets.tsx`
-- **Purpose**: Four subtle L-brackets positioned in card corners.
-- **Behavior**: On card hover, brackets shift outward by 2px (`transform: translate(±2px, ±2px)`) and transition to terracotta cinnabar.
-- **Sizes**: `sm` (10px), `md` (12px), `lg` (16px).
-
-### 6. Classical Card Frame (`.classical-card-frame`)
-- **CSS Class**: Inset hairline border (`inset: 6px`, `rgba(212, 155, 106, 0.12)` in light / `rgba(212, 155, 106, 0.08)` in dark) creating artisan joinery framing.
-- **Strict Rule**: No mouse-following radial gradients. The card surface remains pure, crisp, and undisturbed.
-
-### 7. Section Dividers (`<SectionDivider />`)
-- **File**: `src/components/SectionDivider.tsx`
-- **Anatomy**: Concentric diamond crests with center dots (`<DiamondCrest />`) + layered SVG Seigaiha wave surges (`<SeigaihaMotif />`) flanking a dashed ochre rule with section annotations.
-
-### 8. Project Detail Case Study Modal (`<ProjectDetailModal />`)
-- **File**: `src/components/ProjectDetailModal.tsx`
-- **Anatomy**:
-  - Top header: Kanji watermark, category badge, and active status pill.
-  - Left column: 16:10 showcase media, technology stack badges, and direct external links.
-  - Right column: Title, subtitle, architectural narrative, key architectural highlights bullet list, and operational metrics grid.
-  - Dismissal: Keyboard Escape, backdrop click, or Close button.
-
-### 9. AI Companion Widget (`<AiChatWidget />`)
-- **File**: `src/components/common/AiChatWidget.tsx`
-- **Anatomy**:
-  - Singular Hanko trigger button (`問`) with desktop keyboard shortcut (`⌘K`).
-  - Artisan dialog window adhering to canonical `#F7F0E3` (Day) and `#1B1C22` / `#2A2C32` (Night) tokens.
-  - Opaque quick prompt pills bar (`bg-light-surface-raised dark:bg-dark-surface-card`) preventing message text bleed-through.
-  - Dragging with 6px intent threshold (preventing accidental click teleportation) and explicit docking control (`RotateCcw`).
-  - Strict multimodal upload constraints: Images (`PNG`, `JPEG`, `WEBP`, `GIF`) and Documents (`PDF`, `DOCX`, `DOC`) up to 50 MB, streaming in-memory to the Gemini Files API.
-  - Full keyboard focus restoration on dismissal, meeting WCAG 2.4.3 focus order.
+### Dividers & Rules
+- Inspired by Reference Image #2: Fine horizontal rule with an understated center diamond motif (`<DiamondCrest />`) and gentle Seigaiha wave cues. Not heavy dividing bars.
 
 ---
 
-## 5. Origin Trajectory 4-Phase Framework
+## 4. Parallax Scrolling Layering: "The Division Effect"
 
-Section 04.1 replaces generic story blurbs with an authentic chronological narrative:
-1. **Phase 01: The Spark & Logic** (Web Roots / High School): Discovering how code transforms static markup into dynamic systems with JavaScript logic.
-2. **Phase 02: Mechanics & State** (System Mechanics / College OOP): Exploring game loops, collision mathematics, and state machines with Python and Pygame.
-3. **Phase 03: Beyond the Iceberg** (Data Flow & APIs / Co-op): Realizing frontend is the tip of the iceberg, diving deep into API contracts, relational schemas, caching, and backend systems.
-4. **Phase 04: Hospitality Empathy** (User-First Craft / Hospitality Roots): Years in the Philadelphia service industry translating into active listening, anticipating friction points, and human-centered software engineering.
+To establish a clear, dramatic spatial relationship between the introductory narrative and the product/case study showcase:
+
+### Architectural Concept
+1. **Pinned Hero Canvas**:
+   - The hero background (panoramic sumi-e landscape, pine tree *Matsu*, and ambient bamboo) is pinned or positioned in a fixed viewport layer behind the text.
+   - The background participates in the palette:
+     - Day: Warm sepia/sumi ink wash with washi texture and soft vignette mask.
+     - Night: Dark, desaturated charcoal tone with soft warm glow, blending into `#1E1F24`.
+2. **Mask-Sliding Heavy Container Layer**:
+   - The subsequent section (e.g., Selected Portfolio / Career Trajectory) is constructed as a solid, heavy independent container layer (`bg-light-canvas dark:bg-[#1E1F24]`).
+   - As the user scrolls, this heavy container slides directly over the pinned hero area.
+   - The leading edge of this container features a crisp, architectural division boundary: a fine double hairline rule with a central diamond crest and subtle elevation drop-shadow (`shadow-2xl`), creating a seamless mask-slide effect (The Division Effect).
 
 ---
 
-## 6. Admin CMS Dashboard Standards (`src/components/EditPage/`)
+## 5. Design Variants Exploration
 
-- **Collapsible Drawers Default Closed**: All accordion panels in `IntroEditor.tsx` (`Identity`, `Social`, `Technical Domains`, `Hanko Seal`) and `PhilosophyEditor.tsx` (`Origin Trajectory`, `Architectural Pillars`) must start **closed by default** on mount to keep the interface decluttered.
-- **Dirty State Tracking**: Real-time event dispatching (`portfolio-admin-dirty` / `portfolio-admin-clean`) to warn against unsaved changes.
-- **Deterministic Sync**: Direct Supabase database persistence with instant toast confirmation.
+### Variant 1: "Architectural Tokonoma & Pinned Horizon"
+- **Structure**: Center-balanced editorial layout.
+- **Hero**: Pinned atmospheric landscape backdrop. Left content column with large editorial serif headline, narrative overview, and clean monochrome domain pills. Right column houses the authentic Hanko seal box with vertical Japanese calligraphy (*tategaki*) and Philadelphia coordinates.
+- **The Division Layer**: A heavy, elevated canvas block slides directly over the hero on scroll, introduced by a fine double hairline rule and center seal motif.
+- **Tone**: Meditative, calm, museum-grade, balanced.
+
+### Variant 2: "Akari Studio Column & Asymmetrical Mask"
+- **Structure**: Direct adaptation of the Akari reference site (`media_1790438816001.png`).
+- **Sidebar**: Persistent left editorial spine containing the Hanko seal mark, vertical calligraphy, primary navigation links, and Ensō ring framed by a fine vertical hairline.
+- **Hero & Canvas**: Right workspace with pinned photography/sumi-e art and large headline.
+- **The Division Layer**: Solid panel block sliding straight over the hero image with a sharp horizontal partition and high-contrast section cards.
+- **Tone**: Architectural, editorial, lateral rhythm, gallery showcase.
 
 ---
 
-## 7. Complete Do's and Don'ts
+## 6. Implementation Checklist & Anti-Patterns
 
-### Do
-- **Do preserve exact canonical tokens**: `#F2E9DA` / `#F7F0E3` (Day) and `#1E1F24` / `#1B1C22` (Night).
-- **Do use terracotta cinnabar (`#C83C23`) sparingly** as a single intentional focal point.
-- **Do keep resting cards serene** and reveal Ensō orbital circles exclusively on active card hover (`hoverOnly={true}`).
-- **Do enforce mutually-exclusive Ensō hover** in nested card structures (strictly 1 circle at a time).
-- **Do make entire project cards clickable** (`cursor-pointer`) and attach `e.stopPropagation()` to outbound link buttons.
-- **Do use clean punctuation**: Colons, commas, hyphens, and middle dots instead of em/en dashes.
-- **Do start admin editor accordions in closed state** for clean ergonomics.
-- **Do maintain WCAG AA contrast compliance** across both Day and Night modes.
+### Anti-Patterns (Banned)
+- ❌ **No sci-fi fonts**: `Oxanium`, `Chakra Petch`, and futuristic HUD fonts are strictly prohibited.
+- ❌ **No cyberpunk neon glow**: Drop shadows must be natural soft contact shadows (`rgba(0, 0, 0, 0.08)` or `rgba(43, 46, 58, 0.06)`), never neon orange or cyan glows.
+- ❌ **No structural orange borders**: Terracotta (`#B5482E`) must not be used on resting card borders, headings, or timeline lines.
+- ❌ **No nested border stacking**: Avoid `border` inside `border` inside `border`.
+- ❌ **No pure black night theme**: Avoid `#000000` / `#090A0C`; strictly use warm charcoal `#1E1F24` and `#2A2C32`.
+- ❌ **No harsh white outlines**: In night mode, borders are `#3A3D44` (`rgba(58, 61, 68, 0.75)`).
 
-### Don't
-- **Don't use em dashes (`—`) or en dashes (`–`) anywhere** in copy, headers, subtitles, or comments.
-- **Don't add mouse-following radial gradients** that darken or whiten card surfaces under the cursor.
-- **Don't trigger multiple Ensō circles simultaneously** on nested parent/child elements.
-- **Don't introduce rainbow tags** (no pastel blue, green, purple, yellow badges).
-- **Don't use teal, cyan, neon green, or second competing accent colors**.
-- **Don't use bubbly rounded corners (e.g. 24px+)** on standard cards; preserve the disciplined `rounded-xl` shape language.
-- **Don't allow external link clicks to inadvertently open detail modals** (always attach `e.stopPropagation()`).
+### Approved Patterns (Enforced)
+- ✅ **Editorial Serif Headings**: Canela / Tiempos / Noto Serif with generous breathing room.
+- ✅ **Single Accent Focus**: Terracotta cinnabar (`#B5482E`) reserved exclusively for active states, selected cards, and the Hanko seal.
+- ✅ **Desaturated Palette Textures**: Sumi-e pine trees, bamboo, and washi grain that participate in the warm charcoal or washi canvas.
+- ✅ **The Division Effect**: Smooth parallax scrolling with heavy independent container sliding over the pinned hero.
+- ✅ **Refined Corner Ornaments**: Subtle, print-inspired hairlines on major containers with 50-70% reduced contrast.

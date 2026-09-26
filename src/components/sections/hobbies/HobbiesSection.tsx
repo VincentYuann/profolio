@@ -37,9 +37,9 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
   ) : null;
 
   return (
-    <section id="hobbies" className="relative w-full py-16 lg:py-24">
+    <section id="hobbies" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Hobbies */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface/25 to-transparent dark:via-[#0f1013]/60 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface/25 to-transparent dark:via-[#2A2C32]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-radial-[at_center] from-bamboo/[0.035] dark:from-bamboo/[0.02] to-transparent pointer-events-none z-0" />
 
       {/* Full-Bleed Atmospheric Background Behind Hobbies Cards */}
@@ -47,7 +47,7 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
         <img
           src="./images/hero-sumie-landscape-banner.jpg"
           alt="Sumi-e landscape behind hobbies section"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-screen dark:invert"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{

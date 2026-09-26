@@ -65,7 +65,7 @@ const PILLAR_CONFIGS = [
         <img
           src="./images/sumie-pine-tree-left.jpg"
           alt="Pine motif"
-          className="w-full h-full object-contain object-bottom-right mix-blend-multiply dark:mix-blend-screen dark:invert"
+          className="w-full h-full object-contain object-bottom-right mix-blend-multiply dark:mix-blend-luminosity dark:opacity-15 dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
         />
@@ -107,9 +107,9 @@ export const PhilosophyBento: React.FC = () => {
   }
 
   return (
-    <section id="philosophy" className="relative w-full py-16 lg:py-24">
+    <section id="philosophy" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Philosophy */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-[#101115]/70 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-[#2A2C32]/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Zen Ambient Mist Radial Wash */}
       <div className="absolute inset-0 bg-radial-[at_50%_50%] from-ochre/[0.03] dark:from-ochre/[0.02] to-transparent pointer-events-none z-0" />
 
@@ -119,7 +119,7 @@ export const PhilosophyBento: React.FC = () => {
         <img
           src="./images/hero-sumie-landscape-bamboo-banner.jpg"
           alt="Sumi-e landscape behind philosophy cards"
-          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-screen dark:invert"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{
@@ -133,7 +133,7 @@ export const PhilosophyBento: React.FC = () => {
           <img
             src="./images/sumie-tall-vertical-bamboo.jpg"
             alt="Sumi-e bamboo art left flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-screen dark:invert animate-bamboo-sway"
+            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-bamboo-sway"
             loading="lazy"
             decoding="async"
             style={{
@@ -148,7 +148,7 @@ export const PhilosophyBento: React.FC = () => {
           <img
             src="./images/sumie-tall-vertical-bamboo.jpg"
             alt="Sumi-e bamboo art right flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-screen dark:invert scale-x-[-1]"
+            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 scale-x-[-1]"
             loading="lazy"
             decoding="async"
             style={{

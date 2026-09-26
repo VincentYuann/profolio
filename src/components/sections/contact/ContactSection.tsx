@@ -113,9 +113,9 @@ export const ContactSection: React.FC = () => {
   )}` : '#';
 
   return (
-    <section id="contact" className="relative w-full py-14 lg:py-20 mb-8">
+    <section id="contact" className="relative w-full py-14 lg:py-20 mb-8 scroll-mt-20">
       {/* Architectural Background Chamber for Contact */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-[#121318]/70 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-[#2A2C32]/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
       <div className="absolute inset-0 bg-radial-[at_50%_40%] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
@@ -131,7 +131,7 @@ export const ContactSection: React.FC = () => {
           <CornerBrackets size="lg" />
 
           {/* Komorebi Japanese Landscape Mask Backdrop: Anchored Clearly on Left Side */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-75 dark:opacity-55 mix-blend-multiply dark:mix-blend-screen dark:invert animate-gentle-drift rounded-l-2xl">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-75 dark:opacity-30 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-2xl">
             <img
               src="./images/komorebi-spatial.jpg"
               alt="Komorebi Japanese landscape backdrop"
