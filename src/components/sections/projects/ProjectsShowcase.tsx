@@ -62,19 +62,33 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
     <section id="featured-works" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Featured Works */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#262523]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
-      {/* Subtle Sumi-e Landscape Silhouette Watermark */}
-      <div className="absolute left-0 bottom-0 top-1/4 w-72 lg:w-96 pointer-events-none z-0 overflow-hidden select-none opacity-25 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity">
+      {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="./images/hero-sumie-landscape.png"
-          alt="Landscape backdrop"
-          className="w-full h-full object-contain object-left-bottom opacity-50 dark:opacity-30 dark:filter dark:brightness-75"
+          src="./images/sumie-ocean-waves-backdrop.jpg"
+          alt="Sumi-e ocean waves backdrop"
+          className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full object-cover object-right opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{
-            maskImage: 'radial-gradient(ellipse 80% 80% at 20% 80%, black 25%, transparent 80%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 20% 80%, black 25%, transparent 80%)',
+            maskImage: 'radial-gradient(ellipse 90% 80% at 80% 40%, black 20%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 90% 80% at 80% 40%, black 20%, transparent 80%)',
           }}
         />
+        {/* Subtle left wave accent */}
+        <div className="absolute left-0 bottom-0 top-1/3 w-64 lg:w-80 pointer-events-none z-0 overflow-hidden select-none opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity hidden md:block">
+          <img
+            src="./images/sumie-wave-left.jpg"
+            alt="Sumi-e wave accent"
+            className="w-full h-full object-contain object-left-bottom opacity-60 dark:opacity-30 dark:filter dark:brightness-75"
+            loading="lazy"
+            decoding="async"
+            style={{
+              maskImage: 'radial-gradient(ellipse 85% 85% at 20% 80%, black 25%, transparent 80%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 20% 80%, black 25%, transparent 80%)',
+            }}
+          />
+        </div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

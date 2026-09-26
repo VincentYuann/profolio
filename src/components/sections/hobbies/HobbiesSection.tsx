@@ -42,12 +42,12 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface/25 to-transparent dark:via-[#2A2C32]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-radial-[at_center] from-bamboo/[0.035] dark:from-bamboo/[0.02] to-transparent pointer-events-none z-0" />
 
-      {/* Full-Bleed Atmospheric Background Behind Hobbies Cards */}
+      {/* Full-Bleed Atmospheric Background Behind Hobbies Cards - Komorebi Filtered Light */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="./images/hero-sumie-landscape-banner.jpg"
-          alt="Sumi-e landscape behind hobbies section"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
+          src="./images/komorebi-spatial.jpg"
+          alt="Komorebi dappled sunlight backdrop behind hobbies"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"
           decoding="async"
           style={{

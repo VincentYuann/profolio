@@ -122,11 +122,11 @@ export const ContactSection: React.FC = () => {
           {/* Corner Hairline Brackets (Subtle) */}
           <CornerBrackets size="lg" />
 
-          {/* Komorebi Japanese Landscape Mask Backdrop: Anchored Clearly on Left Side */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-75 dark:opacity-30 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-2xl">
+          {/* Sumi-e Mountain Silhouette Mask Backdrop: Anchored Clearly on Left Side */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-[50%] select-none overflow-hidden opacity-50 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-gentle-drift rounded-l-2xl">
             <img
-              src="./images/komorebi-spatial.jpg"
-              alt="Komorebi Japanese landscape backdrop"
+              src="./images/contact-sumie-mountain.png"
+              alt="Sumi-e mountain backdrop"
               className="w-full h-full object-cover object-[65%_center]"
               loading="lazy"
               decoding="async"

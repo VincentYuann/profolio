@@ -8,6 +8,7 @@ import {
   ListChecks,
 } from 'lucide-react';
 import { CornerBrackets } from '../../common/CornerBrackets';
+import { EnsoOrbital } from '../../common/EnsoOrbital';
 import { useSiteData } from '../../../context/SiteDataContext';
 import { TechTag } from '../../common/TechTag';
 import { Badge } from '../../ui/badge';
@@ -251,6 +252,18 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                         : 'border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D]'
                     }`}
                   >
+                    {/* Celestial Ensō Orbital Circle with Brushstroke & Bamboo Sprig (Image 1 reference) */}
+                    <EnsoOrbital
+                      placement="top-left"
+                      size={112}
+                      hoverOnly={!isCardActive}
+                      className={
+                        isCardActive
+                          ? '!opacity-100 !scale-100 transition-all duration-500'
+                          : 'opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500'
+                      }
+                    />
+
                     {/* Corner Hairline Brackets (Subtle) */}
                     <CornerBrackets size="sm" />
 
@@ -383,7 +396,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                             {/* Tech Stack & Substrates */}
                             {exp.tags && exp.tags.length > 0 && (
                               <div className="pt-1">
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-light-ink-muted dark:text-dark-ink-muted font-semibold mb-2">
+                                <div className="text-2xs font-mono uppercase tracking-widest text-light-ink-muted dark:text-dark-ink-muted font-semibold mb-2">
                                   Substrates &amp; Core Tech Stack
                                 </div>
                                 <div className="flex flex-wrap gap-1.5">

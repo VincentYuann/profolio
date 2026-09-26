@@ -30,78 +30,81 @@ colors:
   light-on-dark: "#F7F0E3"
   light-focus: "#B5482E"
 
-  # Dark theme: Warm Charcoal Night Mode (Reference Image #1 Dark Mode)
-  dark-canvas: "#1E1F24"
-  dark-surface: "#2A2C32"
-  dark-surface-card: "#2A2C32"
-  dark-surface-raised: "#32353C"
-  dark-surface-muted: "#18191D"
-  dark-ink: "#E8E6DF"
-  dark-ink-muted: "#A7A398"
-  dark-ink-subtle: "#76736A"
-  dark-border: "#3A3D44"
-  dark-border-subtle: "rgba(58, 61, 68, 0.75)"
-  dark-button-light: "#E8E6DF"
-  dark-on-light: "#1E1F24"
+  # Dark theme: 4-Tier Warm Charcoal Night Mode (Canonical Architectural Hierarchy)
+  dark-canvas: "#1F1E1D"
+  dark-panel: "#262523"
+  dark-surface: "#262523"
+  dark-card: "#2D2B29"
+  dark-surface-card: "#2D2B29"
+  dark-surface-raised: "#353330"
+  dark-surface-muted: "#1A1918"
+  dark-ink: "#ECE8DF"
+  dark-ink-muted: "#ACA598"
+  dark-ink-subtle: "#787368"
+  dark-border: "#3E3B37"
+  dark-border-strong: "#4E525D"
+  dark-border-subtle: "rgba(182, 175, 162, 0.18)"
+  dark-button-light: "#ECE8DF"
+  dark-on-light: "#1F1E1D"
   dark-focus: "#B5482E"
 
 typography:
   display-xl:
-    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
-    fontSize: "60px"
+    fontFamily: "Zen Old Mincho, Noto Serif JP, Georgia, serif"
+    fontSize: "64px"
     fontWeight: 400
     lineHeight: 1.08
     letterSpacing: "-0.025em"
   display-lg:
-    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontFamily: "Zen Old Mincho, Noto Serif JP, Georgia, serif"
     fontSize: "48px"
     fontWeight: 400
     lineHeight: 1.12
     letterSpacing: "-0.02em"
   headline-lg:
-    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontFamily: "Zen Old Mincho, Noto Serif JP, Georgia, serif"
     fontSize: "36px"
     fontWeight: 400
     lineHeight: 1.18
     letterSpacing: "-0.015em"
   headline-md:
-    fontFamily: "Canela, Tiempos, Noto Serif, Georgia, serif"
+    fontFamily: "Zen Old Mincho, Noto Serif JP, Georgia, serif"
     fontSize: "28px"
     fontWeight: 400
     lineHeight: 1.25
     letterSpacing: "-0.01em"
   headline-sm:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontFamily: "Chakra Petch, Mulish, sans-serif"
     fontSize: "18px"
     fontWeight: 500
     lineHeight: 1.35
     letterSpacing: "0.02em"
   body-lg:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontFamily: "Mulish, Inter, system-ui, sans-serif"
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.7
     letterSpacing: "0em"
   body-md:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontFamily: "Mulish, Inter, system-ui, sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "0em"
   body-sm:
-    fontFamily: "Montserrat, Inter, Arial, sans-serif"
+    fontFamily: "Mulish, Inter, system-ui, sans-serif"
     fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "0.01em"
   code-md:
-    fontFamily: "JetBrains Mono, SFMono-Regular, Consolas, monospace"
+    fontFamily: "Azeret Mono, JetBrains Mono, monospace"
     fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "0em"
   code-sm:
-    fontFamily: "JetBrains Mono, SFMono-Regular, Consolas, monospace"
+    fontFamily: "Azeret Mono, JetBrains Mono, monospace"
     fontSize: "11px"
     fontWeight: 400
     lineHeight: 1.5
@@ -152,21 +155,24 @@ The Vincent Yuan portfolio visual system is an homage to traditional Japanese ma
 
 ## 2. Typography Hierarchy
 
-1. **Headings & Display** (`font-serif`):
-   - Primary: **Canela**, **Tiempos**, **Noto Serif**, **Georgia**, `serif`.
-   - Character: Light, elegant, editorial, generous letterpress breathing room, relaxed line-height.
+1. **Headings & Display** (`font-serif` / `font-zen`):
+   - Primary: **Zen Old Mincho** (weights 400, 500, 600), **Noto Serif JP**, `serif`.
+   - Character: Light, authentic Japanese editorial calligraphy, generous letterpress breathing room, relaxed line-height.
    - Purpose: Main hero headline, major section titles (`01 //`, `02 //`), company names in career timeline, and Kanji watermarks.
-   - **Absolute Ban**: No sci-fi chamfered faces (e.g. `Oxanium`, `Chakra Petch`).
 
-2. **UI & Operational Copy** (`font-sans`):
-   - Primary: **Montserrat**, **Inter**, `system-ui`, `sans-serif`.
-   - Character: Clean, legible, uppercase with tight tracking for badges/labels, balanced for descriptions and paragraphs.
+2. **UI & Operational Copy** (`font-sans` / `font-mulish`):
+   - Primary: **Mulish** (weights 200–900), `sans-serif`.
+   - Character: Clean, balanced, neutral modernist grotesque, comfortable reading cadence for descriptions, paragraphs, and list items.
 
-3. **Technical Metadata & Code** (`font-mono`):
-   - Primary: **JetBrains Mono**, `monospace`.
-   - Character: Small, tracked, quiet metadata (e.g. `#01`, date ranges, coordinates, and code snippets). Never glowing or neon.
+3. **Technical Metadata & Code** (`font-mono` / `font-azeret`):
+   - Primary: **Azeret Mono** (weights 400, 500, 600, 700), `monospace`.
+   - Character: Geometric monospaced precision, small, tracked, quiet metadata (e.g. coordinates, timestamps, `$ npx vincent-yuan` CLI snippets, tech substrates).
 
-4. **Punctuation Standard**:
+4. **Technical Subheadings & Dossier Accents** (`font-chakra`):
+   - Primary: **Chakra Petch** (weights 300, 400, 500, 600), `sans-serif`.
+   - Purpose: Section labels, category eyebrows (`[ ATELIER DOSSIER · 工匠の記録 ]`), dossier headers, and tech category titles.
+
+5. **Punctuation Standard**:
    - Strict elimination of em dashes (`—`) and en dashes (`–`).
    - Use standard hyphens (`-`), colons (`:`), commas (`,`), and centered middle dots (`·`).
 
@@ -212,20 +218,40 @@ To establish a clear, dramatic spatial relationship between the introductory nar
 
 ---
 
-## 5. Design Variants Exploration
+## 5. Canonical Architecture & Extracted Patterns
 
-### Variant 1: "Architectural Tokonoma & Pinned Horizon"
-- **Structure**: Center-balanced editorial layout.
-- **Hero**: Pinned atmospheric landscape backdrop. Left content column with large editorial serif headline, narrative overview, and clean monochrome domain pills. Right column houses the authentic Hanko seal box with vertical Japanese calligraphy (*tategaki*) and Philadelphia coordinates.
-- **The Division Layer**: A heavy, elevated canvas block slides directly over the hero on scroll, introduced by a fine double hairline rule and center seal motif.
-- **Tone**: Meditative, calm, museum-grade, balanced.
+### Canonical Hero: Akari Studio Frame (`HeroAkariStudio.tsx`)
+- **Structure**: Selected Variant 2 (Studio Frame), inspired by the Akari reference site (`media_1790438816001.png`).
+- **Elimination of Duplication with Top Navbar**:
+  - The top fixed `Header` is the sole global site navigator.
+  - The Hero left column is dedicated to the **Atelier Dossier** (`[ ATELIER DOSSIER · 工匠の記録 ]`):
+    - Geolocation & Coordinates: `PHILLY, PA · 39.9526° N, 75.1652° W`
+    - Academic Foundation: `DREXEL UNIVERSITY (BS CS)`
+    - Timezone & Activity: `EST (UTC-5) · ACTIVE ATELIER`
+    - Direct Channels: GitHub, LinkedIn, Email
+    - Copyable Terminal Command: `$ npx vincent-yuan`
+    - Availability Badge: `Open to Full-Stack & AI Roles`
+- **Concrete Tech Stacks (Replacing generic cards)**:
+  1. *Systems & Cloud Backend*: `Python · FastAPI · PostgreSQL · Node.js · Docker`
+  2. *Frontend & UI Craft*: `React 19 · TypeScript · Tailwind · Next.js · Vite`
+  3. *Agentic AI & RAG Intelligence*: `Qdrant · LlamaIndex · Gemini API · LangChain · RAG`
 
-### Variant 2: "Akari Studio Column & Asymmetrical Mask"
-- **Structure**: Direct adaptation of the Akari reference site (`media_1790438816001.png`).
-- **Sidebar**: Persistent left editorial spine containing the Hanko seal mark, vertical calligraphy, primary navigation links, and Ensō ring framed by a fine vertical hairline.
-- **Hero & Canvas**: Right workspace with pinned photography/sumi-e art and large headline.
-- **The Division Layer**: Solid panel block sliding straight over the hero image with a sharp horizontal partition and high-contrast section cards.
-- **Tone**: Architectural, editorial, lateral rhythm, gallery showcase.
+### Curated Section Atmosphere & Decoration Blends
+Each section carries a unique Japanese craft backdrop with radial vignette masking:
+1. **Hero**: Akari craftsmanship (`akari-commerce.jpg`) + Pine tree (*Matsu*) motif (`sumie-pine-tree-left.jpg`) + sumi mountain mist.
+2. **Experience**: Tall sumi-e bamboo grove (`sumie-tall-vertical-bamboo.jpg`) + **Enso Orbital** hover animation (`media_1790446060879.png`).
+3. **Projects / Selected Works**: Great ocean waves backdrop (`sumie-ocean-waves-backdrop.jpg`) + left wave accent (`sumie-wave-left.jpg`), symbolizing dynamic ventures.
+4. **Philosophy / Bento**: Panoramic sumi-e bamboo landscape (`hero-sumie-landscape-bamboo-banner.jpg`) + rising vertical bamboo flanks.
+5. **Hobbies / Daily Pursuits**: Komorebi light filtering through forest canopy (`komorebi-spatial.jpg`), symbolizing leisure and life beyond code.
+6. **Contact / Dialogue**: Misty mountain pagoda silhouette (`contact-sumie-mountain.png`), representing the summit and destination of correspondence.
+
+### Extracted Component: Enso Orbital (`EnsoOrbital.tsx`)
+- Animated calligraphic Enso circle formulated on milestone hover.
+- **Layer 0**: Sumi-e bamboo sprig with terracotta cinnabar accent leaf (`#B5482E`), bamboo green leaf (`#526D57`), and sumi gray leaves (`#8C857B`).
+- **Layer 1**: Golden celestial arc with slow orbital rotation (`animate-orbital-spin`).
+- **Layer 2**: Dashed vermilion orbital ring (`animate-dash-flow`).
+- **Layer 3**: Pulsing ruby bead (`animate-ruby-pulse`).
+- **Layer 4**: Full calligraphic sumi-e Enso ring with breathing opacity (`animate-enso-breathe`).
 
 ---
 

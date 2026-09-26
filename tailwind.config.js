@@ -67,6 +67,10 @@ export default {
         mulish: ['Mulish', 'sans-serif'],
         azeret: ['Azeret Mono', 'monospace'],
       },
+      fontSize: {
+        '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
+        'display-lg': ['4rem', { lineHeight: '1.08' }],
+      },
       spacing: {
         gutter: '1.5rem',
         'space-xs': '0.375rem',
