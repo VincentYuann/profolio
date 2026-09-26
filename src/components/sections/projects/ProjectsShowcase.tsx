@@ -62,6 +62,8 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
     <section id="featured-works" className="relative w-full py-24 lg:py-32 scroll-mt-20">
       {/* Architectural Background Chamber for Featured Works */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-dark-surface/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      {/* Subtle Japanese Joinery Axis Ambient Glow */}
+      <div className="absolute right-0 sm:right-24 top-1/3 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
       {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img

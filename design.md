@@ -301,6 +301,45 @@ The Vincent Yuan portfolio visual system is an homage to traditional Japanese ma
 
 ## Elevation & Depth
 
+### The 4-Layer Optical Composite System
+
+The atmospheric, tactile depth of the interface is achieved through an intentional 4-layer optical composite rather than flat digital hex values. Both themes mirror each other with authentic material physics:
+
+#### Night Mode: Sumi & Charred Cedar (焼杉 Yakisugi)
+1. **Layer 1 (Base Tone - Charred Cedar)**:
+   - Canvas Ground: `#1E1F24` (warm sumi ink wash with blue-brown undertones; never cold OLED `#000000`).
+   - Card Surface: `#2A2C32` (slightly elevated charred cedar *yakisugi* wood tone).
+   - Hairline Border: `#3A3D44` (`rgba(58, 61, 68, 0.75)` quiet warm-gray outline).
+2. **Layer 2 (Tactile Paper Grain Overlay - Washi Tooth)**:
+   - Pinned viewport pseudo-element `body::before` running procedural SVG fractal noise (`type="fractalNoise"`, `baseFrequency="0.8"`) at `opacity: 0.04`.
+   - Breaks up smooth digital monitor subpixels, providing physical tooth and organic texture.
+3. **Layer 3 (Atmospheric Sumi-e Ink Mist & Blend Modes)**:
+   - Traditional sumi-e ink wash art embedded in section chambers (`bamboo.jpg`, `ocean.jpg`, `mountain.jpg`, `tree.jpg`).
+   - Applied with `mix-blend-luminosity`, `opacity: 0.15`–`0.20`, and `filter: brightness(0.75)`.
+   - Feathered seamlessly via `mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)`.
+4. **Layer 4 (Ambient Paper Lantern Glow - Akari Illumination)**:
+   - Soft radial ochre wash: `bg-radial-[at_center] from-ochre/[0.025] to-transparent` (w-96 h-96).
+   - Simulates warm candlelight from an Akari paper lantern casting subtle illumination across charred wood and slate.
+
+#### Light Mode: Unbleached Washi & Akari Paper (和紙・明かり)
+1. **Layer 1 (Base Tone - Raw Washi Paper)**:
+   - Canvas Ground: `#F2E9DA` (unbleached warm cream base mimicking raw kozo/mulberry fibers).
+   - Card Surface: `#F7F0E3` (elevated, readable washi sheet surface).
+   - Hairline Border: `#D9C9AE` (delicate natural bamboo stalk tone).
+   - Primary Ink: `#282E3A` (traditional deep sumi ink).
+   - Muted Ink: `#686559` (earthy charcoal-stone).
+2. **Layer 2 (Tactile Paper Grain Overlay - Washi Tooth)**:
+   - Same global `body::before` fractal noise at `opacity: 0.04`.
+   - On the warm cream `#F2E9DA` canvas, the micro-noise reads as authentic handmade washi paper fibers and organic paper irregularities.
+3. **Layer 3 (Atmospheric Sumi-e Ink Deposition - Multiply Blend Mode)**:
+   - Traditional sumi-e ink wash artwork embedded in section chambers.
+   - Applied with `mix-blend-multiply` at `opacity: 0.25`–`0.30`.
+   - **Physics of `mix-blend-multiply`**: In light mode, the light paper background of the artwork multiplies into `#F2E9DA` and disappears completely, depositing pure sumi ink brush strokes directly onto the canvas with zero rectangular boundaries.
+   - Feathered seamlessly into negative space (*Ma*) via `mask-image: radial-gradient(...)`.
+4. **Layer 4 (Ambient Warm Paper Lantern Glow - Akari Illumination)**:
+   - Soft radial ochre wash: `bg-radial-[at_center] from-ochre/[0.04] to-transparent` (w-96 h-96).
+   - Simulates the soft, diffused amber glow radiating through a handmade washi paper screen (*shoji* 障子).
+
 ### 4-Tier Architectural Hierarchy
 To eliminate visual claustrophobia and "box-in-a-box" clutter:
 1. **Tier 0 (Canvas Ground)**: `#F2E9DA` (Day) / `#1E1F24` (Night).
