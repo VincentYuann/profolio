@@ -50,8 +50,8 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
         </div>
 
         {/* Layer 3: Atmospheric Wash Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-light-canvas via-light-canvas/75 to-transparent dark:from-[#1E1F24] dark:via-[#1E1F24]/85 dark:to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-light-canvas dark:from-[#1E1F24] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-light-canvas via-light-canvas/75 to-transparent dark:from-[#1F1E1D] dark:via-[#1F1E1D]/85 dark:to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-light-canvas dark:from-[#1F1E1D] to-transparent pointer-events-none" />
       </div>
 
       {/* Main Studio Frame Layout (Sidebar + Hero Content) */}
@@ -153,7 +153,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
 
             {/* Status Consultation Badge */}
             <div className="hidden lg:flex items-center gap-3 pt-6 border-t border-light-border/60 dark:border-dark-border/60">
-              <div className="relative w-8 h-8 rounded-full bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] flex items-center justify-center shrink-0">
+              <div className="relative w-8 h-8 rounded-full bg-light-surface-card dark:bg-[#2D2B29] border border-light-border dark:border-[#3E3B37] flex items-center justify-center shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500/90 dark:bg-emerald-400/90 animate-pulse" />
               </div>
               <div>
@@ -175,7 +175,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             <div className="max-w-3xl flex flex-col gap-6">
               {/* Category Eyebrow */}
               <div className="inline-flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-terracotta" />
+                <span className="w-1.5 h-1.5 rounded-full bg-light-ink-subtle/80 dark:bg-[#787368]" />
                 <span className="font-mono text-xs uppercase tracking-widest text-light-ink-subtle dark:text-dark-ink-subtle">
                   STUDIO PERSPECTIVE · 空間と調和
                 </span>
@@ -215,7 +215,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
                       onNavigate('resume');
                     }
                   }}
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#565A63] text-light-ink dark:text-dark-ink font-sans text-xs sm:text-sm font-medium rounded-lg shadow-2xs transition-all cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-light-surface-card dark:bg-[#2D2B29] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs sm:text-sm font-medium rounded-lg shadow-2xs transition-all cursor-pointer"
                 >
                   <span>Technical CV</span>
                   <FileText className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -229,7 +229,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
             */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-light-border/60 dark:border-dark-border/60">
               {/* Feature 1 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
                   <Cpu className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
@@ -242,7 +242,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Feature 2 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
                   <Code2 className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
@@ -255,7 +255,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
               </div>
 
               {/* Feature 3 */}
-              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44]">
+              <div className="flex flex-col gap-1.5 p-4 rounded-lg bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37]">
                 <div className="flex items-center gap-2 text-light-ink dark:text-dark-ink">
                   <Sparkles className="w-4 h-4 text-light-ink-muted dark:text-dark-ink-muted" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">

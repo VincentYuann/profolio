@@ -173,7 +173,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={(e) => handleNavClick(e, item)}
                 className={`group relative font-sans text-xs uppercase tracking-wider transition-colors flex items-center gap-1.5 py-1 whitespace-nowrap ${
                   isActive
-                    ? 'text-terracotta font-semibold'
+                    ? 'text-light-ink dark:text-dark-ink font-semibold'
                     : 'text-light-ink-muted dark:text-dark-ink-muted hover:text-light-ink dark:hover:text-dark-ink'
                 }`}
               >

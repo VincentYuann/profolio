@@ -46,13 +46,13 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
           />
         </div>
 
-        {/* Layer 2: Subtle Washi Paper Grain (participates in Day mode only) */}
-        <div className="absolute inset-0 bg-transparent washi-pattern opacity-25 dark:opacity-0 pointer-events-none" />
+        {/* Layer 2: Subtle Washi Paper Grain (Tactile in both Day and Night modes) */}
+        <div className="absolute inset-0 bg-transparent washi-pattern opacity-25 dark:opacity-15 pointer-events-none" />
 
         {/* Layer 3: Warm Ambient Gradients for Flawless Text Legibility */}
-        <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 lg:w-3/5 bg-gradient-to-r from-light-canvas/80 via-light-canvas/40 to-transparent dark:from-[#1E1F24]/85 dark:via-[#1E1F24]/40 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-light-canvas via-light-canvas/60 to-transparent dark:from-[#1E1F24] dark:via-[#1E1F24]/60 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-light-canvas via-light-canvas/75 to-transparent dark:from-[#1E1F24] dark:via-[#1E1F24]/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 lg:w-3/5 bg-gradient-to-r from-light-canvas/80 via-light-canvas/40 to-transparent dark:from-[#1F1E1D]/85 dark:via-[#1F1E1D]/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-light-canvas via-light-canvas/60 to-transparent dark:from-[#1F1E1D] dark:via-[#1F1E1D]/60 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-light-canvas via-light-canvas/75 to-transparent dark:from-[#1F1E1D] dark:via-[#1F1E1D]/80 to-transparent pointer-events-none" />
 
         {/* Layer 4: Dedicated Japanese Pine Tree (Matsu 松) on the left margin */}
         <div className="absolute left-0 sm:left-4 lg:left-8 bottom-0 h-[78%] max-h-[720px] w-auto max-w-sm sm:max-w-md lg:max-w-lg pointer-events-none z-0">
@@ -78,7 +78,7 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
           <div className="lg:col-span-8 flex flex-col gap-6 pt-2">
             {/* Meta Eyebrow Ribbon */}
             <div className="inline-flex items-center gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <span className="w-1.5 h-1.5 rounded-full bg-light-ink-subtle/80 dark:bg-[#787368]" />
               <span className="font-mono text-xs uppercase tracking-widest text-light-ink-subtle dark:text-dark-ink-subtle font-medium">
                 ENGINEERING PORTFOLIO · 職人の組手
               </span>
@@ -174,9 +174,9 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
               <BambooArt className="w-36 h-52" sway={true} opacity={0.6} />
             </div>
 
-            <div className="relative z-10 w-full max-w-sm bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] p-6 rounded-xl shadow-xs transition-all duration-300 group">
+            <div className="relative z-10 w-full max-w-sm bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] p-6 rounded-xl shadow-xs transition-all duration-300 group">
               {/* Box Header */}
-              <div className="w-full flex items-center justify-between pb-2 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60 relative z-10">
+              <div className="w-full flex items-center justify-between pb-2 mb-4 border-b border-light-border/60 dark:border-[#3E3B37]/60 relative z-10">
                 <span className="font-sans font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase text-[11px] tracking-wider">
                   {hanko?.headerLabel || 'SEAL / 認印'}
                 </span>
@@ -192,8 +192,8 @@ export const HeroTokonoma: React.FC<HeroTokonomaProps> = ({ onNavigate }) => {
                   className="w-16 h-16 sm:w-18 sm:h-18 transition-transform duration-300 group-hover:scale-105"
                 />
                 {hanko?.statusBadge && (
-                  <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-light-surface dark:bg-[#25272D] border border-light-border dark:border-[#3A3D44] text-[11px] font-mono font-medium text-terracotta tracking-wider uppercase">
-                    <span className="w-1.5 h-1.5 rounded-full bg-terracotta" />
+                  <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-600/25 dark:border-emerald-400/25 text-[11px] font-mono font-medium text-emerald-800 dark:text-emerald-400 tracking-wider uppercase">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse" />
                     <span>{hanko.statusBadge}</span>
                   </div>
                 )}

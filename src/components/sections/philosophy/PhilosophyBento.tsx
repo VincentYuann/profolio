@@ -188,12 +188,12 @@ export const PhilosophyBento: React.FC = () => {
         {/* 04.1 Origin Trajectory Bento Box */}
         {hasOriginStory && (
           <div
-            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-[#4E525D] transition-colors duration-300"
+            className="mb-10 sm:mb-12 bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] rounded-xl p-5 sm:p-8 shadow-sm relative overflow-visible classical-card-frame hover:border-light-border-strong dark:hover:border-[#4E525D] transition-colors duration-300"
           >
             <CornerBrackets size="md" />
 
             {/* Card Top Sub-Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60 relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3E3B37]/60 relative z-10">
               <span className="font-mono text-xs font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 {originStory?.badge || 'ORIGIN & TRAJECTORY · 原点と軌跡'}
               </span>
@@ -228,10 +228,10 @@ export const PhilosophyBento: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-[#3A3D44] hover:border-light-ink-muted dark:hover:border-[#4E525D] pt-3.5"
+                      className="group p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 relative border-t-2 border-light-border-strong/40 dark:border-[#3E3B37] hover:border-light-ink-muted dark:hover:border-[#4E525D] pt-3.5"
                     >
                       <div>
-                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-[#3A3D44]/40 relative z-10">
+                        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-light-border/40 dark:border-[#3E3B37]/40 relative z-10">
                           <span className={`font-mono text-[11px] font-bold ${tTheme.eraColor} tracking-wider uppercase`}>
                             {m.era || `PHASE 0${idx + 1}`}
                           </span>
@@ -267,9 +267,9 @@ export const PhilosophyBento: React.FC = () => {
 
         {/* 04.2 Core Architectural Pillars Subsection Divider */}
         {displayPillars.length > 0 && (
-          <div className="mb-6 pt-2 pb-3 flex items-center justify-between border-b border-light-border/60 dark:border-dark-border/60">
+          <div className="mb-6 pt-2 pb-3 flex items-center justify-between border-b border-light-border/60 dark:border-[#3E3B37]/60">
             <div className="flex items-center gap-2">
-              <span className="font-serif text-terracotta text-sm">04.2 //</span>
+              <span className="font-mono text-xs text-light-ink-subtle dark:text-dark-ink-subtle font-medium">04.2 //</span>
               <span className="font-sans text-xs sm:text-sm font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                 Three Architectural Pillars · 三つの信条
               </span>
@@ -299,14 +299,14 @@ export const PhilosophyBento: React.FC = () => {
             return (
               <div
                 key={pillar.position || idx}
-                className="interactive-card bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-[#30333A] hover:border-light-border-strong dark:hover:border-[#4E525D] transition-all duration-300 classical-card-frame min-h-[280px]"
+                className="interactive-card bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] rounded-xl p-5 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-visible group hover:bg-light-surface dark:hover:bg-[#343230] hover:border-light-border-strong dark:hover:border-[#4E525D] transition-all duration-300 classical-card-frame min-h-[280px]"
               >
                 {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
 
                 {/* Top Accent Kanji & Icon */}
                 <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
-                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-[#3A3D44]/60 pb-3 sm:pb-4">
+                  <div className="flex items-center justify-between border-b border-light-border/60 dark:border-[#3E3B37]/60 pb-3 sm:pb-4">
                     <span className="pillar-kanji font-serif text-4xl sm:text-6xl text-light-ink dark:text-dark-ink font-light leading-none inline-block pl-1 sm:pl-2 select-none transition-colors">
                       {pillar.kanji}
                     </span>
@@ -314,7 +314,7 @@ export const PhilosophyBento: React.FC = () => {
                       <span className="font-mono text-[11px] font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                         {num}
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-[#25272D] border border-light-border dark:border-[#3A3D44] flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-full bg-light-surface dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] flex items-center justify-center">
                         <Icon className={`w-3.5 h-3.5 ${config.iconColor}`} />
                       </div>
                     </div>

@@ -49,21 +49,33 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
           onNavigate('projects');
         }
       }}
-      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-terracotta/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
+      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
     >
-      <Layers className="w-3.5 h-3.5 text-terracotta" />
+      <Layers className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
       <span className="sm:hidden">All Projects ({projects?.length || 0})</span>
       <span className="hidden sm:inline">View All Projects ({projects?.length || 0})</span>
-      <ArrowRight className="w-3.5 h-3.5 text-terracotta transition-transform duration-200 group-hover:translate-x-1" />
+      <ArrowRight className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-1" />
     </a>
   );
 
   return (
     <section id="featured-works" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Featured Works */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#2A2C32]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
-      {/* Subtle Japanese Minimal Grid Pattern */}
-      <div className="absolute right-0 sm:right-16 top-1/3 w-[32rem] h-[32rem] bg-radial-[at_center] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-[#262523]/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      {/* Subtle Sumi-e Landscape Silhouette Watermark */}
+      <div className="absolute left-0 bottom-0 top-1/4 w-72 lg:w-96 pointer-events-none z-0 overflow-hidden select-none opacity-25 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity">
+        <img
+          src="./images/hero-sumie-landscape.png"
+          alt="Landscape backdrop"
+          className="w-full h-full object-contain object-left-bottom opacity-50 dark:opacity-30 dark:filter dark:brightness-75"
+          loading="lazy"
+          decoding="async"
+          style={{
+            maskImage: 'radial-gradient(ellipse 80% 80% at 20% 80%, black 25%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 20% 80%, black 25%, transparent 80%)',
+          }}
+        />
+      </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header with Classical Wabi-Sabi Numerals & View All Action */}
@@ -86,7 +98,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
               <article
                 key={project.id}
                 onClick={() => openProject(project)}
-                className="interactive-card group relative w-full bg-light-surface-card dark:bg-[#292B31] hover:bg-light-surface dark:hover:bg-[#30333A] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm overflow-visible cursor-pointer"
+                className="interactive-card group relative w-full bg-light-surface-card dark:bg-[#2D2B29] craft-card hover:bg-light-surface dark:hover:bg-[#343230] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-xl p-4 sm:p-8 transition-all duration-300 shadow-sm overflow-visible cursor-pointer"
               >
                 {/* Corner Hairline Brackets (Subtle) */}
                 <CornerBrackets size="md" />
@@ -98,7 +110,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                 >
                   {/* Visual Media Column */}
                   <div className={`lg:col-span-6 ${isAlternate ? 'lg:col-start-7' : ''}`}>
-                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-[#1A1B20] border border-light-border/70 dark:border-[#3A3D44]/70">
+                    <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden bg-light-surface-muted dark:bg-[#1A1918] border border-light-border/70 dark:border-[#3E3B37]/70">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -119,7 +131,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                     {/* Unified Metadata Strip: Order + Date + Active Status Pill */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <Badge variant={isCurrent ? "terracotta" : "outline"} className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 border-light-border dark:border-[#3A3D44]">
+                        <Badge variant="outline" className="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 bg-light-surface-muted/60 dark:bg-[#1F1E1D] border-light-border dark:border-[#3E3B37] text-light-ink-muted dark:text-dark-ink-muted">
                           #{String(index + 1).padStart(2, '0')}
                         </Badge>
 
@@ -167,7 +179,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
                         <span>
                           {project.links.caseStudyText || 'View Architecture'}
                         </span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5 text-terracotta" />
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5 text-light-ink-muted dark:text-dark-ink-muted group-hover/btn:text-terracotta" />
                       </button>
 
                       {/* Direct External Links */}

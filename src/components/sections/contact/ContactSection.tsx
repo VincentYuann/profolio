@@ -114,11 +114,11 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="relative w-full py-14 lg:py-20 mb-8 scroll-mt-20">
       {/* Architectural Background Chamber for Contact */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-[#2A2C32]/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-[#262523]/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
       <div className="absolute inset-0 bg-radial-[at_50%_40%] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="interactive-card group relative bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-2xl p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">
+        <div className="interactive-card group relative bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] rounded-2xl p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">
           {/* Corner Hairline Brackets (Subtle) */}
           <CornerBrackets size="lg" />
 
@@ -146,7 +146,7 @@ export const ContactSection: React.FC = () => {
             {/* Left Column: Narrative & Direct Links */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div className="flex items-center gap-2 mb-2">
-                <span className="font-serif text-terracotta text-sm">06 //</span>
+                <span className="font-mono text-xs text-light-ink-subtle dark:text-dark-ink-subtle font-medium">06 //</span>
                 <span className="font-mono text-xs sm:text-sm font-semibold text-light-ink-subtle dark:text-dark-ink-subtle uppercase tracking-widest">
                   Dialogue &amp; Correspondence · 対話と通信
                 </span>
@@ -179,7 +179,7 @@ export const ContactSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="inline-flex items-center gap-1.5 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface-raised hover:border-ochre/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200 cursor-pointer"
                         title="Copy email to clipboard"
                       >
                         {copiedEmail ? (
@@ -202,7 +202,7 @@ export const ContactSection: React.FC = () => {
                       href={contactGithub}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface-raised hover:border-ochre/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
+                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
                     >
                       <Github className="w-4 h-4" />
                       <span className="tracking-widest">Github</span>
@@ -214,7 +214,7 @@ export const ContactSection: React.FC = () => {
                       href={contactLinkedin}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:bg-light-surface dark:hover:bg-dark-surface-raised hover:border-ochre/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
+                      className="inline-flex items-center gap-2 px-4 py-3 bg-light-surface-raised dark:bg-[#1F1E1D] border border-light-border dark:border-[#3E3B37] hover:bg-light-surface dark:hover:bg-[#262523] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest rounded-lg shadow-xs transition-all duration-200"
                     >
                       <Linkedin className="w-4 h-4" />
                       <span className="tracking-widest">Linkedin</span>

@@ -40,18 +40,18 @@ interface MilestoneTheme {
 const CANONICAL_MILESTONE_THEME: MilestoneTheme = {
   primary: '#B5482E',
   textClass: 'text-light-ink dark:text-dark-ink',
-  badgeBg: 'bg-light-surface-raised dark:bg-[#30333A]',
-  badgeBorder: 'border-light-border dark:border-[#3A3D44]',
-  badgeText: 'text-light-ink dark:text-dark-ink',
-  emblemBorder: 'border-light-border dark:border-[#3A3D44]',
+  badgeBg: 'bg-emerald-500/10 dark:bg-emerald-500/15',
+  badgeBorder: 'border-emerald-600/25 dark:border-emerald-400/25',
+  badgeText: 'text-emerald-800 dark:text-emerald-400',
+  emblemBorder: 'border-light-border dark:border-[#3E3B37]',
   emblemShadow: 'shadow-2xs',
   cardActiveBorder: 'border-light-border-strong dark:border-[#4E525D]',
   cardActiveRing: '',
   cardActiveGlow: 'shadow-sm',
-  nodeActiveBg: 'bg-terracotta',
-  nodeActiveBorder: 'border-terracotta',
+  nodeActiveBg: 'bg-emerald-600 dark:bg-emerald-400',
+  nodeActiveBorder: 'border-emerald-600 dark:border-emerald-400',
   nodeActiveShadow: '',
-  bulletOrdinalClass: 'text-light-ink-muted dark:text-dark-ink-muted bg-light-surface dark:bg-[#25272D] border-light-border dark:border-[#3A3D44]',
+  bulletOrdinalClass: 'text-light-ink-muted dark:text-dark-ink-muted bg-light-surface dark:bg-[#1F1E1D] border-light-border dark:border-[#3E3B37]',
 };
 
 const getMilestoneTheme = (_idx: number): MilestoneTheme => {
@@ -131,9 +131,23 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
   return (
     <section id="experience" className="relative w-full py-16 lg:py-24 scroll-mt-20">
       {/* Architectural Background Chamber for Experience */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-[#2A2C32]/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-[#262523]/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
       <div className="absolute left-0 sm:left-24 top-1/4 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
+      {/* Subtle Sumi-e Bamboo Silhouette Watermark in Background */}
+      <div className="absolute right-0 top-12 bottom-12 w-64 lg:w-96 pointer-events-none z-0 overflow-hidden select-none opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity">
+        <img
+          src="./images/sumie-tall-vertical-bamboo.jpg"
+          alt="Bamboo backdrop"
+          className="w-full h-full object-cover object-left opacity-60 dark:opacity-30 dark:filter dark:brightness-75"
+          loading="lazy"
+          decoding="async"
+          style={{
+            maskImage: 'linear-gradient(to left, black 20%, transparent 90%)',
+            WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 90%)',
+          }}
+        />
+      </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header with Classical Wabi-Sabi Numerals & Standardized Layout */}
@@ -149,10 +163,10 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
               <button
                 type="button"
                 onClick={toggleAll}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-terracotta/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200 cursor-pointer"
                 title="Expand or collapse all career milestone details"
               >
-                <Layers className="w-3.5 h-3.5 text-terracotta" />
+                <Layers className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
                 <span>{allOpen ? 'Collapse All' : 'Expand All'}</span>
               </button>
 
@@ -165,12 +179,12 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                     onNavigate('resume');
                   }
                 }}
-                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-dark-surface-card border border-light-border dark:border-dark-border hover:border-terracotta/50 text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-light-surface-card dark:bg-[#262523] border border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D] text-light-ink dark:text-dark-ink font-sans text-xs uppercase tracking-widest shadow-xs transition-all duration-200"
               >
-                <Briefcase className="w-3.5 h-3.5 text-terracotta" />
+                <Briefcase className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted" />
                 <span className="hidden sm:inline">Curriculum Vitae</span>
                 <span className="sm:hidden">CV</span>
-                <ArrowRight className="w-3.5 h-3.5 text-terracotta transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="w-3.5 h-3.5 text-light-ink-muted dark:text-dark-ink-muted transition-transform duration-200 group-hover:translate-x-1" />
               </a>
             </>
           }
@@ -225,16 +239,16 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
                     className={`timeline-node absolute left-3.5 sm:left-5 top-7 sm:top-8 w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-300 cursor-pointer ${
                       isCardActive
                         ? 'bg-terracotta border border-terracotta'
-                        : 'border border-light-ink-muted/50 dark:border-[#686559] bg-light-canvas dark:bg-[#1E1F24] hover:border-terracotta'
+                        : 'border border-light-ink-muted/50 dark:border-[#787368] bg-light-canvas dark:bg-[#1F1E1D] hover:border-terracotta'
                     }`}
                   />
 
                   {/* Milestone Card Frame */}
                   <div
-                    className={`relative rounded-xl sm:rounded-2xl border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame bg-light-surface-card dark:bg-[#292B31] ${
+                    className={`relative rounded-xl sm:rounded-2xl border p-5 sm:p-8 overflow-visible transition-all duration-200 classical-card-frame bg-light-surface-card dark:bg-[#2D2B29] craft-card ${
                       isCardActive
                         ? 'border-light-border-strong dark:border-[#4E525D] shadow-sm'
-                        : 'border-light-border dark:border-[#3A3D44] hover:border-light-border-strong dark:hover:border-[#4E525D]'
+                        : 'border-light-border dark:border-[#3E3B37] hover:border-light-border-strong dark:hover:border-[#4E525D]'
                     }`}
                   >
                     {/* Corner Hairline Brackets (Subtle) */}

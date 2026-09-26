@@ -42,13 +42,13 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
 
   // Custom theme overrides from experience milestones
   const activeClass = bg && border && text
-    ? `${bg} ${border} ${text} border shadow-xs`
-    : 'bg-terracotta/15 border border-terracotta/50 text-terracotta dark:text-[#E85D44] shadow-xs';
+    ? `${bg} ${border} ${text} border`
+    : 'bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-600/25 dark:border-emerald-400/25 text-emerald-800 dark:text-emerald-400';
 
   const completedClass =
-    'bg-stone-100 border border-stone-300 text-stone-600 dark:bg-dark-surface dark:border-dark-border dark:text-dark-ink-muted';
+    'bg-stone-100 border border-stone-300 text-stone-600 dark:bg-[#1F1E1D] dark:border-[#3E3B37] dark:text-dark-ink-muted';
 
-  const dotActiveClass = dotBg || 'bg-terracotta';
+  const dotActiveClass = dotBg || 'bg-emerald-600 dark:bg-emerald-400';
 
   return (
     <span

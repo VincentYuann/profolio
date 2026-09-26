@@ -31,13 +31,13 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
 
   return (
     <article
-      className="bg-light-surface-card dark:bg-[#292B31] border border-light-border dark:border-[#3A3D44] rounded-xl p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-light-border-strong dark:hover:border-[#4E525D] hover:bg-light-surface dark:hover:bg-[#30333A] transition-all duration-300 flex flex-col justify-between"
+      className="bg-light-surface-card dark:bg-[#2D2B29] craft-card border border-light-border dark:border-[#3E3B37] rounded-xl p-5 sm:p-7 shadow-sm relative overflow-visible classical-card-frame group hover:border-light-border-strong dark:hover:border-[#4E525D] hover:bg-light-surface dark:hover:bg-[#343230] transition-all duration-300 flex flex-col justify-between"
     >
       <CornerBrackets size="md" />
 
       {/* Card Header */}
       <div className="relative z-10">
-        <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3A3D44]/60">
+        <div className="flex items-start justify-between gap-3 pb-3 mb-4 border-b border-light-border/60 dark:border-[#3E3B37]/60">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="font-mono text-[11px] font-medium text-light-ink-muted dark:text-dark-ink-muted tracking-wider uppercase">
@@ -55,7 +55,7 @@ export const HobbyCard: React.FC<HobbyCardProps> = ({ hobby, index }) => {
           </div>
 
           <div className="text-right shrink-0">
-            <span className="font-serif text-2xl sm:text-3xl text-terracotta/80 font-bold leading-none block">
+            <span className="font-serif text-2xl sm:text-3xl text-light-ink-subtle/50 dark:text-dark-ink-subtle/40 font-medium leading-none block select-none">
               {hobby.kanji || '道'}
             </span>
           </div>
