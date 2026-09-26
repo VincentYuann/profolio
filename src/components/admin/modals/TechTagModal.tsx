@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { Search, X, Plus, Check, ChevronDown, ChevronRight, Layers } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Search, X, Plus, Check, ChevronDown, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { TechTag } from '../../common/TechTag';
-import { getTechBadgeIcon } from '../../../lib/techIcons';
+import { useTechIcon, searchTechIcons, normalizeTechSlug } from '../../../lib/techIcons';
 import {
   Dialog,
   DialogContent,
@@ -25,6 +25,7 @@ export const TECH_CATEGORIES: { category: string; tags: string[] }[] = [
       'Claude',
       'Anthropic',
       'Hugging Face',
+      'DeepSeek',
       'LLaMA',
       'CUDA',
       'llama.cpp',
@@ -37,6 +38,8 @@ export const TECH_CATEGORIES: { category: string; tags: string[] }[] = [
       'NumPy',
       'OpenCV',
       'Qdrant',
+      'Pinecone',
+      'Chroma',
     ],
   },
   {
@@ -167,6 +170,30 @@ interface TechTagModalProps {
   onChange: (tags: string[]) => void;
 }
 
+/**
+ * Live search preview showing verified brand status or clean text-only fallback (no emojis)
+ */
+const SearchBadgePreview: React.FC<{ query: string }> = ({ query }) => {
+  const { isOfficialBrand, canonicalName } = useTechIcon(query);
+  const name = canonicalName || query.trim();
+
+  return (
+    <div className="mt-2.5 flex items-center gap-2 text-xs text-light-ink-muted dark:text-dark-ink-muted">
+      <span>Preview:</span>
+      <TechTag tag={name} size="sm" />
+      {isOfficialBrand ? (
+        <span className="text-[10px] font-mono text-bamboo font-semibold uppercase">
+          Official Brand Logo Found
+        </span>
+      ) : (
+        <span className="text-[10px] font-mono text-light-ink-muted dark:text-dark-ink-muted uppercase">
+          Custom Tag (Text Only)
+        </span>
+      )}
+    </div>
+  );
+};
+
 export const TechTagModal: React.FC<TechTagModalProps> = ({
   isOpen,
   onClose,
@@ -175,6 +202,7 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
 }) => {
   const [search, setSearch] = useState('');
   const [collapsedCategories, setCollapsedCategories] = useState<Record<string, boolean>>({});
+  const [dynamicSuggestions, setDynamicSuggestions] = useState<string[]>([]);
 
   const allTags = useMemo(() => {
     const list: string[] = [];
@@ -191,20 +219,34 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
   const searchResults = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return null;
+    const normQ = normalizeTechSlug(q);
     return allTags.filter((t) => {
-      const match = getTechBadgeIcon(t);
+      const normT = normalizeTechSlug(t);
       return (
         t.toLowerCase().includes(q) ||
-        match.canonicalName.toLowerCase().includes(q)
+        normT.includes(normQ)
       );
     });
   }, [allTags, search]);
 
-  const searchBadge = useMemo(() => {
+  // Live Iconify discovery for arbitrary search terms
+  useEffect(() => {
     const q = search.trim();
-    if (!q) return null;
-    return getTechBadgeIcon(q);
-  }, [search]);
+    if (q.length < 2) {
+      setDynamicSuggestions([]);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      searchTechIcons(q).then((results) => {
+        const existingLower = new Set(allTags.map((t) => t.toLowerCase()));
+        const unique = results.filter((r) => !existingLower.has(r.toLowerCase()));
+        setDynamicSuggestions(unique.slice(0, 8));
+      });
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [search, allTags]);
 
   const toggleTag = (tag: string) => {
     if (selectedTags.includes(tag)) {
@@ -214,13 +256,11 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
     }
   };
 
-  const handleAddCustom = () => {
-    const trimmed = search.trim();
-    if (!trimmed) return;
-    const match = getTechBadgeIcon(trimmed);
-    const tagName = match.canonicalName || trimmed;
-    if (!selectedTags.includes(tagName)) {
-      onChange([...selectedTags, tagName]);
+  const handleAddCustom = (tagToAdd?: string) => {
+    const target = (tagToAdd || search).trim();
+    if (!target) return;
+    if (!selectedTags.includes(target)) {
+      onChange([...selectedTags, target]);
     }
     setSearch('');
   };
@@ -250,14 +290,14 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-terracotta font-semibold uppercase tracking-widest flex items-center gap-1.5">
                 <Layers className="w-3.5 h-3.5 text-ochre" />
-                Official Tech Stack Library
+                Universal Tech Stack Library
               </span>
               <span className="text-light-ink-subtle text-xs">·</span>
               <Badge variant="terracotta" className="text-[10px] py-0 px-1.5 font-mono">
                 {selectedTags.length} selected
               </Badge>
               <Badge variant="secondary" className="text-[10px] py-0 px-1.5 font-mono hidden sm:inline-flex">
-                {totalTagCount} Badges Preloaded
+                {totalTagCount} Curated Badges + Dynamic Iconify
               </Badge>
             </div>
 
@@ -283,9 +323,9 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
             )}
           </div>
 
-          <DialogTitle className="mt-1 text-lg sm:text-xl">Select Official Technology Badges</DialogTitle>
+          <DialogTitle className="mt-1 text-lg sm:text-xl">Select Technology Badges</DialogTitle>
           <DialogDescription className="text-xs sm:text-sm">
-            High-fidelity brand logos automatically linked without version number clutter.
+            Instant official brand logos powered by local pre-bundled assets and dynamic Iconify registry.
           </DialogDescription>
         </DialogHeader>
 
@@ -305,8 +345,8 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
                   }
                 }}
                 className="pl-9 pr-3 text-xs sm:text-sm w-full"
-                placeholder="Search official tech logos (e.g. PyTorch, Docker, Next.js, Rust, AWS, CUDA)…"
-                aria-label="Search official technology logos"
+                placeholder="Search any tech (e.g. PyTorch, DeepSeek, Triton, Chroma, Pinecone, Rust, Next.js)…"
+                aria-label="Search technology logos"
                 autoFocus
               />
             </div>
@@ -314,30 +354,16 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
               <Button
                 type="button"
                 size="sm"
-                onClick={handleAddCustom}
+                onClick={() => handleAddCustom()}
                 className="gap-1 shrink-0 text-xs"
               >
                 <Plus className="w-3.5 h-3.5" />
-                Add &ldquo;{searchBadge?.canonicalName || search.trim()}&rdquo;
+                Add &ldquo;{search.trim()}&rdquo;
               </Button>
             )}
           </div>
 
-          {searchBadge && (
-            <div className="mt-2.5 flex items-center gap-2 text-xs text-light-ink-muted dark:text-dark-ink-muted">
-              <span>Preview:</span>
-              <TechTag tag={searchBadge.canonicalName || search.trim()} size="sm" />
-              {searchBadge.isOfficialBrand ? (
-                <span className="text-[10px] font-mono text-bamboo font-semibold uppercase">
-                  Official Brand Logo Found
-                </span>
-              ) : (
-                <span className="text-[10px] font-mono text-light-ink-muted dark:text-dark-ink-muted uppercase">
-                  Custom Tag (No Logo)
-                </span>
-              )}
-            </div>
-          )}
+          {search.trim() && <SearchBadgePreview query={search.trim()} />}
         </div>
 
         {/* Selected Tags Preview Bar */}
@@ -370,55 +396,97 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
         {/* Scrollable Categories / Search Results */}
         <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 space-y-4">
           {searchResults ? (
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs text-light-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
-                  Matching Badges ({searchResults.length})
-                </span>
+            <div className="space-y-5">
+              {/* Preloaded Matching Badges */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-mono text-xs text-light-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
+                    Curated Library Matches ({searchResults.length})
+                  </span>
+                </div>
+
+                {searchResults.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {searchResults.map((tag) => {
+                      const isSelected = selectedTags.includes(tag);
+                      return (
+                        <button
+                          key={tag}
+                          type="button"
+                          aria-pressed={isSelected}
+                          onClick={() => toggleTag(tag)}
+                          className={`group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-xs transition-all cursor-pointer ${
+                            isSelected
+                              ? 'bg-terracotta/15 border-terracotta text-terracotta font-semibold shadow-xs'
+                              : 'bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-ink dark:text-dark-ink hover:border-terracotta hover:text-terracotta'
+                          }`}
+                        >
+                          <TechTag tag={tag} size="sm" className="border-0 bg-transparent dark:bg-transparent shadow-none p-0" />
+                          {isSelected ? (
+                            <Check className="w-3.5 h-3.5 text-terracotta shrink-0 ml-1" />
+                          ) : (
+                            <Plus className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 shrink-0 ml-1" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="p-3 rounded-lg border border-dashed border-light-border dark:border-dark-border text-xs text-light-ink-muted dark:text-dark-ink-muted">
+                    No curated badge matches &ldquo;{search}&rdquo;. You can still add it directly below.
+                  </div>
+                )}
               </div>
 
-              {searchResults.length > 0 ? (
-                <div className="flex flex-wrap gap-2">
-                  {searchResults.map((tag) => {
-                    const isSelected = selectedTags.includes(tag);
-                    return (
-                      <button
-                        key={tag}
-                        type="button"
-                        aria-pressed={isSelected}
-                        onClick={() => toggleTag(tag)}
-                        className={`group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-xs transition-all cursor-pointer ${
-                          isSelected
-                            ? 'bg-terracotta/15 border-terracotta text-terracotta font-semibold shadow-xs'
-                            : 'bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-ink dark:text-dark-ink hover:border-terracotta hover:text-terracotta'
-                        }`}
-                      >
-                        <TechTag tag={tag} size="sm" className="border-0 bg-transparent dark:bg-transparent shadow-none p-0" />
-                        {isSelected ? (
-                          <Check className="w-3.5 h-3.5 text-terracotta shrink-0 ml-1" />
-                        ) : (
-                          <Plus className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 shrink-0 ml-1" />
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="text-center py-8">
-                  <p className="font-sans text-xs text-light-ink-muted dark:text-dark-ink-muted mb-3">
-                    No predefined tech badge found matching &ldquo;{search}&rdquo;.
-                  </p>
-                  <Button
-                    type="button"
-                    size="sm"
-                    onClick={handleAddCustom}
-                    className="gap-1.5"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                    Add &ldquo;{searchBadge?.canonicalName || search.trim()}&rdquo; to Tech Stack
-                  </Button>
+              {/* Dynamic Iconify Suggestions if discovered */}
+              {dynamicSuggestions.length > 0 && (
+                <div className="pt-2 border-t border-light-border/60 dark:border-dark-border/60">
+                  <div className="flex items-center gap-1.5 mb-3">
+                    <Sparkles className="w-3.5 h-3.5 text-bamboo" />
+                    <span className="font-mono text-xs text-light-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
+                      Discovered via Iconify Registry ({dynamicSuggestions.length})
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {dynamicSuggestions.map((tag) => {
+                      const isSelected = selectedTags.includes(tag);
+                      return (
+                        <button
+                          key={tag}
+                          type="button"
+                          aria-pressed={isSelected}
+                          onClick={() => toggleTag(tag)}
+                          className={`group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-xs transition-all cursor-pointer ${
+                            isSelected
+                              ? 'bg-terracotta/15 border-terracotta text-terracotta font-semibold shadow-xs'
+                              : 'bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-ink dark:text-dark-ink hover:border-terracotta hover:text-terracotta'
+                          }`}
+                        >
+                          <TechTag tag={tag} size="sm" className="border-0 bg-transparent dark:bg-transparent shadow-none p-0" />
+                          {isSelected ? (
+                            <Check className="w-3.5 h-3.5 text-terracotta shrink-0 ml-1" />
+                          ) : (
+                            <Plus className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 shrink-0 ml-1" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
+
+              {/* Add Custom Directly */}
+              <div className="text-center pt-4">
+                <Button
+                  type="button"
+                  size="sm"
+                  onClick={() => handleAddCustom()}
+                  className="gap-1.5"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  Add &ldquo;{search.trim()}&rdquo; to Tech Stack
+                </Button>
+              </div>
             </div>
           ) : (
             TECH_CATEGORIES.map((cat) => {
@@ -499,7 +567,7 @@ export const TechTagModal: React.FC<TechTagModalProps> = ({
         {/* Footer */}
         <DialogFooter className="p-3.5 sm:p-4 border-t border-light-border dark:border-dark-border bg-light-surface/90 dark:bg-dark-surface-card shrink-0 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <span className="font-sans text-xs text-light-ink-muted dark:text-dark-ink-muted text-center sm:text-left">
-            Monochrome architectural badge design · Official simple-icons integration
+            Monochrome architectural badge design · Official Simple Icons &amp; Devicon dynamic integration
           </span>
           <Button type="button" onClick={onClose} className="px-5">
             Done
