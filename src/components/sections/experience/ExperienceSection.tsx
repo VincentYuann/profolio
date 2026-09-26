@@ -130,7 +130,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
   const allOpen = list.every((exp, idx) => expandedCards[exp.id || idx]);
 
   return (
-    <section id="experience" className="relative w-full py-24 lg:py-32 scroll-mt-20">
+    <section id="experience" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Experience */}
       <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/40 to-light-canvas dark:from-dark-canvas dark:via-dark-surface/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
@@ -139,7 +139,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
       {/* Full-Bleed Atmospheric Bamboo Mist Backdrop */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="./background/bamboo.jpg"
+          src="./decorators/bamboo.jpg"
           alt="Bamboo mist backdrop"
           className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"

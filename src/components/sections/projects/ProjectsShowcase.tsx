@@ -59,7 +59,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
   );
 
   return (
-    <section id="featured-works" className="relative w-full py-24 lg:py-32 scroll-mt-20">
+    <section id="featured-works" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Featured Works */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-dark-surface/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
@@ -67,7 +67,7 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
       {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="./background/ocean.jpg"
+          src="./decorators/ocean.jpg"
           alt="Sumi-e ocean waves backdrop"
           className="absolute right-0 top-0 bottom-0 w-full lg:w-3/4 h-full object-cover object-right opacity-30 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"

@@ -229,13 +229,13 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
     if (typeof window !== 'undefined') {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const maxH = Math.max(360, vh - 32);
+      const maxH = Math.max(360, Math.min(580, vh - 48));
       return {
-        width: Math.min(430, vw - 24),
-        height: Math.min(580, maxH),
+        width: Math.min(440, vw - 32),
+        height: maxH,
       };
     }
-    return { width: 420, height: 580 };
+    return { width: 440, height: 580 };
   });
   const [windowPos, setWindowPos] = useState<{ x: number; y: number } | null>(null);
   const chatWindowRef = useRef<HTMLDivElement>(null);
@@ -564,6 +564,8 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
       chatWindowRef.current.style.right = '';
       chatWindowRef.current.style.bottom = '';
       chatWindowRef.current.style.transform = '';
+      chatWindowRef.current.style.width = '';
+      chatWindowRef.current.style.height = '';
       chatWindowRef.current.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
       setTimeout(() => {
         if (chatWindowRef.current) {
@@ -571,6 +573,12 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
         }
       }, 260);
     }
+    const vw = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+    setWindowSize({
+      width: Math.min(440, vw - 32),
+      height: Math.max(360, Math.min(580, vh - 48)),
+    });
     setWindowPos(null);
   };
 
@@ -777,13 +785,25 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
       }
       if (direction.includes('w')) {
         const nextW = Math.min(maxW, Math.max(minW, curWidth - dx));
-        curX += curWidth - nextW;
-        curWidth = nextW;
+        const proposedX = curX + (curWidth - nextW);
+        if (proposedX >= 8) {
+          curX = proposedX;
+          curWidth = nextW;
+        } else {
+          curWidth += (curX - 8);
+          curX = 8;
+        }
       }
       if (direction.includes('n')) {
         const nextH = Math.min(maxH, Math.max(minH, curHeight - dy));
-        curY += curHeight - nextH;
-        curHeight = nextH;
+        const proposedY = curY + (curHeight - nextH);
+        if (proposedY >= 8) {
+          curY = proposedY;
+          curHeight = nextH;
+        } else {
+          curHeight += (curY - 8);
+          curY = 8;
+        }
       }
 
       if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current);
@@ -815,7 +835,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
         chatWindowRef.current.style.transition = '';
       }
       setWindowSize({ width: curWidth, height: curHeight });
-      setWindowPos({ x: curX, y: curY });
+      setWindowPos({ x: Math.max(8, curX), y: Math.max(8, curY) });
     };
 
     window.addEventListener('pointermove', onPointerMove, { passive: true });
@@ -879,7 +899,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
             right: !isMobile && windowPos ? 'auto' : undefined,
             bottom: !isMobile && windowPos ? 'auto' : undefined,
             transform: !isMobile && windowPos
-              ? `translate3d(${windowPos.x}px, ${windowPos.y}px, 0)`
+              ? `translate3d(${Math.max(8, windowPos.x)}px, ${Math.max(8, windowPos.y)}px, 0)`
               : undefined,
             transition: isMobile
               ? 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)'
@@ -895,10 +915,10 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ onNavigate, isAdmin 
           aria-labelledby="ai-chat-title"
         >
           {/* Subtle Outer Joinery Corner Brackets (Desktop Only) */}
-          <div className="hidden sm:block absolute top-1.5 left-1.5 w-3 h-3 border-t-2 border-l-2 border-terracotta pointer-events-none z-40 opacity-70" />
-          <div className="hidden sm:block absolute top-1.5 right-1.5 w-3 h-3 border-t-2 border-r-2 border-terracotta pointer-events-none z-40 opacity-70" />
-          <div className="hidden sm:block absolute bottom-1.5 left-1.5 w-3 h-3 border-b-2 border-l-2 border-terracotta pointer-events-none z-40 opacity-70" />
-          <div className="hidden sm:block absolute bottom-1.5 right-1.5 w-3 h-3 border-b-2 border-r-2 border-terracotta pointer-events-none z-40 opacity-70" />
+          <div className="hidden sm:block absolute top-1.5 left-1.5 w-2.5 h-2.5 border-t border-l border-terracotta/50 pointer-events-none z-40" />
+          <div className="hidden sm:block absolute top-1.5 right-1.5 w-2.5 h-2.5 border-t border-r border-terracotta/50 pointer-events-none z-40" />
+          <div className="hidden sm:block absolute bottom-1.5 left-1.5 w-2.5 h-2.5 border-b border-l border-terracotta/50 pointer-events-none z-40" />
+          <div className="hidden sm:block absolute bottom-1.5 right-1.5 w-2.5 h-2.5 border-b border-r border-terracotta/50 pointer-events-none z-40" />
 
           {/* Desktop Resizing Affordances */}
           <div

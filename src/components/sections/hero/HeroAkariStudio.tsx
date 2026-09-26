@@ -70,7 +70,7 @@ export const HeroAkariStudio: React.FC<HeroAkariStudioProps> = ({ onNavigate }) 
         {/* Layer 2: Subtle Pine Tree Atmosphere on Left */}
         <div className="absolute left-0 top-1/4 w-72 lg:w-96 h-96 opacity-30 dark:opacity-10 mix-blend-multiply dark:mix-blend-screen pointer-events-none">
           <img
-            src="./background/tree.jpg"
+            src="./decorators/tree.jpg"
             alt="Sumi-e pine tree branch"
             className="w-full h-full object-contain object-left"
             loading="lazy"

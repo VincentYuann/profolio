@@ -106,7 +106,7 @@ export const PhilosophyBento: React.FC = () => {
   }
 
   return (
-    <section id="philosophy" className="relative w-full py-24 lg:py-32 scroll-mt-20">
+    <section id="philosophy" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Philosophy */}
       <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface/35 to-light-canvas dark:from-dark-canvas dark:via-dark-surface-card/40 dark:to-dark-canvas pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Zen Ambient Mist Radial Wash */}
@@ -116,7 +116,7 @@ export const PhilosophyBento: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         {/* Panoramic Mist Landscape backdrop spanning across the section */}
         <img
-          src="./images/hero-sumie-landscape-bamboo-banner.jpg"
+          src="./background/hero-sumie-landscape-bamboo-banner.jpg"
           alt="Sumi-e landscape behind philosophy cards"
           className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
           loading="lazy"

@@ -336,7 +336,7 @@ export const App: React.FC = () => {
       <TooltipProvider delayDuration={200}>
         <VariantProvider>
           <SiteDataProvider>
-          <div className="min-h-screen bg-light-canvas dark:bg-dark-canvas text-light-ink dark:text-dark-ink transition-colors duration-300 flex flex-col selection:bg-terracotta/20 selection:text-terracotta">
+          <div className="min-h-screen bg-light-canvas dark:bg-dark-canvas text-light-ink dark:text-dark-ink transition-colors duration-300 flex flex-col selection:bg-terracotta/20 selection:text-terracotta overflow-x-clip">
             <Header
               currentView={currentView}
               onNavigate={handleNavigate}

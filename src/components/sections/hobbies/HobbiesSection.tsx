@@ -37,10 +37,10 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
   ) : null;
 
   return (
-    <section id="hobbies" className="relative w-full py-24 lg:py-32 scroll-mt-20">
+    <section id="hobbies" className="relative w-full py-24 lg:py-32 scroll-mt-20 overflow-hidden">
       {/* Architectural Background Chamber for Hobbies */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface/25 to-transparent dark:via-dark-surface-card/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
-      <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-radial-[at_center] from-bamboo/[0.035] dark:from-bamboo/[0.02] to-transparent pointer-events-none z-0" />
+      <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-[28rem] max-w-full h-[28rem] bg-radial-[at_center] from-bamboo/[0.035] dark:from-bamboo/[0.02] to-transparent pointer-events-none z-0" />
 
       {/* Full-Bleed Atmospheric Background Behind Hobbies Cards - Komorebi Filtered Light */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">

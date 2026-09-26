@@ -24,11 +24,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   const rightAction = actions || action;
   return (
     <div
-      className={`relative flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-light-border/70 dark:border-dark-border/80 gap-6 ${className}`}
+      className={`relative flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-light-border/70 dark:border-dark-border/80 gap-6 overflow-hidden ${className}`}
     >
       {/* Ambient Radial Lantern Glow simulating an Akari paper lamp */}
       <div
-        className="pointer-events-none absolute -left-12 -top-10 w-[32rem] h-64 -z-10 select-none opacity-90 dark:opacity-60"
+        className="pointer-events-none absolute -left-12 -top-10 w-full max-w-[32rem] h-64 -z-10 select-none opacity-90 dark:opacity-60"
         style={{
           background: 'radial-gradient(ellipse 65% 55% at 30% 35%, rgba(232, 162, 86, 0.08) 0%, rgba(232, 162, 86, 0.02) 60%, transparent 80%)',
         }}
