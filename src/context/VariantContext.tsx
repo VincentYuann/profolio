@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
-export type DesignVariant = 'tokonoma' | 'akari';
+export type DesignVariant = 'tokonoma' | 'akari' | 'shokunin';
 
 interface VariantContextType {
   variant: DesignVariant;
@@ -15,10 +15,20 @@ export const VariantProvider: React.FC<{ children: React.ReactNode }> = ({ child
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const v = urlParams.get('variant');
-      if (v === 'akari' || v === '2') return 'akari';
-      if (v === 'tokonoma' || v === '1') return 'tokonoma';
+      if (v === 'shokunin' || v === '3') {
+        localStorage.setItem('profolio-design-variant', 'shokunin');
+        return 'shokunin';
+      }
+      if (v === 'akari' || v === '2') {
+        localStorage.setItem('profolio-design-variant', 'akari');
+        return 'akari';
+      }
+      if (v === 'tokonoma' || v === '1') {
+        localStorage.setItem('profolio-design-variant', 'tokonoma');
+        return 'tokonoma';
+      }
       const saved = localStorage.getItem('profolio-design-variant');
-      if (saved === 'akari' || saved === 'tokonoma') return saved;
+      if (saved === 'shokunin' || saved === 'akari' || saved === 'tokonoma') return saved;
     }
     return 'tokonoma';
   });
@@ -28,13 +38,16 @@ export const VariantProvider: React.FC<{ children: React.ReactNode }> = ({ child
     if (typeof window !== 'undefined') {
       localStorage.setItem('profolio-design-variant', v);
       const url = new URL(window.location.href);
-      url.searchParams.set('variant', v === 'akari' ? '2' : '1');
+      const paramVal = v === 'shokunin' ? '3' : v === 'akari' ? '2' : '1';
+      url.searchParams.set('variant', paramVal);
       window.history.replaceState(null, '', url.toString());
     }
   };
 
   const toggleVariant = () => {
-    setVariant(variant === 'tokonoma' ? 'akari' : 'tokonoma');
+    if (variant === 'tokonoma') setVariant('akari');
+    else if (variant === 'akari') setVariant('shokunin');
+    else setVariant('tokonoma');
   };
 
   return (

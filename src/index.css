@@ -59,6 +59,21 @@
 }
 
 @layer utilities {
+  .font-zen {
+    font-family: 'Zen Old Mincho', 'Noto Serif JP', 'Noto Serif', serif;
+  }
+  .font-mulish {
+    font-family: 'Mulish', 'Montserrat', 'Inter', sans-serif;
+  }
+  .font-azeret {
+    font-family: 'Azeret Mono', 'JetBrains Mono', monospace;
+  }
+  .font-chakra {
+    font-family: 'Chakra Petch', 'Azeret Mono', sans-serif;
+  }
+}
+
+@layer utilities {
   /* Washi Paper Texture Subtle Background */
   .washi-pattern {
     background-color: transparent;

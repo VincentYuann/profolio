@@ -37,6 +37,19 @@ export const VariantSwitcher: React.FC = () => {
       >
         弐 · Akari Studio Frame
       </button>
+
+      <button
+        type="button"
+        onClick={() => setVariant('shokunin')}
+        className={`px-3 py-1 rounded-full transition-all duration-200 cursor-pointer ${
+          variant === 'shokunin'
+            ? 'bg-light-button-dark dark:bg-dark-button-light text-light-on-dark dark:text-dark-on-light font-semibold shadow-xs'
+            : 'text-light-ink-muted dark:text-dark-ink-muted hover:text-light-ink dark:hover:text-dark-ink'
+        }`}
+        title="Variant 3: Shokunin Engawa Pavilion & Kinetic Substrates"
+      >
+        参 · Shokunin Engawa
+      </button>
     </div>
   );
 };
