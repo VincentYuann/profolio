@@ -3,6 +3,7 @@ import { Compass, Feather, ShieldCheck } from 'lucide-react';
 import { BambooArt } from '../../common/BambooArt';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData } from '../../../context/SiteDataContext';
+import { SectionSideBackdrop } from '../../common/SectionSideBackdrop';
 
 const TRAJECTORY_THEMES = [
   {
@@ -112,55 +113,17 @@ export const PhilosophyBento: React.FC = () => {
       {/* Zen Ambient Mist Radial Wash */}
       <div className="absolute inset-0 bg-radial-[at_50%_50%] from-ochre/[0.03] dark:from-ochre/[0.02] to-transparent pointer-events-none z-0" />
 
-      {/* Full-Bleed Atmospheric Background Behind Philosophy Cards */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
-        {/* Panoramic Mist Landscape backdrop spanning across the section */}
-        <img
-          src="./background/hero-sumie-landscape-bamboo-banner.jpg"
-          alt="Sumi-e landscape behind philosophy cards"
-          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
-          loading="lazy"
-          decoding="async"
-          style={{
-            maskImage: 'radial-gradient(ellipse 92% 80% at 50% 50%, black 30%, transparent 88%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 92% 80% at 50% 50%, black 30%, transparent 88%)',
-          }}
-        />
-
-        {/* Left Flank Art: Long Tall Sumi-e Bamboo Rising in Left Empty Space */}
-        <div className="absolute left-0 lg:left-4 xl:left-8 bottom-0 top-12 w-36 sm:w-48 lg:w-64 pointer-events-none z-0 hidden md:block">
-          <img
-            src="./images/sumie-tall-vertical-bamboo.jpg"
-            alt="Sumi-e bamboo art left flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 animate-bamboo-sway"
-            loading="lazy"
-            decoding="async"
-            style={{
-              maskImage: 'radial-gradient(ellipse 85% 85% at 40% 60%, black 40%, transparent 88%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 40% 60%, black 40%, transparent 88%)',
-            }}
-          />
-        </div>
-
-        {/* Right Flank Art: Long Tall Sumi-e Bamboo Rising in Right Empty Space */}
-        <div className="absolute right-0 lg:right-4 xl:right-8 bottom-0 top-12 w-36 sm:w-48 lg:w-64 pointer-events-none z-0 hidden md:block">
-          <img
-            src="./images/sumie-tall-vertical-bamboo.jpg"
-            alt="Sumi-e bamboo art right flank"
-            className="w-full h-full object-contain object-bottom opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75 scale-x-[-1]"
-            loading="lazy"
-            decoding="async"
-            style={{
-              maskImage: 'radial-gradient(ellipse 85% 85% at 60% 60%, black 40%, transparent 88%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 60% 60%, black 40%, transparent 88%)',
-            }}
-          />
-        </div>
-
-        {/* Top & Bottom seamless gradient transitions */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-light-canvas via-light-canvas/80 to-transparent dark:from-dark-canvas dark:via-dark-canvas/80 z-10 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-light-canvas via-light-canvas/80 to-transparent dark:from-dark-canvas dark:via-dark-canvas/80 z-10 pointer-events-none" />
-      </div>
+      {/* 16:9 Washi Paper Texture Background & Sumi-e Mountain Painting Decorations on the Side Flanks */}
+      <SectionSideBackdrop
+        textureDay="./background/white paper texture.jpg"
+        textureNight="./background/black paper.jpg"
+        painting="./decorators/mountain.jpg"
+        paintingAlt="Sumi-e misty mountain ink wash painting"
+        textureOpacityDay={0.5}
+        textureOpacityNight={0.4}
+        paintingOpacityDay={0.36}
+        paintingOpacityNight={0.22}
+      />
 
       {/* Main Philosophy Bento Content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

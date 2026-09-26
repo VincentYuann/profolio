@@ -7,6 +7,7 @@ import { useSiteData, Project } from '../../../context/SiteDataContext';
 import { SectionHeading } from '../../common/SectionHeading';
 import { StatusBadge } from '../../common/StatusBadge';
 import { handleImageError } from '../../../lib/constants';
+import { SectionSideBackdrop } from '../../common/SectionSideBackdrop';
 
 const ProjectDetailModal = lazy(() =>
   import('./ProjectDetailModal').then((m) => ({ default: m.ProjectDetailModal }))
@@ -64,20 +65,18 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({ onNavigate }
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface-card/30 to-transparent dark:via-dark-surface/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
       <div className="absolute right-0 sm:right-24 top-1/3 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
-      {/* Subtle Sumi-e Great Ocean Waves Backdrop */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
-        <img
-          src="./decorators/ocean.jpg"
-          alt="Sumi-e ocean waves backdrop"
-          className="absolute right-0 top-0 bottom-0 w-full lg:w-3/4 h-full object-cover object-right opacity-30 dark:opacity-20 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
-          loading="lazy"
-          decoding="async"
-          style={{
-            maskImage: 'radial-gradient(ellipse 90% 80% at 75% 50%, black 25%, transparent 85%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 90% 80% at 75% 50%, black 25%, transparent 85%)',
-          }}
-        />
-      </div>
+      
+      {/* 16:9 Cedar Wood Texture Background & Sumi-e Great Ocean Waves Painting Decorations on the Side Flanks */}
+      <SectionSideBackdrop
+        textureDay="./background/white wood.jpg"
+        textureNight="./background/black wood.jpg"
+        painting="./decorators/ocean.jpg"
+        paintingAlt="Sumi-e ocean wave ink wash painting"
+        textureOpacityDay={0.5}
+        textureOpacityNight={0.4}
+        paintingOpacityDay={0.36}
+        paintingOpacityNight={0.22}
+      />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header with Classical Wabi-Sabi Numerals & View All Action */}

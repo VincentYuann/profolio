@@ -4,6 +4,7 @@ import { ArrowRight, Layers } from 'lucide-react';
 import { ViewMode } from '../../../App';
 import { HobbyCard } from './HobbyCard';
 import { SectionHeading } from '../../common/SectionHeading';
+import { SectionSideBackdrop } from '../../common/SectionSideBackdrop';
 
 interface HobbiesSectionProps {
   onNavigate?: (view: ViewMode, sectionId?: string) => void;
@@ -42,24 +43,17 @@ export const HobbiesSection: React.FC<HobbiesSectionProps> = ({ onNavigate }) =>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-surface/25 to-transparent dark:via-dark-surface-card/40 pointer-events-none z-0 border-y border-light-border/40 dark:border-dark-border/40" />
       <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-[28rem] max-w-full h-[28rem] bg-radial-[at_center] from-bamboo/[0.035] dark:from-bamboo/[0.02] to-transparent pointer-events-none z-0" />
 
-      {/* Full-Bleed Atmospheric Background Behind Hobbies Cards - Komorebi Filtered Light */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
-        <img
-          src="./images/botanical-ink-accent.jpg"
-          alt="Botanical ink art backdrop behind hobbies"
-          className="absolute inset-0 w-full h-full object-contain opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
-          loading="lazy"
-          decoding="async"
-          style={{
-            maskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
-          }}
-        />
-
-        {/* Top & Bottom seamless gradient transitions */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-light-canvas via-light-canvas/80 to-transparent dark:from-dark-canvas dark:via-dark-canvas/80 z-10 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-light-canvas via-light-canvas/80 to-transparent dark:from-dark-canvas dark:via-dark-canvas/80 z-10 pointer-events-none" />
-      </div>
+      {/* 16:9 Linen Texture Background & Sumi-e Pine Tree Painting Decorations on the Side Flanks */}
+      <SectionSideBackdrop
+        textureDay="./background/white linen.jpg"
+        textureNight="./background/black linen.jpg"
+        painting="./decorators/tree.jpg"
+        paintingAlt="Sumi-e pine tree ink wash painting"
+        textureOpacityDay={0.5}
+        textureOpacityNight={0.4}
+        paintingOpacityDay={0.36}
+        paintingOpacityNight={0.22}
+      />
 
       {/* Main Hobbies Content Container */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

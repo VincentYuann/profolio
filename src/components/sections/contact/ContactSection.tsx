@@ -4,6 +4,7 @@ import { sendContactMessage } from '../../../lib/supabase';
 import { BambooArt } from '../../common/BambooArt';
 import { CornerBrackets } from '../../common/CornerBrackets';
 import { useSiteData } from '../../../context/SiteDataContext';
+import { SectionSideBackdrop } from '../../common/SectionSideBackdrop';
 
 export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -116,6 +117,18 @@ export const ContactSection: React.FC = () => {
       {/* Architectural Background Chamber for Contact */}
       <div className="absolute inset-0 bg-gradient-to-b from-light-canvas via-light-surface-card/40 to-light-canvas dark:from-dark-canvas dark:via-dark-surface-card/40 dark:to-dark-canvas pointer-events-none z-0 border-t border-light-border/50 dark:border-dark-border/50" />
       <div className="absolute inset-0 bg-radial-[at_50%_40%] from-terracotta/[0.03] dark:from-terracotta/[0.02] to-transparent pointer-events-none z-0" />
+
+      {/* 16:9 Cedar Wood Texture Background & Sumi-e Mountain Painting Decorations on the Outer Side Flanks */}
+      <SectionSideBackdrop
+        textureDay="./background/white wood.jpg"
+        textureNight="./background/black wood.jpg"
+        painting="./decorators/mountain.jpg"
+        paintingAlt="Sumi-e misty mountain ink wash painting"
+        textureOpacityDay={0.5}
+        textureOpacityNight={0.4}
+        paintingOpacityDay={0.36}
+        paintingOpacityNight={0.22}
+      />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         <div className="interactive-card group relative bg-light-surface-card dark:bg-dark-surface-card craft-card border border-light-border dark:border-dark-border hover:border-light-border-strong dark:hover:border-dark-border-strong rounded-[3px] p-8 sm:p-12 overflow-visible shadow-sm classical-card-frame transition-colors duration-300">

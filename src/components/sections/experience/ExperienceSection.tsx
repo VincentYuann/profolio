@@ -15,6 +15,7 @@ import { Badge } from '../../ui/badge';
 import { SectionHeading } from '../../common/SectionHeading';
 import { StatusBadge } from '../../common/StatusBadge';
 import { handleImageError } from '../../../lib/constants';
+import { SectionSideBackdrop } from '../../common/SectionSideBackdrop';
 
 interface ExperienceSectionProps {
   onNavigate?: (view: 'home' | 'projects' | 'resume', sectionId?: string) => void;
@@ -136,35 +137,17 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
       {/* Subtle Japanese Joinery Axis Ambient Glow */}
       <div className="absolute left-0 sm:left-24 top-1/4 w-96 h-96 bg-radial-[at_center] from-ochre/[0.04] dark:from-ochre/[0.025] to-transparent pointer-events-none z-0" />
       
-      {/* Full-Bleed Atmospheric Bamboo Mist Backdrop */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
-        <img
-          src="./decorators/bamboo.jpg"
-          alt="Bamboo mist backdrop"
-          className="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15 mix-blend-multiply dark:mix-blend-luminosity dark:filter dark:brightness-75"
-          loading="lazy"
-          decoding="async"
-          style={{
-            maskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 90% 75% at 50% 50%, black 25%, transparent 85%)',
-          }}
-        />
-      </div>
-
-      {/* Subtle Sumi-e Bamboo Silhouette Watermark in Background */}
-      <div className="absolute right-0 top-12 bottom-12 w-64 lg:w-96 pointer-events-none z-0 overflow-hidden select-none opacity-20 dark:opacity-10 mix-blend-multiply dark:mix-blend-luminosity">
-        <img
-          src="./images/sumie-tall-vertical-bamboo.jpg"
-          alt="Bamboo backdrop"
-          className="w-full h-full object-cover object-left opacity-60 dark:opacity-30 dark:filter dark:brightness-75"
-          loading="lazy"
-          decoding="async"
-          style={{
-            maskImage: 'linear-gradient(to left, black 20%, transparent 90%)',
-            WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 90%)',
-          }}
-        />
-      </div>
+      {/* 16:9 Linen Texture Background & Sumi-e Bamboo Painting Decorations on the Side Flanks */}
+      <SectionSideBackdrop
+        textureDay="./background/white linen.jpg"
+        textureNight="./background/black linen.jpg"
+        painting="./decorators/bamboo.jpg"
+        paintingAlt="Sumi-e bamboo ink wash painting"
+        textureOpacityDay={0.5}
+        textureOpacityNight={0.4}
+        paintingOpacityDay={0.36}
+        paintingOpacityNight={0.22}
+      />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header with Classical Wabi-Sabi Numerals & Standardized Layout */}
